@@ -1,11 +1,15 @@
+import React, { Component, useState, useEffect } from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import LandingPage from './Components/LandingPage/LandingPage'
 
-
-function App() {
+const App = () => {
   return (
-    <div>
-      
-    </div>
-  );
+    <Router>
+      <Switch>
+        <Route path='/' exact component={LandingPage} />
+      </Switch>
+    </Router>
+  )
 }
 
-export default App;
+export default App
