@@ -1,4 +1,5 @@
 import React, { Component, useState, useEffect } from 'react'
+import Home from '../Home/Home'
 
 //Componente que renderizará el video de la primera carga
 const LandingPage = (props) => {
@@ -27,7 +28,7 @@ const LandingPage = (props) => {
     } else {
         return (
             <div>
-                HOME
+                <Home />
             </div>
         )
     }
