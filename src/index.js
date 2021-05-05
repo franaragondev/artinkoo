@@ -5,6 +5,7 @@ import './jq.js'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './Components/LandingPage/landingPage.css'
+import './Components/Home/home.css'
 
 ReactDOM.render(
   <React.StrictMode>

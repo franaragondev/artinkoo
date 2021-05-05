@@ -1,7 +1,7 @@
 import React, { Component, useState, useEffect } from 'react'
 
 //Componente que renderizará el video de la primera carga
-const Home = (props) => {
+const LandingPage = (props) => {
     return (
         <div>
             <video muted preload='auto' className='video' autoPlay playsInline>
@@ -13,4 +13,4 @@ const Home = (props) => {
     )
 }
 
-export default Home
+export default LandingPage
