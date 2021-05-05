@@ -25,7 +25,7 @@ const Header = (props) => {
             </div>
 
             <div id="logoCabecera">
-                <a href="index.html"><img alt="logoColor" src="../images/logotipo_en_color.png" /></a>
+                <a href="#"><img alt="logoColor" src="../images/logotipo_en_color.png" /></a>
             </div>
 
             <div id='menu_query'>
