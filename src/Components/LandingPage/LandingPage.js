@@ -8,7 +8,7 @@ const LandingPage = (props) => {
     const showImage = () => {
         setTimeout(() => {
             setVideo(false)
-        }, 2000);
+        }, 3000);
     }
 
     if (video) {
