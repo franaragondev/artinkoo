@@ -1,0 +1,359 @@
+/*CABECERA*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+header>div#menu_query {
+    display: none;
+}
+
+/*ICONO MENÚ*/
+
+header>div#menu>input {
+    display: none;
+}
+
+/*ACCIONES CUANDO MENÚ ES CHECKED*/
+
+header>div#menu>input:checked~label>span:nth-child(1) {
+    transform: translateY(12px) rotate(45deg);
+    transition: all 0.4s;
+}
+
+header>div#menu>input:checked~label>span:nth-child(2) {
+    opacity: 0;
+}
+
+header>div#menu>input:checked~label>span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    transition: all 0.4s;
+}
+
+header>div#menu>input:checked~ul#menuOculto {
+    left: 0;
+}
+
+/*FORMATO ICONO MENÚ*/
+
+header>div#menu>label {
+    display: inline-block;
+    cursor: pointer;
+    width: 1.58rem;
+    height: 2rem;
+    visibility: visible;
+    position: relative;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-top: 10px;
+}
+
+header>div#menu>label>span {
+    border-radius: 15px;
+    width: 2rem;
+    height: 0.3rem;
+    position: absolute;
+    display: block;
+    background: black;
+    top: 0;
+    left: 0;
+    transition: all .5s;
+    z-index: 3;
+}
+
+header>div#menu>label>span:nth-child(1) {
+    position: absolute;
+    height: 4px;
+    width: 25px;
+    background: black;
+    margin-top: 3px;
+    transform: rotate(0deg);
+    transition: all 0.4s;
+}
+
+header>div#menu>label>span:nth-child(2) {
+    height: 4px;
+    width: 25px;
+    margin-top: 13px;
+    background: black;
+    transform: rotate(0deg);
+    transition: all 0.4s;
+}
+
+header>div#menu>label>span:nth-child(3) {
+    position: absolute;
+    height: 4px;
+    width: 25px;
+    margin-top: 23px;
+    background: black;
+    transform: rotate(0deg);
+    transition: all 0.4s;
+}
+
+/*FORMATO MENÚ DESPLEGABLE*/
+
+header>div#menu>ul#menuOculto {
+    position: absolute;
+    background-color: white;
+    margin-top: 0.5rem;
+    width: 100%;
+    padding-left: 0%;
+    left: -100%;
+    z-index: 1;
+    transition: left 0.4s ease-in-out 0s;
+}
+
+/*LUPA MENÚ*/
+
+header>div#menu>ul#menuOculto>li>img {
+    position: absolute;
+    width: 1.5rem;
+    margin-left: 70%;
+    border-radius: 0.2rem;
+}
+
+/*BUSCADOR*/
+
+header>div#menu>ul#menuOculto>li>input {
+    margin-left: -2.5rem;
+    width: 128%;
+    height: 1.5rem;
+    border: none;
+    color: black;
+    background-color: #87B6C5;
+    border-radius: 0.2rem;
+    outline: none;
+    cursor: text;
+}
+
+header>div#menu>ul#menuOculto>li>input:focus {
+    border: 2px solid black;
+}
+
+header>div#menu>ul#menuOculto>li>input::placeholder {
+    color: black;
+}
+
+/*FORMATO MENÚ DESPLEGABLE*/
+
+header>div#menu>ul#menuOculto>li>hr {
+    margin-top: 1.5rem;
+    border: 1px solid #87B6C5;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    width: 128%;
+    margin-left: -2.5rem;
+}
+
+header>div#menu>ul#menuOculto>li {
+    margin-top: 0.8rem;
+    list-style: none;
+    margin-left: 3.5rem;
+    font-family: Quicksand;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    width: 72%;
+    height: 100%;
+}
+
+header>div#menu>ul#menuOculto>li:first-of-type {
+    padding-top: .6rem;
+    padding-bottom: .6rem;
+}
+
+header>div#menu>ul#menuOculto>li:last-of-type {
+    margin-bottom: 300%;
+}
+
+header>div#menu>ul#menuOculto>li:not(:first-of-type) {
+    border-top: 1px solid #87B6C5;
+    padding-top: .6rem;
+    padding-bottom: .6rem;
+}
+
+header>div#menu>ul#menuOculto>li:nth-child(2) {
+    border-top: none;
+    margin-top: -0.6rem;
+    padding-bottom: .6rem;
+}
+
+header>div#menu>ul#menuOculto>li>a {
+    text-decoration: none;
+    color: black;
+}
+
+/*LOGO CABECERA*/
+
+header>div#logoCabecera>a>img {
+    width: 10rem;
+    margin-top: 2%;
+}
+
+/*PARTE DERECHA DE LA CABECERA*/
+
+header>div#derecha {
+    display: flex;
+}
+
+header>div#derecha>img#icon_user {
+    cursor: pointer;
+    margin-top: -0.5rem;
+    width: 1.6rem;
+}
+
+/*CAMBIO DE IDIOMA*/
+
+header>div#derecha>input#idioma {
+    display: none;
+}
+
+header>div#derecha>input#idioma:checked~label>img:nth-child(1) {
+    display: none;
+}
+
+header>div#derecha>input#idioma:checked~label>img:nth-child(2) {
+    display: flex;
+}
+
+/*CAMBIO A IDIOMA INGLÉS*/
+
+header>div#derecha>label>img {
+    /*OCULTA IDIOMA*/
+    display: none;
+    margin-top: 0.7rem;
+    width: 1.5rem;
+    justify-content: right;
+    cursor: pointer;
+}
+
+header>div#derecha>label>img:nth-child(2) {
+    display: none;
+}
+
+/*BOLSA COMPRA*/
+
+header>div#derecha>div#bolsaCompra>a>img {
+    margin-top: 0.6rem;
+    width: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+/*CERRAR MENÚ BOLSA COMPRA*/
+
+header>div#derecha>div#menu_oculto_bolsa {
+    position: absolute;
+    background-color: white;
+    margin-top: 0;
+    width: 75%;
+    height: 80rem;
+    right: -100%;
+    z-index: 1;
+    transition: right 0.4s ease-in-out 0s;
+}
+
+header>div#derecha>div#menu_oculto_bolsa>div#cerrar_menu_bolsa {
+    display: flex;
+    justify-content: flex-end;
+}
+
+header>div#derecha>div#menu_oculto_bolsa>div#cerrar_menu_bolsa>picture>img {
+    width: 1rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+header>div#derecha>div#menu_oculto_bolsa>div#cerrar_menu_bolsa>p {
+    margin-right: 0.8rem;
+    font-family: Quicksand;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>p:first-child {
+    margin-left: 1rem;
+    font-family: Quicksand;
+    font-weight: bold;
+}
+
+header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>hr {
+    width: 90%;
+    margin-bottom: 1.5rem;
+}
+
+header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>div#contenido_compra {
+    display: flex;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>div#contenido_compra>picture>img {
+    width: 30%;
+    margin-bottom: 1.5rem;
+}
+
+header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>div#contenido_compra>p#nombre_producto {
+    position: absolute;
+    margin-top: 0;
+    margin-left: 28%;
+    font-family: Open Sans;
+    font-size: 15px;
+}
+
+header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>div#contenido_compra>p#precio_producto {
+    position: absolute;
+    margin-top: 1.5rem;
+    margin-left: 28%;
+    font-family: Open Sans;
+    font-size: 13px;
+}
+
+header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>div#contenido_compra>picture>img#eliminar_producto {
+    width: 1rem;
+    margin-top: 0.2rem;
+    margin-right: 5%;
+    cursor: pointer;
+}
+
+header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>p:not(:first-child) {
+    font-family: Open Sans;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>button#comprar_desde_menu {
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    padding: 0.5rem;
+    width: 10rem;
+    display: block;
+    margin: auto;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>button#ver_carrito {
+    border: 1px solid black;
+    background-color: white;
+    padding: 0.5rem;
+    width: 10rem;
+    display: block;
+    margin: auto;
+    margin-top: 1.5rem;
+    cursor: pointer;
+}

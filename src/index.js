@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './Components/LandingPage/landingPage.css'
 import './Components/Home/home.css'
+import './Components/Header/header.css'
 
 ReactDOM.render(
   <React.StrictMode>
