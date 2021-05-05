@@ -11,13 +11,12 @@ const LandingPage = (props) => {
     }
 
     if (video) {
-        showMap()
         return (
             <div>
                 <video muted preload='auto' className='video' autoPlay playsInline>
                     <source src="../images/intro.mp4" type="video/mp4" />
+                    {showMap()}
                     <source src="../images/intro11.webm" type="video/webm" />
-                    <img src="imagen.png" alt="Video no soportado" />
                 </video>
             </div>
         )
