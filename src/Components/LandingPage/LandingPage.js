@@ -4,7 +4,7 @@ import React, { Component, useState, useEffect } from 'react'
 const Home = (props) => {
     return (
         <div>
-            <video muted preload='auto' className='video' autoPlay>
+            <video muted preload='auto' className='video' autoPlay playsInline>
                 <source src="../images/intro.mp4" type="video/mp4" />
                 <source src="../images/intro11.webm" type="video/webm" />
                 <img src="imagen.png" alt="Video no soportado" />
