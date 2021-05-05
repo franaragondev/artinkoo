@@ -7,23 +7,27 @@ const LandingPage = (props) => {
     const showMap = () => {
         setTimeout(() => {
             setVideo(false)
-        }, 5000);
+        }, 2000);
     }
 
     if (video) {
         return (
-            <div>
-                <video muted preload='auto' className='video' autoPlay playsInline>
+            <div className='contenedorImagen'>
+                <picture>
+                    {/* {showMap()} */}
+                    <img className='imagenInicial' src='../images/ojocamaleon.png' alt='Imagen inicial'></img>
+                </picture>
+                {/* <video muted preload='auto' className='video' autoPlay playsInline>
                     <source src="../images/intro.mp4" type="video/mp4" />
                     {showMap()}
                     <source src="../images/intro11.webm" type="video/webm" />
-                </video>
+                </video> */}
             </div>
         )
     } else {
         return (
             <div>
-                PAGINA
+                HOME
             </div>
         )
     }
