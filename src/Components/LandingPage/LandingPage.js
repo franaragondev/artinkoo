@@ -4,7 +4,7 @@ import React, { Component, useState, useEffect } from 'react'
 const LandingPage = (props) => {
     const [video, setVideo] = useState(true)
 
-    const showMap = () => {
+    const showImage = () => {
         setTimeout(() => {
             setVideo(false)
         }, 2000);
@@ -14,7 +14,7 @@ const LandingPage = (props) => {
         return (
             <div className='contenedorImagen'>
                 <picture>
-                    {/* {showMap()} */}
+                    {showImage()}
                     <img className='imagenInicial' src='../images/ojocamaleon.png' alt='Imagen inicial'></img>
                 </picture>
                 {/* <video muted preload='auto' className='video' autoPlay playsInline>
