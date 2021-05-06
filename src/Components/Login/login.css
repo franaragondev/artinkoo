@@ -1,20 +1,20 @@
 .login_container {
-    width: 100%;
-    min-height: 100%;
-    height: auto !important;
-    position: fixed;
+    min-height: 100vh;
     background-color: rgba(85, 143, 201, 0.432);
 }
 
 #logotipo_login {
-    display: block;
+    display: flex;
     margin: auto;
     width: 20rem;
-    margin-top: 2rem;
+    padding-top: 2rem;
 }
 
 .loginFormat {
     text-align: center;
+}
+
+#mensajeLogin {
     font-size: 20px;
 }
 
@@ -44,7 +44,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 6px;
     height: 2.9rem;
-    font-family: Montserrat;
+    font-family: Quicksand;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -54,4 +54,24 @@
     margin-bottom: 1.5rem;
     margin-left: auto;
     margin-right: auto;
+}
+
+.link {
+    color: #e70074;
+    text-decoration: none;
+}
+
+.flecha {
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    justify-content: center;
+}
+
+#flecha {
+    width: 2.2rem;
+}
+
+#registrateLink {
+    font-size: 17px;
 }

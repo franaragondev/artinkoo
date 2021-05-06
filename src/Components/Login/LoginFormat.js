@@ -6,14 +6,23 @@ import { Link } from 'react-router-dom'
 const LoginFormat = (props) => {
     return (
         <div className='loginFormat'>
-            <p id='mensajeLogin'>LOGUEESE O REGÍSTRESE</p>
+            <p id='mensajeLogin'>INICIAR SESIÓN</p>
             <form action='' method=''>
                 <input className='inputLogin' type='text' placeholder='Usuario' name='usuario' />
                 <input className='inputLogin' type='password' placeholder='Contraseña' name='contraseña' />
                 <button className='btnLogin' type='submit'>Iniciar Sesión</button>
             </form>
-            <p>Regístrate <Link to='/register' className='link'>aquí</Link></p>
-            <Link className='link' to='/home'>Volver a Inicio</Link>
+            <p id='registrateLink'>Regístrate <Link to='/register' className='link'>aquí</Link></p>
+            <div className='flecha'>
+                {/* <picture>
+                    <img id='flecha' alt='flecha' src='../images/flecha.svg'></img>
+                </picture> */}
+                <Link className='link' to='/home'>
+                    Volver a Inicio
+            </Link>
+            </div>
+
+
         </div>
     )
 }
