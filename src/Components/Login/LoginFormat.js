@@ -8,12 +8,12 @@ const LoginFormat = (props) => {
         <div className='loginFormat'>
             <p id='mensajeLogin'>LOGUEESE O REGÍSTRESE</p>
             <form action='' method=''>
-                <input type='text' placeholder='Usuario' name='usuario' />
-                <input type='password' placeholder='Contraseña' name='contraseña' />
-                <button type='submit'>Iniciar Sesión</button>
+                <input className='inputLogin' type='text' placeholder='Usuario' name='usuario' />
+                <input className='inputLogin' type='password' placeholder='Contraseña' name='contraseña' />
+                <button className='btnLogin' type='submit'>Iniciar Sesión</button>
             </form>
-            <p>Regístrate <strong>aquí</strong></p>
-            <Link to='/home'>Volver al Incio</Link>
+            <p>Regístrate <Link to='/register' className='link'>aquí</Link></p>
+            <Link className='link' to='/home'>Volver a Inicio</Link>
         </div>
     )
 }
