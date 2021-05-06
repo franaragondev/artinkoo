@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import './Components/LandingPage/landingPage.css'
 import './Components/Home/home.css'
 import './Components/Header/header.css'
+import './Components/Login/login.css'
 
 ReactDOM.render(
   <React.StrictMode>

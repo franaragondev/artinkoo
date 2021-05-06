@@ -1,4 +1,5 @@
 import React, { Component, useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 //Componente que renderizará el video de la primera carga
 const Header = (props) => {
@@ -25,7 +26,9 @@ const Header = (props) => {
             </div>
 
             <div id="logoCabecera">
-                <a href="#"><img alt="logoColor" src="../images/logotipo_en_color.png" /></a>
+                <Link to='/home'>
+                    <img alt="logoColor" src="../images/logotipo_en_color.png" />
+                </Link>
             </div>
 
             <div id='menu_query'>
@@ -36,7 +39,9 @@ const Header = (props) => {
             </div>
 
             <div id="derecha">
-                <img id='icon_user' alt="icono_user" src="../images/icon_user.svg" />
+                <Link to='/login'>
+                    <img id='icon_user' alt="icono_user" src="../images/icon_user.svg" />
+                </Link>
                 <input id="idioma" type="checkbox" />
                 <label for="idioma">
                     <img alt="globoIdioma" src="../images/-language_89801.svg" />

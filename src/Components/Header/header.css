@@ -206,9 +206,9 @@ header>div#derecha {
     display: flex;
 }
 
-header>div#derecha>img#icon_user {
+#icon_user {
     cursor: pointer;
-    margin-top: -0.5rem;
+    margin-top: .6rem;
     width: 1.6rem;
 }
 
