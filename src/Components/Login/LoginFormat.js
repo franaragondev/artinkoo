@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom'
 const LoginFormat = (props) => {
     return (
         <div className='loginFormat'>
-            <p id='mensajeLogin'>INICIAR SESIÓN</p>
-            <form action='' method=''>
+            <p className='mensajeLogin'>INICIAR SESIÓN</p>
+            <form action='http://localhost:8000/login' method='POST'>
                 <input className='inputLogin' type='text' placeholder='Usuario' name='usuario' />
-                <input className='inputLogin' type='password' placeholder='Contraseña' name='contraseña' />
+                <input className='inputLogin' type='password' placeholder='Contraseña' name='contrasenia' />
                 <button className='btnLogin' type='submit'>Iniciar Sesión</button>
             </form>
             <p id='registrateLink'>Regístrate <Link to='/register' className='link'>aquí</Link></p>
