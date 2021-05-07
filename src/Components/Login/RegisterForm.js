@@ -7,7 +7,7 @@ const RegisterForm = (props) => {
     return (
         <div className='loginFormat'>
             <p className='mensajeLogin'>REGÍSTRATE</p>
-            <form action='http://localhost:8000/register' method='POST'>
+            <form action='https://artinkoo.herokuapp.com/register' method='POST'>
                 <input required className='inputLogin' type='text' placeholder='Nombre' name='nombre' />
                 <input required className='inputLogin' type='text' placeholder='Apellidos' name='apellidos' />
                 <input required className='inputLogin' type='text' placeholder='Dirección' name='direccion' />

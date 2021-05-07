@@ -7,7 +7,7 @@ const LoginFormat = (props) => {
     return (
         <div className='loginFormat'>
             <p className='mensajeLogin'>INICIAR SESIÓN</p>
-            <form action='http://localhost:8000/login' method='POST'>
+            <form action='https://artinkoo.herokuapp.com/login' method='POST'>
                 <input className='inputLogin' type='text' placeholder='Usuario' name='usuario' />
                 <input className='inputLogin' type='password' placeholder='Contraseña' name='contrasenia' />
                 <button className='btnLogin' type='submit'>Iniciar Sesión</button>
