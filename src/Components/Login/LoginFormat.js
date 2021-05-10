@@ -54,10 +54,11 @@ const LoginFormat = (props) => {
                         text: "Usuario o Contraseña incorrectos",
                         icon: "error",
                         button: "Volver",
-                    }).then(function () {
-                        // window.location.href = 'http://localhost:3000/login'
-                        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/'
                     })
+                    // .then(function () {
+                    //     // window.location.href = 'http://localhost:3000/login'
+                    //     window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/'
+                    // })
                 }
             })
             .catch(error => {
@@ -76,7 +77,8 @@ const LoginFormat = (props) => {
         cookies.remove('cesta', { path: '/' })
         cookies.remove('nombreUsuario', { path: '/' })
         cookies.remove('email', { path: '/' })
-        window.location.href = 'http://localhost:3000/home'
+        // window.location.href = 'http://localhost:3000/home'
+        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/'
     }
 
     const handleNombre = (e) => {
