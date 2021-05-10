@@ -14,7 +14,7 @@ const LoginFormat = (props) => {
     const cookies = new Cookies()
 
     const loguin = async () => {
-        await Axios.post('http://localhost:8000/login',
+        await Axios.post('https://artinkoo.herokuapp.com/login',
             { nombreUsuario: nombre, contrasenia: md5(password) })
             .then(response => {
                 // if (response.data.message) {
@@ -45,7 +45,8 @@ const LoginFormat = (props) => {
                         icon: "success",
                         button: "Ok!",
                     }).then(function () {
-                        window.location.href = 'http://localhost:3000/home'
+                        // window.location.href = 'http://localhost:3000/home'
+                        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/'
                     })
                 } else {
                     swal({
@@ -54,7 +55,8 @@ const LoginFormat = (props) => {
                         icon: "error",
                         button: "Volver",
                     }).then(function () {
-                        window.location.href = 'http://localhost:3000/login'
+                        // window.location.href = 'http://localhost:3000/login'
+                        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/'
                     })
                 }
             })

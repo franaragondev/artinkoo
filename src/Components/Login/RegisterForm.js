@@ -18,7 +18,7 @@ const RegisterForm = (props) => {
     const [password, setPassword] = useState('')
 
     const register = async () => {
-        await Axios.post('http://localhost:8000/register',
+        await Axios.post('https://artinkoo.herokuapp.com/register',
             { nombre: nombre, apellidos: apellidos, direccion: direccion, ciudad: ciudad, provincia: provincia, codigoPostal: codigoPostal, nombreUsuario: usuario, contrasenia: md5(password), email: email })
             .then(response => {
                 if (response.statusText == 'OK') {
@@ -28,7 +28,8 @@ const RegisterForm = (props) => {
                         icon: "success",
                         button: "Ok!",
                     }).then(function () {
-                        window.location.href = 'http://localhost:3000/home'
+                        // window.location.href = 'http://localhost:3000/home'
+                        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/'
                     })
                 } else {
                     swal({
@@ -37,7 +38,8 @@ const RegisterForm = (props) => {
                         icon: "error",
                         button: "Volver",
                     }).then(function () {
-                        window.location.href = 'http://localhost:3000/login'
+                        // window.location.href = 'http://localhost:3000/login'
+                        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/'
                     })
                 }
             })
