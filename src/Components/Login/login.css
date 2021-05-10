@@ -18,7 +18,7 @@
     font-size: 20px;
 }
 
-.loginFormat>form {
+.loginFormat>div {
     display: flex;
     flex-flow: column;
     width: 70%;
