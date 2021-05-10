@@ -14,7 +14,7 @@ const LoginFormat = (props) => {
     const cookies = new Cookies()
 
     const loguin = async () => {
-        await Axios.post('https://artinkoo.herokuapp.com/login',
+        await Axios.post('http://localhost:8000/login',
             { nombreUsuario: nombre, contrasenia: md5(password) })
             .then(response => {
                 // if (response.data.message) {
@@ -44,19 +44,37 @@ const LoginFormat = (props) => {
                         text: `Bienvenido, ${respuesta.nombre} ${respuesta.apellidos}`,
                         icon: "success",
                         button: "Ok!",
-                    });
+                    }).then(function () {
+                        window.location.href = 'http://localhost:3000/home'
+                    })
                 } else {
                     swal({
                         title: "Oh! Algo ha fallado.",
                         text: "Usuario o Contraseña incorrectos",
                         icon: "error",
                         button: "Volver",
-                    });
+                    }).then(function () {
+                        window.location.href = 'http://localhost:3000/login'
+                    })
                 }
             })
             .catch(error => {
                 console.log(error);
             })
+    }
+
+    const cerrarSesion = () => {
+        cookies.remove('idUsuario', { path: '/' })
+        cookies.remove('nombre', { path: '/' })
+        cookies.remove('apellidos', { path: '/' })
+        cookies.remove('direccion', { path: '/' })
+        cookies.remove('ciudad', { path: '/' })
+        cookies.remove('provincia', { path: '/' })
+        cookies.remove('codigoPostal', { path: '/' })
+        cookies.remove('cesta', { path: '/' })
+        cookies.remove('nombreUsuario', { path: '/' })
+        cookies.remove('email', { path: '/' })
+        window.location.href = 'http://localhost:3000/home'
     }
 
     const handleNombre = (e) => {
@@ -67,26 +85,53 @@ const LoginFormat = (props) => {
         setPassword(e.target.value);
     }
 
-    return (
-        <div className='loginFormat'>
-            <p className='mensajeLogin'>INICIAR SESIÓN</p>
-            <div>
-                <input className='inputLogin' type='text' placeholder='Usuario' name='usuario' onChange={(e) => handleNombre(e)} />
-                <input className='inputLogin' type='password' placeholder='Contraseña' name='contrasenia' onChange={(e) => handlePassword(e)} />
-                <button className='btnLogin' onClick={loguin}>Iniciar Sesión</button>
+    if (cookies.get('nombre')) {
+        return (
+            <div className='loginFormat'>
+                <h2>PANEL DE USUARIO</h2>
+                <div className='cerrarSesion'>
+                    <h3>Bienvenido, {cookies.get('nombre')} {cookies.get('apellidos')}</h3>
+                    <button className='btnLogin' onClick={cerrarSesion}>Cerrar Sesión</button>
+                </div>
+                <div className='opcionesUsuario'>
+                    <div className='opcionUsuario'>
+                        <p>MIS DATOS PERSONALES</p>
+                        <img src='./images/datosIco.png' alt='datos personales'></img>
+                    </div>
+                    <div className='opcionUsuario'>
+                        <p>MIS PEDIDOS</p>
+                        <img src='./images/pedidosIco.png' alt='pedidos'></img>
+                    </div>
+                    <div className='opcionUsuario'>
+                        <p>AYUDA</p>
+                        <img src='./images/infoIco.png' alt='información'></img>
+                    </div>
+                </div>
+
             </div>
-            <p id='registrateLink'>Regístrate <Link to='/register' className='link'>aquí</Link></p>
-            <div className='flecha'>
-                {/* <picture>
-                    <img id='flecha' alt='flecha' src='../images/flecha.svg'></img>
-                </picture> */}
-                <Link className='link' to='/home'>
-                    Volver a Inicio
-            </Link>
+        )
+    } else {
+        return (
+            <div className='loginFormat'>
+                <p className='mensajeLogin'>INICIAR SESIÓN</p>
+                <div>
+                    <input className='inputLogin' type='text' placeholder='Usuario' name='usuario' onChange={handleNombre} />
+                    <input className='inputLogin' type='password' placeholder='Contraseña' name='contrasenia' onChange={handlePassword} />
+                    <button className='btnLogin' onClick={loguin}>Iniciar Sesión</button>
+                </div>
+                <p id='registrateLink'>Regístrate <Link to='/register' className='link'>aquí</Link></p>
+                <div className='flecha'>
+                    {/* <picture>
+                        <img id='flecha' alt='flecha' src='../images/flecha.svg'></img>
+                    </picture> */}
+                    <Link className='link' to='/home'>
+                        Volver a Inicio
+                </Link>
+                </div>
+                {/* <h1>{loguinStatus}</h1> */}
             </div>
-            {/* <h1>{loguinStatus}</h1> */}
-        </div>
-    )
+        )
+    }
 }
 
 export default LoginFormat
