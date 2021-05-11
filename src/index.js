@@ -9,6 +9,7 @@ import './Components/Home/home.css'
 import './Components/Header/header.css'
 import './Components/Login/login.css'
 import './Components/User/datosPersonales.css'
+import './Components/User/misPedidos.css'
 
 ReactDOM.render(
   <React.StrictMode>
