@@ -56,11 +56,10 @@ const LoginFormat = (props) => {
                         text: "Usuario o Contraseña incorrectos",
                         icon: "error",
                         button: "Volver",
+                    }).then(function () {
+                        //     // window.location.href = 'http://localhost:3000/login'
+                        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
                     })
-                    // .then(function () {
-                    //     // window.location.href = 'http://localhost:3000/login'
-                    window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
-                    // })
                 }
             })
             .catch(error => {
@@ -108,18 +107,24 @@ const LoginFormat = (props) => {
                     <button className='btnLogin' onClick={cerrarSesion}>Cerrar Sesión</button>
                 </div>
                 <div className='opcionesUsuario'>
-                    <div className='opcionUsuario'>
-                        <p>MIS DATOS PERSONALES</p>
-                        <img src='./images/datosIco.png' alt='datos personales'></img>
-                    </div>
-                    <div className='opcionUsuario'>
-                        <p>MIS PEDIDOS</p>
-                        <img src='./images/pedidosIco.png' alt='pedidos'></img>
-                    </div>
-                    <div className='opcionUsuario'>
-                        <p>AYUDA</p>
-                        <img src='./images/infoIco.png' alt='información'></img>
-                    </div>
+                    <Link to='/datosPersonales' className='opcionUsuarioLink'>
+                        <div className='opcionUsuario'>
+                            <p>MIS DATOS PERSONALES</p>
+                            <img src='./images/datosIco.png' alt='datos personales'></img>
+                        </div>
+                    </Link>
+                    <Link to='/misPedidos' className='opcionUsuarioLink'>
+                        <div className='opcionUsuario'>
+                            <p>MIS PEDIDOS</p>
+                            <img src='./images/pedidosIco.png' alt='pedidos'></img>
+                        </div>
+                    </Link>
+                    <Link to='/ayuda' className='opcionUsuarioLink'>
+                        <div className='opcionUsuario'>
+                            <p>AYUDA</p>
+                            <img src='./images/infoIco.png' alt='información'></img>
+                        </div>
+                    </Link>
                 </div>
             </div>
         )

@@ -1,0 +1,50 @@
+.datosPersonales {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    width: 70%;
+    margin: auto;
+}
+
+.datosPersonales>h2 {
+    text-align: center;
+}
+
+.datosPersonales>h4 {
+    margin-bottom: .2rem;
+}
+
+.datosPersonales>input {
+    margin-bottom: 1rem;
+}
+
+.linkDatosPersonales {
+    text-align: center;
+    color: #e70074;
+    text-decoration: none;
+    margin-bottom: 2rem;
+}
+
+.columnaDatosPersonales {
+    color: #e70074;
+}
+
+.botonEditar {
+    margin-top: 2rem;
+    cursor: pointer;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    height: 2.9rem;
+    width: 10rem;
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 29px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
