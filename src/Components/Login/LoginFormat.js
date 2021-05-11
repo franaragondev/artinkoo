@@ -5,12 +5,14 @@ import Axios from 'axios'
 import md5 from 'md5'
 import Cookies from 'universal-cookie'
 import swal from 'sweetalert';
+import GoogleLogin from 'react-google-login'
 
 //Componente que renderizará el video de la primera carga
 const LoginFormat = (props) => {
     const [nombre, setNombre] = useState('')
     const [password, setPassword] = useState('')
     const [loguinStatus, setLoguinStatus] = useState('')
+    const [datosGoogle, setDatosGoogle] = useState([])
     const cookies = new Cookies()
 
     const loguin = async () => {
@@ -89,6 +91,10 @@ const LoginFormat = (props) => {
         setPassword(e.target.value);
     }
 
+    const responseGoogle = (respuesta) => {
+        setDatosGoogle(respuesta.profileObj)
+    }
+
     if (cookies.get('nombre')) {
         return (
             <div className='loginFormat'>
@@ -111,7 +117,30 @@ const LoginFormat = (props) => {
                         <img src='./images/infoIco.png' alt='información'></img>
                     </div>
                 </div>
-
+            </div>
+        )
+    } else if (datosGoogle) {
+        return (
+            <div className='loginFormat'>
+                <h2>PANEL DE USUARIO</h2>
+                <div className='cerrarSesion'>
+                    <h3>Bienvenido, {datosGoogle.name}</h3>
+                    <button className='btnLogin' onClick={cerrarSesion}>Cerrar Sesión</button>
+                </div>
+                <div className='opcionesUsuario'>
+                    <div className='opcionUsuario'>
+                        <p>MIS DATOS PERSONALES</p>
+                        <img src='./images/datosIco.png' alt='datos personales'></img>
+                    </div>
+                    <div className='opcionUsuario'>
+                        <p>MIS PEDIDOS</p>
+                        <img src='./images/pedidosIco.png' alt='pedidos'></img>
+                    </div>
+                    <div className='opcionUsuario'>
+                        <p>AYUDA</p>
+                        <img src='./images/infoIco.png' alt='información'></img>
+                    </div>
+                </div>
             </div>
         )
     } else {
@@ -122,6 +151,13 @@ const LoginFormat = (props) => {
                     <input className='inputLogin' type='text' placeholder='Usuario' name='usuario' onChange={handleNombre} />
                     <input className='inputLogin' type='password' placeholder='Contraseña' name='contrasenia' onChange={handlePassword} />
                     <button className='btnLogin' onClick={loguin}>Iniciar Sesión</button>
+                    <GoogleLogin
+                        clientId="451365567546-0bfhrbcj0kgm6k18guhc9ru94h6gtsvs.apps.googleusercontent.com"
+                        buttonText="Login"
+                        onSuccess={responseGoogle}
+                        onFailure={responseGoogle}
+                        cookiePolicy={'single_host_origin'}
+                    />
                 </div>
                 <p id='registrateLink'>Regístrate <Link to='/register' className='link'>aquí</Link></p>
                 <div className='flecha'>
