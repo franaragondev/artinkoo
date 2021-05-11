@@ -79,8 +79,12 @@ const LoginFormat = (props) => {
         cookies.remove('cesta', { path: '/' })
         cookies.remove('nombreUsuario', { path: '/' })
         cookies.remove('email', { path: '/' })
-        // window.location.href = 'http://localhost:3000/home'
+        // window.location.href = 'http://localhost:3000/login'
         window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
+    }
+
+    const cerrarSesionGoogle = () => {
+        setDatosGoogle(undefined)
     }
 
     const handleNombre = (e) => {
@@ -119,13 +123,13 @@ const LoginFormat = (props) => {
                 </div>
             </div>
         )
-    } else if (datosGoogle) {
+    } else if (datosGoogle != undefined && datosGoogle.name) {
         return (
             <div className='loginFormat'>
                 <h2>PANEL DE USUARIO</h2>
                 <div className='cerrarSesion'>
                     <h3>Bienvenido, {datosGoogle.name}</h3>
-                    <button className='btnLogin' onClick={cerrarSesion}>Cerrar Sesión</button>
+                    <button className='btnLogin' onClick={cerrarSesionGoogle}>Cerrar Sesión</button>
                 </div>
                 <div className='opcionesUsuario'>
                     <div className='opcionUsuario'>
@@ -151,13 +155,15 @@ const LoginFormat = (props) => {
                     <input className='inputLogin' type='text' placeholder='Usuario' name='usuario' onChange={handleNombre} />
                     <input className='inputLogin' type='password' placeholder='Contraseña' name='contrasenia' onChange={handlePassword} />
                     <button className='btnLogin' onClick={loguin}>Iniciar Sesión</button>
-                    <GoogleLogin
-                        clientId="451365567546-0bfhrbcj0kgm6k18guhc9ru94h6gtsvs.apps.googleusercontent.com"
-                        buttonText="Login"
-                        onSuccess={responseGoogle}
-                        onFailure={responseGoogle}
-                        cookiePolicy={'single_host_origin'}
-                    />
+                    <div>
+                        <GoogleLogin
+                            clientId="451365567546-0bfhrbcj0kgm6k18guhc9ru94h6gtsvs.apps.googleusercontent.com"
+                            buttonText="Iniciar Sesión"
+                            onSuccess={responseGoogle}
+                            onFailure={responseGoogle}
+                            cookiePolicy={'single_host_origin'}
+                        />
+                    </div>
                 </div>
                 <p id='registrateLink'>Regístrate <Link to='/register' className='link'>aquí</Link></p>
                 <div className='flecha'>
@@ -169,7 +175,7 @@ const LoginFormat = (props) => {
                 </Link>
                 </div>
                 {/* <h1>{loguinStatus}</h1> */}
-            </div>
+            </div >
         )
     }
 }
