@@ -46,7 +46,7 @@ const LoginFormat = (props) => {
                         button: "Ok!",
                     }).then(function () {
                         // window.location.href = 'http://localhost:3000/home'
-                        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/'
+                        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/home'
                     })
                 } else {
                     swal({
@@ -57,7 +57,7 @@ const LoginFormat = (props) => {
                     })
                     // .then(function () {
                     //     // window.location.href = 'http://localhost:3000/login'
-                    //     window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/'
+                    window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
                     // })
                 }
             })
@@ -78,7 +78,7 @@ const LoginFormat = (props) => {
         cookies.remove('nombreUsuario', { path: '/' })
         cookies.remove('email', { path: '/' })
         // window.location.href = 'http://localhost:3000/home'
-        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/'
+        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
     }
 
     const handleNombre = (e) => {
