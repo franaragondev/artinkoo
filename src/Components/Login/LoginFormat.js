@@ -19,16 +19,6 @@ const LoginFormat = (props) => {
         await Axios.post('https://artinkoo.herokuapp.com/login',
             { nombreUsuario: nombre, contrasenia: md5(password) })
             .then(response => {
-                // if (response.data.message) {
-                // setLoguinStatus(response.data.message)
-                // return response.data;
-                // } else {
-                // setLoguinStatus('Bienvenido: ' + response.data[0].nombreUsuario)
-                return response.data;
-                // }
-                // console.log(response);
-            })
-            .then(response => {
                 if (response.length > 0) {
                     var respuesta = response[0]
                     cookies.set('idUsuario', respuesta.idUsuario, { path: '/' })
