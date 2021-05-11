@@ -83,7 +83,12 @@ const LoginFormat = (props) => {
     }
 
     const cerrarSesionGoogle = () => {
-        setDatosGoogle(undefined)
+        cookies.remove('idGoogle', { path: '/' })
+        cookies.remove('nombreGoogle', { path: '/' })
+        cookies.remove('apellidosGoogle', { path: '/' })
+        cookies.remove('emailGoogle', { path: '/' })
+        // window.location.href = 'http://localhost:3000/login'
+        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
     }
 
     const handleNombre = (e) => {
@@ -96,6 +101,19 @@ const LoginFormat = (props) => {
 
     const responseGoogle = (respuesta) => {
         setDatosGoogle(respuesta.profileObj)
+        cookies.set('idGoogle', respuesta.profileObj.googleId, { path: '/' })
+        cookies.set('nombreGoogle', respuesta.profileObj.givenName, { path: '/' })
+        cookies.set('apellidosGoogle', respuesta.profileObj.familyName, { path: '/' })
+        cookies.set('emailGoogle', respuesta.profileObj.email, { path: '/' })
+        swal({
+            title: "Sesión Iniciada",
+            text: `Bienvenido, ${cookies.get('nombreGoogle')} ${cookies.get('apellidosGoogle')}`,
+            icon: "success",
+            button: "Ok!",
+        }).then(function () {
+            // window.location.href = 'http://localhost:3000/login'
+            window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
+        })
     }
 
     if (cookies.get('nombre')) {
@@ -128,27 +146,27 @@ const LoginFormat = (props) => {
                 </div>
             </div>
         )
-    } else if (datosGoogle != undefined && datosGoogle.name) {
+    } else if (datosGoogle != undefined && cookies.get('idGoogle')) {
         return (
             <div className='loginFormat'>
                 <h2>PANEL DE USUARIO</h2>
                 <div className='cerrarSesion'>
-                    <h3>Bienvenido, {datosGoogle.name}</h3>
+                    <h3>Bienvenido, {cookies.get('nombreGoogle')} {cookies.get('apellidosGoogle')}</h3>
                     <button className='btnLogin' onClick={cerrarSesionGoogle}>Cerrar Sesión</button>
                 </div>
                 <div className='opcionesUsuario'>
-                    <div className='opcionUsuario'>
-                        <p>MIS DATOS PERSONALES</p>
-                        <img src='./images/datosIco.png' alt='datos personales'></img>
-                    </div>
-                    <div className='opcionUsuario'>
-                        <p>MIS PEDIDOS</p>
-                        <img src='./images/pedidosIco.png' alt='pedidos'></img>
-                    </div>
-                    <div className='opcionUsuario'>
-                        <p>AYUDA</p>
-                        <img src='./images/infoIco.png' alt='información'></img>
-                    </div>
+                    <Link to='/datosPersonales' className='opcionUsuarioLink'>
+                        <div className='opcionUsuario'>
+                            <p>MIS DATOS PERSONALES</p>
+                            <img src='./images/datosIco.png' alt='datos personales'></img>
+                        </div>
+                    </Link>
+                    <Link to='/ayuda' className='opcionUsuarioLink'>
+                        <div className='opcionUsuario'>
+                            <p>AYUDA</p>
+                            <img src='./images/infoIco.png' alt='información'></img>
+                        </div>
+                    </Link>
                 </div>
             </div>
         )

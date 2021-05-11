@@ -62,7 +62,7 @@ const DatosPersonales = (props) => {
         setEditarBoolean(true)
     }
 
-    if (editarBoolean) {
+    if (cookies.get('idGoogle')) {
         return (
             <div className='login_container'>
                 <picture>
@@ -70,46 +70,67 @@ const DatosPersonales = (props) => {
                 </picture>
                 <div className='datosPersonales'>
                     <h2>DATOS PERSONALES</h2>
-                    <input type='text' placeholder='Nombre' onChange={(e) => { setNombre(e.target.value) }} />
-                    <input type='text' placeholder='Apellidos' onChange={(e) => { setApellidos(e.target.value) }} />
-                    <input type='text' placeholder='Nombre de Usuario' onChange={(e) => { setUsuario(e.target.value) }} />
-                    <input type='email' placeholder='Email' onChange={(e) => { setEmail(e.target.value) }} />
-                    <input type='text' placeholder='Provincia' onChange={(e) => { setProvincia(e.target.value) }} />
-                    <input type='text' placeholder='Ciudad' onChange={(e) => { setCiudad(e.target.value) }} />
-                    <input type='number' placeholder='Código Postal' onChange={(e) => { setCodigoPostal(e.target.value) }} />
-                    <input type='text' placeholder='Dirección' onChange={(e) => { setDireccion(e.target.value) }} />
+                    <h4><span className='columnaDatosPersonales'>ID Google:</span> {cookies.get('idGoogle')}</h4>
+                    <h4><span className='columnaDatosPersonales'>Nombre:</span> {cookies.get('nombreGoogle')}</h4>
+                    <h4><span className='columnaDatosPersonales'>Apellidos:</span> {cookies.get('apellidosGoogle')}</h4>
+                    <h4><span className='columnaDatosPersonales'>Email:</span> {cookies.get('emailGoogle')}</h4>
 
-                    <button className='botonEditar' onClick={actualizar}>Editar</button>
-                    <Link className='linkDatosPersonales' to='/home'>
-                        Volver a Inicio
+                    <Link className='linkDatosPersonalesGoogle' to='/login'>
+                        Volver al Panel de Usuario
                     </Link>
                 </div>
             </div>
         )
     } else {
-        return (
-            <div className='login_container'>
-                <picture>
-                    <img alt='logotipo' id='logotipo_login' src='../images/logotipo_en_color.png'></img>
-                </picture>
-                <div className='datosPersonales'>
-                    <h2>DATOS PERSONALES</h2>
-                    <h4><span className='columnaDatosPersonales'>Nombre:</span> {cookies.get('nombre')}</h4>
-                    <h4><span className='columnaDatosPersonales'>Apellidos:</span> {cookies.get('apellidos')}</h4>
-                    <h4><span className='columnaDatosPersonales'>Nombre de Usuario:</span> {cookies.get('nombreUsuario')}</h4>
-                    <h4><span className='columnaDatosPersonales'>Email:</span> {cookies.get('email')}</h4>
-                    <h4><span className='columnaDatosPersonales'>Provincia:</span> {cookies.get('provincia')}</h4>
-                    <h4><span className='columnaDatosPersonales'>Ciudad:</span> {cookies.get('ciudad')}</h4>
-                    <h4><span className='columnaDatosPersonales'>Código Postal:</span> {cookies.get('codigoPostal')}</h4>
-                    <h4><span className='columnaDatosPersonales'>Dirección:</span> {cookies.get('direccion')}</h4>
+        if (editarBoolean) {
+            return (
+                <div className='login_container'>
+                    <picture>
+                        <img alt='logotipo' id='logotipo_login' src='../images/logotipo_en_color.png'></img>
+                    </picture>
+                    <div className='datosPersonales'>
+                        <h2>DATOS PERSONALES</h2>
+                        <input type='text' placeholder='Nombre' onChange={(e) => { setNombre(e.target.value) }} />
+                        <input type='text' placeholder='Apellidos' onChange={(e) => { setApellidos(e.target.value) }} />
+                        <input type='text' placeholder='Nombre de Usuario' onChange={(e) => { setUsuario(e.target.value) }} />
+                        <input type='email' placeholder='Email' onChange={(e) => { setEmail(e.target.value) }} />
+                        <input type='text' placeholder='Provincia' onChange={(e) => { setProvincia(e.target.value) }} />
+                        <input type='text' placeholder='Ciudad' onChange={(e) => { setCiudad(e.target.value) }} />
+                        <input type='number' placeholder='Código Postal' onChange={(e) => { setCodigoPostal(e.target.value) }} />
+                        <input type='text' placeholder='Dirección' onChange={(e) => { setDireccion(e.target.value) }} />
 
-                    <button className='botonEditar' onClick={funcionEditar}>Editar</button>
-                    <Link className='linkDatosPersonales' to='/home'>
-                        Volver a Inicio
-                    </Link>
+                        <button className='botonEditar' onClick={actualizar}>Editar</button>
+                        <Link className='linkDatosPersonales' to='/login'>
+                            Volver al Panel de Usuario
+                        </Link>
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        } else {
+            return (
+                <div className='login_container'>
+                    <picture>
+                        <img alt='logotipo' id='logotipo_login' src='../images/logotipo_en_color.png'></img>
+                    </picture>
+                    <div className='datosPersonales'>
+                        <h2>DATOS PERSONALES</h2>
+                        <h4><span className='columnaDatosPersonales'>Nombre:</span> {cookies.get('nombre')}</h4>
+                        <h4><span className='columnaDatosPersonales'>Apellidos:</span> {cookies.get('apellidos')}</h4>
+                        <h4><span className='columnaDatosPersonales'>Nombre de Usuario:</span> {cookies.get('nombreUsuario')}</h4>
+                        <h4><span className='columnaDatosPersonales'>Email:</span> {cookies.get('email')}</h4>
+                        <h4><span className='columnaDatosPersonales'>Provincia:</span> {cookies.get('provincia')}</h4>
+                        <h4><span className='columnaDatosPersonales'>Ciudad:</span> {cookies.get('ciudad')}</h4>
+                        <h4><span className='columnaDatosPersonales'>Código Postal:</span> {cookies.get('codigoPostal')}</h4>
+                        <h4><span className='columnaDatosPersonales'>Dirección:</span> {cookies.get('direccion')}</h4>
+
+                        <button className='botonEditar' onClick={funcionEditar}>Editar</button>
+                        <Link className='linkDatosPersonales' to='/login'>
+                            Volver al Panel de Usuario
+                        </Link>
+                    </div>
+                </div>
+            )
+        }
     }
 }
 

@@ -25,6 +25,14 @@
     margin-bottom: 2rem;
 }
 
+.linkDatosPersonalesGoogle {
+    text-align: center;
+    color: #e70074;
+    text-decoration: none;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
 .columnaDatosPersonales {
     color: #e70074;
 }
