@@ -21,14 +21,15 @@ const RegisterForm = (props) => {
         await Axios.post('https://artinkoo.herokuapp.com/register',
             { nombre: nombre, apellidos: apellidos, direccion: direccion, ciudad: ciudad, provincia: provincia, codigoPostal: codigoPostal, nombreUsuario: usuario, contrasenia: md5(password), email: email })
             .then(response => {
-                if (response.statusText == 'OK') {
+                if (response.data.affectedRows == 1) {
+                    console.log(response);
                     swal({
                         title: "Registro Correcto!",
                         text: 'Inicie Sesión desde el icono de usuarios',
                         icon: "success",
                         button: "Ok!",
                     }).then(function () {
-                        // window.location.href = 'http://localhost:3000/home'
+                        // window.location.href = 'http://localhost:3000/login'
                         window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
                     })
                 } else {
