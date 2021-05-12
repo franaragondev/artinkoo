@@ -65,9 +65,11 @@ const DatosPersonales = (props) => {
     if (cookies.get('idGoogle')) {
         return (
             <div className='login_container'>
-                <picture>
-                    <img alt='logotipo' id='logotipo_login' src='../images/logotipo_en_color.png'></img>
-                </picture>
+                <Link to='/home'>
+                    <picture>
+                        <img alt='logotipo' id='logotipo_login' src='../images/logotipo_en_color.png'></img>
+                    </picture>
+                </Link>
                 <div className='datosPersonales'>
                     <h2>DATOS PERSONALES</h2>
                     <h4><span className='columnaDatosPersonales'>ID Google:</span> {cookies.get('idGoogle')}</h4>
@@ -85,9 +87,11 @@ const DatosPersonales = (props) => {
         if (editarBoolean) {
             return (
                 <div className='login_container'>
-                    <picture>
-                        <img alt='logotipo' id='logotipo_login' src='../images/logotipo_en_color.png'></img>
-                    </picture>
+                    <Link to='/home'>
+                        <picture>
+                            <img alt='logotipo' id='logotipo_login' src='../images/logotipo_en_color.png'></img>
+                        </picture>
+                    </Link>
                     <div className='datosPersonales'>
                         <h2>DATOS PERSONALES</h2>
                         <input type='text' placeholder='Nombre' onChange={(e) => { setNombre(e.target.value) }} />
@@ -109,9 +113,11 @@ const DatosPersonales = (props) => {
         } else {
             return (
                 <div className='login_container'>
-                    <picture>
-                        <img alt='logotipo' id='logotipo_login' src='../images/logotipo_en_color.png'></img>
-                    </picture>
+                    <Link to='/home'>
+                        <picture>
+                            <img alt='logotipo' id='logotipo_login' src='../images/logotipo_en_color.png'></img>
+                        </picture>
+                    </Link>
                     <div className='datosPersonales'>
                         <h2>DATOS PERSONALES</h2>
                         <h4><span className='columnaDatosPersonales'>Nombre:</span> {cookies.get('nombre')}</h4>

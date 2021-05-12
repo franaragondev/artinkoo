@@ -10,14 +10,16 @@ const MisPedidos = (props) => {
 
     return (
         <div className='login_container'>
-            <picture>
-                <img alt='logotipo' id='logotipo_login' src='../images/logotipo_en_color.png'></img>
-            </picture>
+            <Link to='/home'>
+                <picture>
+                    <img alt='logotipo' id='logotipo_login' src='../images/logotipo_en_color.png'></img>
+                </picture>
+            </Link>
             <div className='datosPersonales'>
                 <h2>MIS PEDIDOS</h2>
                 <h4 className='mensajeMisPedidos'>Actualmente no existe ningún pedido.</h4>
-                <Link className='linkDatosPersonales' to='/home'>
-                    Volver a Inicio
+                <Link className='linkDatosPersonales' to='/login'>
+                    Volver al Panel de Usuario
                     </Link>
             </div>
         </div>

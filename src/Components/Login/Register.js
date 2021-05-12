@@ -7,9 +7,11 @@ import RegisterForm from './RegisterForm'
 const Register = (props) => {
     return (
         <div className='login_container'>
-            <picture>
-                <img alt='logotipo' id='logotipo_login' src='../images/logotipo_en_color.png'></img>
-            </picture>
+            <Link to='/home'>
+                <picture>
+                    <img alt='logotipo' id='logotipo_login' src='../images/logotipo_en_color.png'></img>
+                </picture>
+            </Link>
             <RegisterForm />
         </div>
     )
