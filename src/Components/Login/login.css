@@ -116,3 +116,18 @@
     color: #e70074;
     text-decoration: none;
 }
+
+@media all and (min-width: 750px) {
+    .opcionesUsuario {
+        display: flex;
+        align-items: center;
+        flex-flow: row;
+    }
+    .opcionUsuario {
+        height: 10rem;
+        width: 20rem;
+    }
+    .opcionUsuario>p {
+        margin-top: 0;
+    }
+}
