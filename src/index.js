@@ -10,6 +10,7 @@ import './Components/Header/header.css'
 import './Components/Login/login.css'
 import './Components/User/datosPersonales.css'
 import './Components/User/misPedidos.css'
+import './Components/User/ayuda.css'
 
 ReactDOM.render(
   <React.StrictMode>

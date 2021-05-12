@@ -144,6 +144,9 @@ const LoginFormat = (props) => {
                         </div>
                     </Link>
                 </div>
+                <Link className='linkHome' to='/home'>
+                    Volver a Inicio
+                </Link>
             </div>
         )
     } else if (datosGoogle != undefined && cookies.get('idGoogle')) {
@@ -167,7 +170,11 @@ const LoginFormat = (props) => {
                             <img src='./images/infoIco.png' alt='información'></img>
                         </div>
                     </Link>
+
                 </div>
+                <p><Link className='linkHome' to='/home'>
+                    Volver a Inicio
+                </Link></p>
             </div>
         )
     } else {

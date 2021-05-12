@@ -12,6 +12,7 @@
 
 .loginFormat {
     text-align: center;
+    padding-bottom: 2rem;
 }
 
 .mensajeLogin {
@@ -86,7 +87,7 @@
     /* border: 4px solid blue; */
 }
 
-.opcionUsuarioLink{
+.opcionUsuarioLink {
     text-decoration: none;
 }
 
@@ -109,4 +110,9 @@
 
 .opcionUsuario>img {
     width: 7rem;
+}
+
+.linkHome {
+    color: #e70074;
+    text-decoration: none;
 }
