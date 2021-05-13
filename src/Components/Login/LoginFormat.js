@@ -125,24 +125,38 @@ const LoginFormat = (props) => {
                     <button className='btnLogin' onClick={cerrarSesion}>Cerrar Sesión</button>
                 </div>
                 <div className='opcionesUsuario'>
-                    <Link to='/datosPersonales' className='opcionUsuarioLink'>
-                        <div className='opcionUsuario'>
-                            <p>MIS DATOS PERSONALES</p>
-                            <img src='./images/datosIco.png' alt='datos personales'></img>
-                        </div>
-                    </Link>
-                    <Link to='/misPedidos' className='opcionUsuarioLink'>
-                        <div className='opcionUsuario'>
-                            <p>MIS PEDIDOS</p>
-                            <img src='./images/pedidosIco.png' alt='pedidos'></img>
-                        </div>
-                    </Link>
-                    <Link to='/ayuda' className='opcionUsuarioLink'>
-                        <div className='opcionUsuario'>
-                            <p>AYUDA</p>
-                            <img src='./images/infoIco.png' alt='información'></img>
-                        </div>
-                    </Link>
+                    <div className='opcion'>
+                        <Link to='/datosPersonales' className='opcionUsuarioLink'>
+                            <div className='opcionUsuario'>
+                                <p>MIS DATOS PERSONALES</p>
+                                <img src='./images/datosIco.png' alt='datos personales'></img>
+                            </div>
+                        </Link>
+                    </div>
+                    <div className='opcion'>
+                        <Link to='/misPedidos' className='opcionUsuarioLink'>
+                            <div className='opcionUsuario'>
+                                <p>MIS PEDIDOS REALIZADOS</p>
+                                <img src='./images/pedidosIco.png' alt='pedidos'></img>
+                            </div>
+                        </Link>
+                    </div>
+                    <div className='opcion'>
+                        <Link to='/misPedidos' className='opcionUsuarioLink'>
+                            <div className='opcionUsuario'>
+                                <p>SEGUIMIENTO DEL PEDIDO</p>
+                                <img className='camionIco' src='./images/truck_13241.png' alt='seguimiento'></img>
+                            </div>
+                        </Link>
+                    </div>
+                    <div className='opcion'>
+                        <Link to='/ayuda' className='opcionUsuarioLink'>
+                            <div className='opcionUsuario'>
+                                <p>AYUDA</p>
+                                <img src='./images/infoIco.png' alt='información'></img>
+                            </div>
+                        </Link>
+                    </div>
                 </div>
                 <Link className='linkHome' to='/home'>
                     Volver a Inicio
@@ -181,7 +195,7 @@ const LoginFormat = (props) => {
         return (
             <div className='loginFormat'>
                 <p className='mensajeLogin'>INICIAR SESIÓN</p>
-                <div>
+                <div className='inicioSesion'>
                     <input className='inputLogin' type='text' placeholder='Usuario' name='usuario' onChange={handleNombre} />
                     <input className='inputLogin' type='password' placeholder='Contraseña' name='contrasenia' onChange={handlePassword} />
                     <button className='btnLogin' onClick={loguin}>Iniciar Sesión</button>
