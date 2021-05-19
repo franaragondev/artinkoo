@@ -57,7 +57,7 @@ const LoginFormat = (props) => {
                         icon: "error",
                         button: "Volver",
                     }).then(function () {
-                        // window.location.href = 'http://localhost:3000/login'
+                        window.location.href = 'http://localhost:3000/login'
                         // window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
                     })
                 }

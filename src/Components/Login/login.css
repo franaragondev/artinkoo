@@ -125,17 +125,17 @@
 
 .opcionesRegistro {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column;
     justify-content: center;
 }
 
 .opcionesRegistro>input {
-    width: 25%;
+    /* width: 25%; */
     margin: 1rem;
 }
 
 .opcionesRegistro>button {
-    width: 15%;
+    /* width: 15%; */
 }
 
 .botonesUsuario {
@@ -149,7 +149,7 @@
     text-decoration: none;
 }
 
-@media all and (min-width: 750px) {
+@media all and (min-width: 730px) {
     .opcionesUsuario {
         flex-flow: row wrap;
         flex-wrap: wrap;
@@ -163,6 +163,18 @@
     }
     .opcionUsuario>p {
         margin-top: 0;
+    }
+
+    .opcionesRegistro {
+        flex-flow: row wrap;
+    }
+    
+    .opcionesRegistro>input {
+        width: 25%;
+    }
+    
+    .opcionesRegistro>button {
+        width: 15%;
     }
 }
 
