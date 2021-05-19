@@ -68,6 +68,66 @@ const DatosPersonales = (props) => {
 
     }
 
+    const borrarCuenta = async () => {
+        swal({
+            title: "¿Estás seguro?",
+            text: "Una vez borrada perderás todos los datos.",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (willDelete) {
+                Axios.post('https://artinkoo.herokuapp.com/borrarCuenta',
+                    { idUsuario: idUsuario })
+                    .then(response => {
+                        if (response.statusText == 'OK') {
+                            cookies.remove('idUsuario', { path: '/' })
+                            cookies.remove('nombre', { path: '/' })
+                            cookies.remove('apellidos', { path: '/' })
+                            cookies.remove('direccion', { path: '/' })
+                            cookies.remove('ciudad', { path: '/' })
+                            cookies.remove('provincia', { path: '/' })
+                            cookies.remove('codigoPostal', { path: '/' })
+                            cookies.remove('cesta', { path: '/' })
+                            cookies.remove('nombreUsuario', { path: '/' })
+                            cookies.remove('email', { path: '/' })
+                            swal({
+                                title: "Cuenta Borrada",
+                                text: `Su cuenta ha sido borrada correctamente.`,
+                                icon: "success",
+                                button: "Ok!",
+                            }).then(function () {
+                                window.location.href = 'http://localhost:3000/login'
+                                // window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
+                            })
+                        } else {
+                            swal({
+                                title: "Oh! Algo ha fallado.",
+                                text: "Inténtelo de nuevo más tarde.",
+                                icon: "error",
+                                button: "Volver",
+                            }).then(function () {
+                                window.location.href = 'http://localhost:3000/login'
+                                // window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
+                            })
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    })
+            } else {
+                swal({
+                    title: "Proceso Cancelado",
+                    text: `El proceso ha sido cancelado correctamente.`,
+                    icon: "success",
+                    button: "Ok!",
+                })
+            }
+            // window.location.href = 'http://localhost:3000/login'
+            // window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
+        })
+    }
+
     const funcionEditar = () => {
         setEditarBoolean(true)
     }
@@ -141,7 +201,11 @@ const DatosPersonales = (props) => {
                             <h4><span className='columnaDatosPersonales'>Código Postal:</span> {cookies.get('codigoPostal')}</h4>
                             <h4><span className='columnaDatosPersonales'>Dirección:</span> {cookies.get('direccion')}</h4>
                         </div>
-                        <button className='botonEditar' onClick={funcionEditar}>Editar</button>
+                        <div className='botonesUsuario'>
+                            <button className='botonEditar' onClick={funcionEditar}>Editar</button>
+                            <button className='botonEditar' onClick={borrarCuenta}>Borrar Cuenta</button>
+                        </div>
+
                         <Link className='linkDatosPersonales' to='/login'>
                             Volver al Panel de Usuario
                         </Link>

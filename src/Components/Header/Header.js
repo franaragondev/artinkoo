@@ -14,7 +14,7 @@ const Header = (props) => {
                 </label>
                 <ul id="menuOculto">
                     <li>
-                        <img alt="lupa" src="../images/search_magnifying_glass_icon_149392.svg" />
+                        {/* <img alt="lupa" src="../images/search_magnifying_glass_icon_149392.svg" /> */}
                         <input type="text" id="buscar" name="buscar" placeholder="Encuentra lo que buscas" />
                         <hr />
                     </li>

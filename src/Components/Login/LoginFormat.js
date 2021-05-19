@@ -47,8 +47,8 @@ const LoginFormat = (props) => {
                         icon: "success",
                         button: "Ok!",
                     }).then(function () {
-                        // window.location.href = 'http://localhost:3000/home'
-                        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
+                        window.location.href = 'http://localhost:3000/login'
+                        // window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
                     })
                 } else {
                     swal({
@@ -57,8 +57,8 @@ const LoginFormat = (props) => {
                         icon: "error",
                         button: "Volver",
                     }).then(function () {
-                        //     // window.location.href = 'http://localhost:3000/login'
-                        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
+                        // window.location.href = 'http://localhost:3000/login'
+                        // window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
                     })
                 }
             })
@@ -78,8 +78,8 @@ const LoginFormat = (props) => {
         cookies.remove('cesta', { path: '/' })
         cookies.remove('nombreUsuario', { path: '/' })
         cookies.remove('email', { path: '/' })
-        // window.location.href = 'http://localhost:3000/login'
-        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
+        window.location.href = 'http://localhost:3000/login'
+        // window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
     }
 
     const cerrarSesionGoogle = () => {
@@ -87,8 +87,8 @@ const LoginFormat = (props) => {
         cookies.remove('nombreGoogle', { path: '/' })
         cookies.remove('apellidosGoogle', { path: '/' })
         cookies.remove('emailGoogle', { path: '/' })
-        // window.location.href = 'http://localhost:3000/login'
-        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
+        window.location.href = 'http://localhost:3000/login'
+        // window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
     }
 
     const handleNombre = (e) => {
@@ -111,8 +111,8 @@ const LoginFormat = (props) => {
             icon: "success",
             button: "Ok!",
         }).then(function () {
-            // window.location.href = 'http://localhost:3000/login'
-            window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
+            window.location.href = 'http://localhost:3000/login'
+            // window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
         })
     }
 
@@ -172,19 +172,22 @@ const LoginFormat = (props) => {
                     <button className='btnLogin' onClick={cerrarSesionGoogle}>Cerrar Sesión</button>
                 </div>
                 <div className='opcionesUsuario'>
-                    <Link to='/datosPersonales' className='opcionUsuarioLink'>
-                        <div className='opcionUsuario'>
-                            <p>MIS DATOS PERSONALES</p>
-                            <img src='./images/datosIco.png' alt='datos personales'></img>
-                        </div>
-                    </Link>
-                    <Link to='/ayuda' className='opcionUsuarioLink'>
-                        <div className='opcionUsuario'>
-                            <p>AYUDA</p>
-                            <img src='./images/infoIco.png' alt='información'></img>
-                        </div>
-                    </Link>
-
+                    <div className='opcion'>
+                        <Link to='/datosPersonales' className='opcionUsuarioLink'>
+                            <div className='opcionUsuario'>
+                                <p>MIS DATOS PERSONALES</p>
+                                <img src='./images/datosIco.png' alt='datos personales'></img>
+                            </div>
+                        </Link>
+                    </div>
+                    <div className='opcion'>
+                        <Link to='/ayuda' className='opcionUsuarioLink'>
+                            <div className='opcionUsuario'>
+                                <p>AYUDA</p>
+                                <img src='./images/infoIco.png' alt='información'></img>
+                            </div>
+                        </Link>
+                    </div>
                 </div>
                 <p><Link className='linkHome' to='/home'>
                     Volver a Inicio

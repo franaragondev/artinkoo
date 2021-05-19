@@ -123,6 +123,27 @@
     width: 7rem;
 }
 
+.opcionesRegistro {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.opcionesRegistro>input {
+    width: 25%;
+    margin: 1rem;
+}
+
+.opcionesRegistro>button {
+    width: 15%;
+}
+
+.botonesUsuario {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .linkHome {
     color: #e70074;
     text-decoration: none;

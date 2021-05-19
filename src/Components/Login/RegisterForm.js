@@ -31,8 +31,8 @@ const RegisterForm = (props) => {
                             icon: "success",
                             button: "Ok!",
                         }).then(function () {
-                            // window.location.href = 'http://localhost:3000/login'
-                            window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
+                            window.location.href = 'http://localhost:3000/login'
+                            // window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
                         })
                     } else {
                         swal({
@@ -41,8 +41,8 @@ const RegisterForm = (props) => {
                             icon: "error",
                             button: "Volver",
                         }).then(function () {
-                            // window.location.href = 'http://localhost:3000/login'
-                            window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/home'
+                            window.location.href = 'http://localhost:3000/login'
+                            // window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/home'
                         })
                     }
                 })
@@ -82,7 +82,7 @@ const RegisterForm = (props) => {
     return (
         <div className='loginFormat'>
             <p className='mensajeLogin'>REGÍSTRATE</p>
-            <div>
+            <div className='opcionesRegistro'>
                 <input required className='inputLogin' type='text' placeholder='Nombre' name='nombre' onChange={(e) => { setNombre(e.target.value) }} />
                 <input required className='inputLogin' type='text' placeholder='Apellidos' name='apellidos' onChange={(e) => { setApellidos(e.target.value) }} />
                 <input required className='inputLogin' type='text' placeholder='Dirección' name='direccion' onChange={(e) => { setDireccion(e.target.value) }} />

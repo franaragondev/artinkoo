@@ -8,7 +8,8 @@ header {
     width: 100%;
     position: fixed;
     top: 0;
-    box-shadow: 0px 4px 5px -1px rgba(0, 0, 0, 0.14);}
+    box-shadow: 0px 4px 5px -1px rgba(0, 0, 0, 0.14);
+}
 
 header>div#menu_query {
     display: none;
@@ -121,12 +122,12 @@ header>div#menu>ul#menuOculto>li>img {
 /*BUSCADOR*/
 
 header>div#menu>ul#menuOculto>li>input {
-    margin-left: -2.5rem;
     width: 128%;
+    margin-left: -2.5rem;
     height: 1.5rem;
     border: none;
     color: black;
-    background-color: #87B6C5;
+    background-color: rgba(85, 143, 201, 0.432);
     border-radius: 0.2rem;
     outline: none;
     cursor: text;
@@ -356,4 +357,24 @@ header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>button#ver_ca
     margin: auto;
     margin-top: 1.5rem;
     cursor: pointer;
+}
+
+@media all and (min-width: 700px) {
+	header>div#menu>ul#menuOculto>li>input{
+        width: 132%;
+    }
+
+    header>div#menu>ul#menuOculto>li>hr{
+        width: 132%;
+    }
+}
+
+@media all and (min-width: 800px) {
+	header>div#menu>ul#menuOculto>li>input{
+        width: 135%;
+    }
+
+    header>div#menu>ul#menuOculto>li>hr{
+        width: 135%;
+    }
 }
