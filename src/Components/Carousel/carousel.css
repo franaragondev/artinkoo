@@ -12,6 +12,10 @@
     object-fit: cover;
 }
 
+.carousel-indicators>li {
+    display: none;
+}
+
 @media all and (min-width: 700px) {
     .carousel {
         display: none;
