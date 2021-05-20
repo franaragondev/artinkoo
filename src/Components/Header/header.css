@@ -337,6 +337,7 @@ header>div#derecha>div#menu_oculto_bolsa>div#cerrar_menu_bolsa>p {
     font-family: Quicksand;
     font-size: 15px;
     cursor: pointer;
+    margin-top: .8rem;
 }
 
 header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>p:first-child {
@@ -436,7 +437,7 @@ header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>button#ver_ca
         display: flex;
         justify-content: space-around;
         width: 60%;
-        margin-top: 0;
+        margin-top: 0.8rem;
         margin-left: 1rem;
     }
     header>div#menu_query>p>a {
@@ -472,7 +473,7 @@ header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>button#ver_ca
         display: flex;
         justify-content: space-around;
         width: 60%;
-        margin-top: 0;
+        margin-top: .8rem;
         margin-left: 1rem;
     }
     header>div#menu_query>p>a {

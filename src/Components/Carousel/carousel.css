@@ -1,0 +1,9 @@
+.carousel {
+    margin-top: 4.2rem;
+}
+
+@media all and (min-width: 700px) {
+    .carousel {
+        display: none;
+    }
+}
