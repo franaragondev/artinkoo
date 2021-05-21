@@ -16,6 +16,14 @@
     display: none;
 }
 
+.carousel-control-prev{
+    z-index: 55555;
+}
+
+.carousel-control-next{
+    z-index: 55555;
+}
+
 @media all and (min-width: 700px) {
     .carousel {
         margin-top: 1rem;
