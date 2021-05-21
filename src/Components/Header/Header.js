@@ -22,7 +22,7 @@ const Header = (props) => {
                             </div>
                             <hr />
                         </li>
-                        <li> <a href="#">Productos</a></li>
+                        <li> <Link to='productos'>Productos</Link></li>
                         <li> <a href="#">ALOJÚ</a></li>
                         <li> <a href="#">Contáctanos</a></li>
                         <li> <a href="#">Ayuda</a></li>
@@ -36,7 +36,7 @@ const Header = (props) => {
                 </div>
 
                 <div id='menu_query'>
-                    <p id='productos_menu_query'><a href="#">Productos</a></p>
+                    <p id='productos_menu_query'><Link to='productos'>Productos</Link></p>
                     <p id='personalizacion_menu_query'><a href="#">ALOJÚ</a></p>
                     <p id='aloju_menu_query'><a href="#">Contáctanos</a></p>
                     <p id='contactanos_menu_query'><a href="#">Ayuda</a></p>
@@ -92,7 +92,7 @@ const Header = (props) => {
                 <input type="text" id="buscar" name="buscar" placeholder="Encuentra lo que buscas" />
                 <button id='btnBuscar'>Buscar</button>
             </div>
-        </div>
+        </div >
     )
 }
 

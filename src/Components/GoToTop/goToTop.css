@@ -11,6 +11,7 @@ a.scroll-top {
     background: rgb(85, 143, 201);
     border-radius: 50px !important;
     text-align: center;
+    cursor: pointer;
   }
   a.scroll-top .ielement {
     position: relative;

@@ -7,6 +7,7 @@ import Register from './Components/Login/Register'
 import DatosPersonales from './Components/User/DatosPersonales'
 import MisPedidos from './Components/User/MisPedidos'
 import Ayuda from './Components/User/Ayuda'
+import Productos from './Components/Pages/Productos/Productos'
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path='/datosPersonales' exact component={DatosPersonales} />
         <Route path='/misPedidos' exact component={MisPedidos} />
         <Route path='/ayuda' exact component={Ayuda} />
+        <Route path='/productos' exact component={Productos} />
       </Switch>
     </Router>
   )

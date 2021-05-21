@@ -15,6 +15,7 @@ import './Components/Carousel/carousel.css'
 import './Components/Footer/footer.css'
 import './Components/GoToTop/goToTop.css'
 import './Components/Pages/ProductosHome/productosHome.css'
+import './Components/Pages/Productos/productos.css'
 
 ReactDOM.render(
   <React.StrictMode>
