@@ -13,6 +13,7 @@ import './Components/User/misPedidos.css'
 import './Components/User/ayuda.css'
 import './Components/Carousel/carousel.css'
 import './Components/Footer/footer.css'
+import './Components/GoToTop/goToTop.css'
 import './Components/Pages/ProductosHome/productosHome.css'
 
 ReactDOM.render(

@@ -3,6 +3,7 @@ import Header from '../Header/Header'
 import Carousel from '../Carousel/Carousel'
 import ProductosHome from '../Pages/ProductosHome/ProductosHome'
 import Footer from '../Footer/Footer'
+import GoToTop from '../GoToTop/GoToTop'
 
 //Componente que renderizará el HOME de la aplicación
 const Home = (props) => {
@@ -11,6 +12,7 @@ const Home = (props) => {
             <Header />
             <Carousel />
             <ProductosHome />
+            <GoToTop />
             <Footer />
         </div>
     )

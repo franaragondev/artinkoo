@@ -2,6 +2,20 @@ import $ from 'jquery'
 
 $(document).ready(function () {
 
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+            $('a.scroll-top').stop()
+            $('a.scroll-top').fadeIn('slow');
+        } else {
+            $('a.scroll-top').stop()
+            $('a.scroll-top').fadeOut('slow');
+        }
+    });
+    $('a.scroll-top').click(function (event) {
+        event.preventDefault();
+        $('html, body').animate({ scrollTop: 0 }, 600);
+    });
+
     /*Abre y oculta el menu de la cesta de compra.
     Si esta abierto el menu normal, se cierra*/
     $('#bolsaCompra').click(function () {

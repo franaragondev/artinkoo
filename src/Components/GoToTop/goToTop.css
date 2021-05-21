@@ -1,0 +1,21 @@
+a.scroll-top {
+    color: #fff;
+    display: none;
+    width: 45px;
+    height: 45px;
+    position: fixed;
+    z-index: 1000;
+    bottom: 90px;
+    right: 30px;
+    font-size: 20px;
+    background: rgb(85, 143, 201);
+    border-radius: 50px !important;
+    text-align: center;
+  }
+  a.scroll-top .ielement {
+    position: relative;
+    top: 1px;
+    font-size: 2.5rem;
+    color: white;
+  }
+  
