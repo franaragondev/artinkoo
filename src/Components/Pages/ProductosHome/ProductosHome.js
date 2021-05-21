@@ -24,21 +24,24 @@ const ProductosHome = (props) => {
                     if (index == 8) {
                         return (
                             <>
-                                <div id='publicidad_query'>
-                                    <section id="alojuPublicidad">
+                                <div className='publicidad_query'>
+                                    <section id="alojuPublicidadQuery">
                                         <picture><img src="../images/alojuhomemobiledesign.jpg" alt="alojú" /></picture>
                                     </section>
 
-                                    <section id="coloreaPublicidad">
-                                        <picture><img src="images/colorea_la_vida.jpg" alt="colorea_la_vida" /></picture>
+                                    <section id="coloreaPublicidadQuery">
+                                        <picture><img src="../images/colorea_la_vida.jpg" alt="colorea_la_vida" /></picture>
                                     </section>
                                 </div>
+                                <section id="alojuPublicidad">
+                                    <picture><img src="../images/alojuhomemobiledesign.jpg" alt="alojú" /></picture>
+                                </section>
                                 <article>
                                     <a href="#">
                                         <picture><img src={'../images/productos/' + producto.idProducto + '.jpg'} alt={'Imagen producto ' + producto.idProducto} /></picture>
                                     </a>
                                     <h4 className='nombreProducto'>{producto.nombre} | {producto.precio}€</h4>
-                                    <a href="#"><span>AÑADIR A LA CESTA</span><i class="fas fa-shopping-cart"></i></a>
+                                    <a href="#"><span>AÑADIR A LA CESTA</span></a>
                                 </article>
                             </>
                         )
@@ -49,7 +52,7 @@ const ProductosHome = (props) => {
                                 <picture><img src={'../images/productos/' + producto.idProducto + '.jpg'} alt={'Imagen producto ' + producto.idProducto} /></picture>
                             </a>
                             <h4 className='nombreProducto'>{producto.nombre} | {producto.precio}€</h4>
-                            <a href="#"><span>AÑADIR A LA CESTA</span><i class="fas fa-shopping-cart"></i></a>
+                            <a href="#"><span>AÑADIR A LA CESTA</span></a>
                         </article>
                     )
                 })}

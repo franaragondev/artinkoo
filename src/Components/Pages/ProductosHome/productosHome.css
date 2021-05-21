@@ -1,4 +1,5 @@
 /*ESTILOS GLOBALES*/
+
 h2.tituloPagina {
 	font-family: Quicksand;
 	font-style: normal;
@@ -14,11 +15,13 @@ h4.nombreProducto {
 	font-style: normal;
 	font-weight: 600;
 	letter-spacing: 0em;
-    margin: auto;
-    margin-top: .8rem;
+	margin: auto;
+	margin-top: .8rem;
+	width: 100%;
 }
 
 /*MÁS VENDIDOS*/
+
 section#masVendidos {
 	display: flex;
 	flex: 0 40%;
@@ -45,8 +48,8 @@ section#masVendidos>div#tituloVendidos>hr {
 	width: 6.7rem;
 	height: 1px;
 	margin-left: 1rem;
-    margin-right: 1rem;
-    margin-top: 1.7rem;
+	margin-right: 1rem;
+	margin-top: 1.7rem;
 }
 
 section#masVendidos>article {
@@ -98,12 +101,13 @@ section#masVendidos>button#mostrarMasVendidos {
 	cursor: pointer;
 }
 
-/*PUBLI ALOJÚ*/
-#coloreaPublicidad {
+/*PUBLICIDAD DISPOSITIVO MÓVIL*/
+
+.publicidad_query {
 	display: none;
 }
 
-div#publicidad_query>section#alojuPublicidad {
+section#alojuPublicidad {
 	margin-left: 2%;
 	margin-right: 2%;
 	display: flex;
@@ -112,22 +116,80 @@ div#publicidad_query>section#alojuPublicidad {
 	justify-content: center;
 }
 
-div#publicidad_query>section#alojuPublicidad>picture>img {
+section#alojuPublicidad>picture>img {
 	width: 100%;
 	height: 100%;
 }
 
-/*COLOREA LA VIDA*/
-div#publicidad_query>section#coloreaPublicidad {
+/*PUBLICIDAD QUERY*/
+
+div.publicidad_query>section {
+	width: 50%;
+}
+
+div.publicidad_query>section#alojuPublicidadQuery {
+	margin-left: 2%;
+	margin-right: 2%;
+	display: flex;
+	margin-top: -1rem;
+	margin-bottom: 1rem;
+	justify-content: center;
+}
+
+div.publicidad_query>section#alojuPublicidadQuery>picture>img {
+	width: 100%;
+	height: 100%;
+}
+
+div.publicidad_query>section#coloreaPublicidadQuery {
 	margin-left: 1rem;
 	margin-right: 1rem;
+	margin-top: -1rem;
 	display: flex;
 	margin-bottom: 1rem;
 	justify-content: center;
-	display: none;
 }
 
-div#publicidad_query>section#coloreaPublicidad>picture>img {
+div.publicidad_query>section#coloreaPublicidadQuery>picture>img {
 	width: 100%;
 	height: 100%;
+}
+
+@media all and (min-width: 700px) {
+	h4.nombreProducto {
+		font-size: 1.6vh;
+		margin-bottom: .5rem;
+	}
+
+	/*SECCION INDEX PRODUCTOS*/
+	section#masVendidos>div#tituloVendidos>h2 {
+		font-size: 25px;
+	}
+	section#masVendidos>div#tituloVendidos>hr {
+		width: 30%;
+		margin-top: 2rem;
+		border-top: 2px solid lightgray;
+	}
+	section#masVendidos {
+		flex: 0 20%;
+	}
+	section#masVendidos>article {
+		width: 25%;
+	}
+	section#masVendidos>article>a>picture>img {
+		width: 90%;
+		height: 90%;
+	}
+	section#alojuPublicidad {
+		display: none;
+	}
+	.publicidad_query {
+		display: flex;
+	}
+}
+
+@media all and (min-width: 1000px) {
+	h4.nombreProducto {
+		font-size: 2vh;
+	}
 }
