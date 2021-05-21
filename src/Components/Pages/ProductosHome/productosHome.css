@@ -97,3 +97,36 @@ section#masVendidos>button#mostrarMasVendidos {
 	margin-bottom: 2rem;
 	cursor: pointer;
 }
+
+/*PUBLI ALOJÚ*/
+#coloreaPublicidad {
+	display: none;
+}
+
+div#publicidad_query>section#alojuPublicidad {
+	margin-left: 2%;
+	margin-right: 2%;
+	display: flex;
+	margin-bottom: 1rem;
+	justify-content: center;
+}
+
+div#publicidad_query>section#alojuPublicidad>picture>img {
+	width: 100%;
+	height: 100%;
+}
+
+/*COLOREA LA VIDA*/
+div#publicidad_query>section#coloreaPublicidad {
+	margin-left: 1rem;
+	margin-right: 1rem;
+	display: flex;
+	margin-bottom: 1rem;
+	justify-content: center;
+	display: none;
+}
+
+div#publicidad_query>section#coloreaPublicidad>picture>img {
+	width: 100%;
+	height: 100%;
+}
