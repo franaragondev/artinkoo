@@ -15,6 +15,10 @@
     padding-bottom: 2rem;
 }
 
+.loginFormat>h2 {
+    font-size: 30px;
+}
+
 .mensajeLogin {
     font-size: 20px;
 }
@@ -85,6 +89,10 @@
     font-size: 17px;
 }
 
+.cerrarSesion>h3 {
+    font-size: 18px;
+}
+
 .cerrarSesion>button {
     margin-top: 0;
     margin-bottom: 2rem;
@@ -116,7 +124,6 @@
 .opcionUsuario>p {
     color: #e70074;
     font-weight: bold;
-    padding-top: 1rem;
 }
 
 .opcionUsuario>img {
@@ -164,15 +171,12 @@
     .opcionUsuario>p {
         margin-top: 0;
     }
-
     .opcionesRegistro {
         flex-flow: row wrap;
     }
-    
     .opcionesRegistro>input {
         width: 25%;
     }
-    
     .opcionesRegistro>button {
         width: 15%;
     }
