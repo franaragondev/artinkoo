@@ -3,7 +3,7 @@ import { Form } from 'reactstrap'
 import LoginFormat from './LoginFormat'
 import { Link } from 'react-router-dom'
 
-//Componente que renderizará el video de la primera carga
+//Componente que renderizará el login de la aplicación
 const Login = (props) => {
     return (
         <div className='login_container'>

@@ -6,7 +6,7 @@ import md5 from 'md5'
 import swal from 'sweetalert';
 import $ from "jquery";
 
-//Componente que renderizará el video de la primera carga
+//Componente que renderizará el formato del registro de la aplicación
 const RegisterForm = (props) => {
     const [nombre, setNombre] = useState('')
     const [apellidos, setApellidos] = useState('')

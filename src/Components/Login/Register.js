@@ -3,7 +3,7 @@ import { Form } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import RegisterForm from './RegisterForm'
 
-//Componente que renderizará el video de la primera carga
+//Componente que renderizará el registro de la aplicación
 const Register = (props) => {
     return (
         <div className='login_container'>

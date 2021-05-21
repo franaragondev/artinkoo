@@ -1,7 +1,7 @@
 import React, { Component, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-//Componente que renderizará el video de la primera carga
+//Componente que renderizará la cabecera de la web
 const Header = (props) => {
     return (
         <div>

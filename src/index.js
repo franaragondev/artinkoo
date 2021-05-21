@@ -12,6 +12,7 @@ import './Components/User/datosPersonales.css'
 import './Components/User/misPedidos.css'
 import './Components/User/ayuda.css'
 import './Components/Carousel/carousel.css'
+import './Components/Pages/ProductosHome/productosHome.css'
 
 ReactDOM.render(
   <React.StrictMode>

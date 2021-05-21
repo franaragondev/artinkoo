@@ -7,7 +7,7 @@ import Cookies from 'universal-cookie'
 import swal from 'sweetalert';
 import GoogleLogin from 'react-google-login'
 
-//Componente que renderizará el video de la primera carga
+//Componente que renderizará el formato de login de la aplicación
 const LoginFormat = (props) => {
     const [nombre, setNombre] = useState('')
     const [password, setPassword] = useState('')

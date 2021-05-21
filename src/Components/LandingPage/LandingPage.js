@@ -1,7 +1,7 @@
 import React, { Component, useState, useEffect } from 'react'
 import Home from '../Home/Home'
 
-//Componente que renderizará el video de la primera carga
+//Componente que renderizará la imagen de la primera carga de la web
 const LandingPage = (props) => {
     const [video, setVideo] = useState(true)
 

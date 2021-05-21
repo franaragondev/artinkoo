@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import CarouselComponent from 'react-bootstrap/Carousel'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-//Componente que renderizará el video de la primera carga
+//Componente que renderizará el carrusel
 const Carousel = (props) => {
     return (
         <div>
@@ -32,13 +32,13 @@ const Carousel = (props) => {
                     </CarouselComponent.Item>
                 </CarouselComponent>
             </div>
-            <div className='imagenFija'>
+            {/* <div className='imagenFija'>
                 <img
                     className="d-block w-100"
                     src="../images/carousel1.jpg"
                     alt='artinkoo fija'
                 />
-            </div>
+            </div> */}
         </div>
     )
 }
