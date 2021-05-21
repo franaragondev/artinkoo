@@ -107,6 +107,7 @@ div#publicidad_query>section#alojuPublicidad {
 	margin-left: 2%;
 	margin-right: 2%;
 	display: flex;
+	margin-top: -1rem;
 	margin-bottom: 1rem;
 	justify-content: center;
 }
