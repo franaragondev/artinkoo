@@ -1,0 +1,271 @@
+/*PIE DE PÁGINA*/
+
+footer {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(0deg, #87B6C5, #87B6C5);
+    text-align: center;
+}
+
+/*SECCIÓN CONTACTO*/
+
+footer>div#contacto>h1 {
+    font-family: Quicksand;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 15px;
+    letter-spacing: 0em;
+    padding-top: 2rem;
+}
+
+footer>div#contacto>p {
+    padding-top: 0.5rem;
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 11px;
+}
+
+footer>div#contacto>a {
+    padding-top: 0.5rem;
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 11px;
+    color: black;
+    text-decoration: none;
+}
+
+footer>hr {
+    border: 1px solid #E1DBDE;
+}
+
+footer>div#contacto>p:nth-child(3) {
+    padding-bottom: 1.5rem;
+}
+
+/*ESTILO PIE DE PÁGINA DE WEB CONTACTO*/
+
+footer>hr#email {
+    width: 19rem;
+}
+
+/*FIN ESTILO PIE DE PÁGINA DE WEB CONTACTO*/
+
+/*SECCIÓN NEWSLETTER*/
+
+footer>div#newsletter>h1 {
+    font-family: Quicksand;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 15px;
+    letter-spacing: 0em;
+    padding-top: 1rem;
+}
+
+footer>div#newsletter>form>input {
+    margin-top: 1rem;
+    border: 0px;
+    background-color: transparent;
+    width: 15rem;
+    height: 1.5rem;
+    outline: none;
+    cursor: text;
+}
+
+footer>div#newsletter>form>input::placeholder {
+    color: black;
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 11px;
+}
+
+footer>div#newsletter>form>button {
+    margin-top: 0.1rem;
+    border: 0px;
+    background-color: transparent;
+    font-size: 15px;
+    color: black;
+    font-family: Quicksand;
+    font-weight: bold;
+    height: 1rem;
+    outline: none;
+    cursor: pointer;
+}
+
+/*ESTILO LÍNEA EMAIL NEWSLETTER*/
+
+footer>hr:nth-child(4) {
+    width: 80%;
+    margin-bottom: 2.5rem;
+}
+
+/*SECCIÓN MENÚ DESPLEGABLE PIE DE PÁGINA*/
+
+footer>ul#menuPiePagina {
+    list-style: none;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    text-align: left;
+}
+
+footer>ul#menuPiePagina>li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: 3.5%;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: -1.8rem;
+    border-bottom: 2px solid #E1DBDE;
+}
+
+footer>ul#menuPiePagina>li>a {
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Open Sans;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    text-decoration: none;
+    color: black;
+}
+
+footer>ul#menuPiePagina>li>hr {
+    border: 1px solid #E1DBDE;
+}
+
+footer>ul#menuPiePagina>li>input {
+    display: none;
+}
+
+/*ACCIONES SI SE DESPLIEGA EL MENÚ*/
+
+footer>ul#menuPiePagina>li>input#submenu1:checked~ul {
+    display: block;
+    width: 100%;
+    padding-left: 0%;
+}
+
+footer>ul#menuPiePagina>li>input#submenu1:checked~label {
+    visibility: hidden;
+}
+
+footer>ul#menuPiePagina>li>input#submenu1:checked~label::after {
+    content: "-";
+    visibility: visible;
+}
+
+footer>ul#menuPiePagina>li>input#submenu2:checked~ul {
+    display: block;
+    width: 100%;
+    padding-left: 0%;
+}
+
+footer>ul#menuPiePagina>li>input#submenu2:checked~label {
+    visibility: hidden;
+}
+
+footer>ul#menuPiePagina>li>input#submenu2:checked~label::after {
+    content: "-";
+    visibility: visible;
+}
+
+footer>ul#menuPiePagina>li>input#submenu3:checked~ul {
+    display: block;
+    width: 100%;
+    padding-left: 0%;
+}
+
+footer>ul#menuPiePagina>li>input#submenu3:checked~label {
+    visibility: hidden;
+}
+
+footer>ul#menuPiePagina>li>input#submenu3:checked~label::after {
+    content: "-";
+    visibility: visible;
+}
+
+/*FIN ACCIONES DESPLEGAR MENÚ*/
+
+footer>ul#menuPiePagina>li>label {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+footer>ul#menuPiePagina>li>ul {
+    list-style: none;
+    text-align: left;
+    display: none;
+}
+
+footer>ul#menuPiePagina>li>ul>li {
+    margin-top: 0.5rem;
+}
+
+footer>ul#menuPiePagina>li>ul>li>a {
+    font-size: 12px;
+    font-family: Open Sans;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    text-decoration: none;
+    color: black;
+    margin-left: 5%;
+}
+
+/*REDES SOCIALES*/
+
+footer>div#redes_sociales {
+    padding-bottom: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+footer>div#redes_sociales>h1 {
+    font-family: Quicksand;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 15px;
+    letter-spacing: 0em;
+    padding-top: 0.1rem;
+    padding-bottom: 0.3rem;
+    width: 100%;
+}
+
+footer>div#redes_sociales>a>img {
+    width: 2.3rem;
+    margin-right: 1rem;
+}
+
+/*COPYRIGHT Y DERECHOS DE AUTOR*/
+
+footer>div#pie {
+    background-color: black;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+}
+
+footer>div#pie>p {
+    font-family: Quicksand;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 11px;
+    text-align: center;
+    padding: 0.01rem;
+    margin-top: .5rem;
+}
