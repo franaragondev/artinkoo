@@ -65,7 +65,7 @@ footer>div#newsletter>h1 {
     padding-top: 1rem;
 }
 
-footer>div#newsletter>form>input {
+footer>div#newsletter>input {
     margin-top: 1rem;
     border: 0px;
     background-color: transparent;
@@ -75,7 +75,7 @@ footer>div#newsletter>form>input {
     cursor: text;
 }
 
-footer>div#newsletter>form>input::placeholder {
+footer>div#newsletter>input::placeholder {
     color: black;
     font-family: Quicksand;
     font-style: normal;
@@ -84,7 +84,7 @@ footer>div#newsletter>form>input::placeholder {
     line-height: 11px;
 }
 
-footer>div#newsletter>form>button {
+footer>div#newsletter>button {
     margin-top: 0.1rem;
     border: 0px;
     background-color: transparent;

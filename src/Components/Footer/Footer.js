@@ -1,8 +1,21 @@
 import React, { Component, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Axios from 'axios'
 
 //Componente que renderizará el pie de página de la web
 const Footer = (props) => {
+    const [emailRegistro, setEmailRegistro] = useState('')
+
+    const registrarNewsletter = async () => {
+        await Axios.post('https://artinkoo.herokuapp.com/registrarseNewsletter', { email: emailRegistro })
+            .then(response => {
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
     return (
         <div>
             <footer>
@@ -17,10 +30,8 @@ const Footer = (props) => {
 
                 <div id="newsletter">
                     <h1>SUBSCRÍBETE A NUESTRA REVISTA</h1>
-                    <form>
-                        <input required type="email" pattern="[^ @]*@[^ @]*" placeholder="Introduzca su email" />
-                        <button type="submit" id="botonEnviar">Enviar</button>
-                    </form>
+                    <input required name='email' type="email" pattern="[^ @]*@[^ @]*" placeholder="Introduzca su email" onChange={(e) => { setEmailRegistro(e.target.value) }} />
+                    <button type="submit" id="botonEnviar" onClick={registrarNewsletter}>Enviar</button>
                 </div>
                 <hr />
 
