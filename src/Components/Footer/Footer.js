@@ -1,6 +1,7 @@
 import React, { Component, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Axios from 'axios'
+import swal from 'sweetalert';
 
 //Componente que renderizará el pie de página de la web
 const Footer = (props) => {
@@ -9,7 +10,21 @@ const Footer = (props) => {
     const registrarNewsletter = async () => {
         await Axios.post('https://artinkoo.herokuapp.com/registrarseNewsletter', { email: emailRegistro })
             .then(response => {
-                console.log(response.data);
+                if (response.data == 'Signed Up!') {
+                    swal({
+                        title: "BIENVENIDO A LA FAMILIA",
+                        text: 'En breves momentos recibirás un email de confirmación (revise la bandeja de promociones).',
+                        icon: "success",
+                        button: "Ok!",
+                    })
+                } else {
+                    swal({
+                        title: "Oh! Algo ha fallado",
+                        text: 'Asegúrese que el email introducido no está ya registrado e inténtelo de nuevo más tarde.',
+                        icon: "success",
+                        button: "Ok!",
+                    })
+                }
             })
             .catch(error => {
                 console.log(error);
