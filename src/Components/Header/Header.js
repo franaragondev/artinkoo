@@ -25,7 +25,7 @@ const Header = (props) => {
                         <li> <Link to='productos'>Productos</Link></li>
                         <li> <a href="#">ALOJÚ</a></li>
                         <li> <a href="#">Contáctanos</a></li>
-                        <li> <a href="#">Ayuda</a></li>
+                        <li> <a href="#">Descarga la App</a></li>
                     </ul>
                 </div>
 
@@ -39,7 +39,7 @@ const Header = (props) => {
                     <p id='productos_menu_query'><Link to='productos'>Productos</Link></p>
                     <p id='personalizacion_menu_query'><a href="#">ALOJÚ</a></p>
                     <p id='aloju_menu_query'><a href="#">Contáctanos</a></p>
-                    <p id='contactanos_menu_query'><a href="#">Ayuda</a></p>
+                    <p id='contactanos_menu_query'><a href="#">Descarga la App</a></p>
                 </div>
 
                 <div id="derecha">
