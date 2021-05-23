@@ -27,20 +27,68 @@ const Productos = (props) => {
                     <hr />
                 </div>
                 {productos.map((producto, index) => {
-                    if (index == 8 || index == 16 || index == 24) {
+                    if (index == 8) {
                         return (
                             <>
                                 <div className='publicidad_query'>
                                     <section id="alojuPublicidadQuery">
-                                        <picture><img src="../images/alojuhomemobiledesign.jpg" alt="alojú" /></picture>
+                                        <picture><img src="../images/publiDeporteProductos.jpg" alt="publi ropa deporte" /></picture>
                                     </section>
 
                                     <section id="coloreaPublicidadQuery">
-                                        <picture><img src="../images/colorea_la_vida.jpg" alt="colorea_la_vida" /></picture>
+                                        <picture><img src="../images/pexels-alina-vilchenko-1353503.jpg" alt="ropa" /></picture>
                                     </section>
                                 </div>
                                 <section id="alojuPublicidad">
-                                    <picture><img src="../images/alojuhomemobiledesign.jpg" alt="alojú" /></picture>
+                                    <picture><img src="../images/publiDeporteProductos.jpg" alt="publi ropa deporte" /></picture>
+                                </section>
+                                <article>
+                                    <a href="#">
+                                        <picture><img src={'../images/productos/' + producto.idProducto + '.jpg'} alt={'Imagen producto ' + producto.idProducto} /></picture>
+                                    </a>
+                                    <h4 className='nombreProducto'>{producto.nombre} | {producto.precio}€</h4>
+                                    <a href="#"><span>AÑADIR A LA CESTA</span></a>
+                                </article>
+                            </>
+                        )
+                    } else if (index == 16) {
+                        return (
+                            <>
+                                <div className='publicidad_query'>
+                                    <section id="alojuPublicidadQuery">
+                                        <picture><img src="../images/pexels-oliver-sjöström-1122413.jpg" alt="surfero" /></picture>
+                                    </section>
+
+                                    <section id="coloreaPublicidadQuery">
+                                        <picture><img src="../images/pexels-robin-1020370.jpg" alt="tienda de ropa" /></picture>
+                                    </section>
+                                </div>
+                                <section id="alojuPublicidad">
+                                    <picture><img src="../images/pexels-oliver-sjöström-1122413.jpg" alt="surfero" /></picture>
+                                </section>
+                                <article>
+                                    <a href="#">
+                                        <picture><img src={'../images/productos/' + producto.idProducto + '.jpg'} alt={'Imagen producto ' + producto.idProducto} /></picture>
+                                    </a>
+                                    <h4 className='nombreProducto'>{producto.nombre} | {producto.precio}€</h4>
+                                    <a href="#"><span>AÑADIR A LA CESTA</span></a>
+                                </article>
+                            </>
+                        )
+                    } else if (index == 24) {
+                        return (
+                            <>
+                                <div className='publicidad_query'>
+                                    <section id="alojuPublicidadQuery">
+                                        <picture><img src="../images/pexels-scott-webb-430209.jpg" alt="grafiti muro" /></picture>
+                                    </section>
+
+                                    <section id="coloreaPublicidadQuery">
+                                        <picture><img src="../images/pexels-𝐕𝐞𝐧𝐮𝐬-𝐇𝐃-𝐌𝐚𝐤𝐞-𝐮𝐩-𝐏𝐞𝐫𝐟𝐮𝐦𝐞-1749452.jpg" alt="pinturas" /></picture>
+                                    </section>
+                                </div>
+                                <section id="alojuPublicidad">
+                                    <picture><img src="../images/pexels-scott-webb-430209.jpg" alt="grafiti muro" /></picture>
                                 </section>
                                 <article>
                                     <a href="#">

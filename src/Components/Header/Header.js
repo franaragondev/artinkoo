@@ -47,25 +47,26 @@ const Header = (props) => {
                         <img id='icon_user' alt="icono_user" src="../images/icon_user.svg" />
                     </Link>
                     <input id="idioma" type="checkbox" />
-                    <label for="idioma">
+                    <label id='idiomaAnimacion' for="idioma">
                         <img alt="globoIdioma" src="../images/-language_89801.svg" />
                         <img alt="idiomaIngles" id="english" src="../images/icons8-gran-bretana-48.png" />
                     </label>
 
-                    <div id="bolsaCompra">
-                        <a href="#"><img id='icono_bolsaCompra' alt="bolsaCompra"
-                            src="../images/shopping-bag_icon-icons.com_69305.svg" /></a>
-                        <div>
-                            <p></p>
-                        </div>
-                    </div>
+                    <input id="input_carrito" type="checkbox" />
+                    <label id='animacionCarrito' for='input_carrito'><img id='icono_bolsaCompra' alt="bolsaCompra"
+                        src="../images/shopping-bag_icon-icons.com_69305.svg" /></label>
+
+                    {/* <input id="cerrar_carrito" type="checkbox" />
+                    <label id='animacionbolsa' for='cerrar_carrito'><p id='cerrar_bolsa'>CERRAR</p></label>
+                    <p id='cerrar_bolsa2'>CERRAR</p> */}
+
+
                     <div id='menu_oculto_bolsa'>
-                        <div id='cerrar_menu_bolsa'>
+                        {/* <div id='cerrar_menu_bolsa'>
                             <picture>
                                 <img id='icono_cerrar_bolsa' alt='cerrar' src='../images/cross-symbol_icon-icons.com_74149.png' />
                             </picture>
-                            <p id='cerrar_bolsa'>CERRAR</p>
-                        </div>
+                        </div> */}
                         <div id='contenido_menu_compra'>
                             <p>CARRITO DE COMPRA</p>
                             <hr />

@@ -284,7 +284,7 @@ header>div#derecha>input#idioma:checked~label>img:nth-child(2) {
 
 /*CAMBIO A IDIOMA INGLÉS*/
 
-header>div#derecha>label>img {
+header>div#derecha>label#idiomaAnimacion>img {
     /*OCULTA IDIOMA*/
     display: none;
     margin-top: 0.7rem;
@@ -299,12 +299,20 @@ header>div#derecha>label>img:nth-child(2) {
 
 /*BOLSA COMPRA*/
 
-header>div#derecha>div#bolsaCompra>a>img {
+header>div#derecha>input#input_carrito {
+    display: none;
+}
+
+header>div#derecha>label#animacionCarrito>img#icono_bolsaCompra {
     margin-top: 0.8rem;
     width: 1.5rem;
     margin-left: 1rem;
     margin-right: 1rem;
     cursor: pointer;
+}
+
+input#input_carrito:checked~div#menu_oculto_bolsa {
+    right: 0;
 }
 
 /*CERRAR MENÚ BOLSA COMPRA*/
@@ -318,6 +326,7 @@ header>div#derecha>div#menu_oculto_bolsa {
     right: -100%;
     z-index: 1;
     transition: right 0.4s ease-in-out 0s;
+    margin-top: 3.5rem;
 }
 
 header>div#derecha>div#menu_oculto_bolsa>div#cerrar_menu_bolsa {
