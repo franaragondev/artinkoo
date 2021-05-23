@@ -37,9 +37,9 @@ const ProductosHome = (props) => {
                                     <picture><img src="../images/alojuhomemobiledesign.jpg" alt="alojú" /></picture>
                                 </section>
                                 <article>
-                                    <a href="#">
+                                    <Link to={`/producto/${producto.idProducto}`}>
                                         <picture><img src={'../images/productos/' + producto.idProducto + '.jpg'} alt={'Imagen producto ' + producto.idProducto} /></picture>
-                                    </a>
+                                    </Link>
                                     <h4 className='nombreProducto'>{producto.nombre} | {producto.precio}€</h4>
                                     <a href="#"><span>AÑADIR A LA CESTA</span></a>
                                 </article>
@@ -48,9 +48,9 @@ const ProductosHome = (props) => {
                     }
                     return (
                         <article>
-                            <a href="#">
+                            <Link to={`/producto/${producto.idProducto}`}>
                                 <picture><img src={'../images/productos/' + producto.idProducto + '.jpg'} alt={'Imagen producto ' + producto.idProducto} /></picture>
-                            </a>
+                            </Link>
                             <h4 className='nombreProducto'>{producto.nombre} | {producto.precio}€</h4>
                             <a href="#"><span>AÑADIR A LA CESTA</span></a>
                         </article>

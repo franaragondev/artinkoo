@@ -8,6 +8,7 @@ import DatosPersonales from './Components/User/DatosPersonales'
 import MisPedidos from './Components/User/MisPedidos'
 import Ayuda from './Components/User/Ayuda'
 import Productos from './Components/Pages/Productos/Productos'
+import Producto from './Components/Pages/Producto/Producto'
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path='/misPedidos' exact component={MisPedidos} />
         <Route path='/ayuda' exact component={Ayuda} />
         <Route path='/productos' exact component={Productos} />
+        <Route path='/producto/:idProducto' exact component={Producto} />
       </Switch>
     </Router>
   )

@@ -16,6 +16,7 @@ import './Components/Footer/footer.css'
 import './Components/GoToTop/goToTop.css'
 import './Components/Pages/ProductosHome/productosHome.css'
 import './Components/Pages/Productos/productos.css'
+import './Components/Pages/Producto/producto.css'
 
 ReactDOM.render(
   <React.StrictMode>

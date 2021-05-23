@@ -42,10 +42,11 @@ const Productos = (props) => {
                                 <section id="alojuPublicidad">
                                     <picture><img src="../images/publiDeporteProductos.jpg" alt="publi ropa deporte" /></picture>
                                 </section>
+
                                 <article>
-                                    <a href="#">
+                                    <Link to={`/producto/${producto.idProducto}`}>
                                         <picture><img src={'../images/productos/' + producto.idProducto + '.jpg'} alt={'Imagen producto ' + producto.idProducto} /></picture>
-                                    </a>
+                                    </Link>
                                     <h4 className='nombreProducto'>{producto.nombre} | {producto.precio}€</h4>
                                     <a href="#"><span>AÑADIR A LA CESTA</span></a>
                                 </article>
@@ -66,10 +67,11 @@ const Productos = (props) => {
                                 <section id="alojuPublicidad">
                                     <picture><img src="../images/pexels-oliver-sjöström-1122413.jpg" alt="surfero" /></picture>
                                 </section>
+
                                 <article>
-                                    <a href="#">
+                                    <Link to={`/producto/${producto.idProducto}`}>
                                         <picture><img src={'../images/productos/' + producto.idProducto + '.jpg'} alt={'Imagen producto ' + producto.idProducto} /></picture>
-                                    </a>
+                                    </Link>
                                     <h4 className='nombreProducto'>{producto.nombre} | {producto.precio}€</h4>
                                     <a href="#"><span>AÑADIR A LA CESTA</span></a>
                                 </article>
@@ -90,10 +92,11 @@ const Productos = (props) => {
                                 <section id="alojuPublicidad">
                                     <picture><img src="../images/pexels-scott-webb-430209.jpg" alt="grafiti muro" /></picture>
                                 </section>
+
                                 <article>
-                                    <a href="#">
+                                    <Link to={`/producto/${producto.idProducto}`}>
                                         <picture><img src={'../images/productos/' + producto.idProducto + '.jpg'} alt={'Imagen producto ' + producto.idProducto} /></picture>
-                                    </a>
+                                    </Link>
                                     <h4 className='nombreProducto'>{producto.nombre} | {producto.precio}€</h4>
                                     <a href="#"><span>AÑADIR A LA CESTA</span></a>
                                 </article>
@@ -101,13 +104,15 @@ const Productos = (props) => {
                         )
                     }
                     return (
+
                         <article>
-                            <a href="#">
+                            <Link to={`/producto/${producto.idProducto}`}>
                                 <picture><img src={'../images/productos/' + producto.idProducto + '.jpg'} alt={'Imagen producto ' + producto.idProducto} /></picture>
-                            </a>
+                            </Link>
                             <h4 className='nombreProducto'>{producto.nombre} | {producto.precio}€</h4>
                             <a href="#"><span>AÑADIR A LA CESTA</span></a>
                         </article>
+
                     )
                 })}
             </section>
