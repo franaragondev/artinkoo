@@ -9,20 +9,22 @@ import MisPedidos from './Components/User/MisPedidos'
 import Ayuda from './Components/User/Ayuda'
 import Productos from './Components/Pages/Productos/Productos'
 import Producto from './Components/Pages/Producto/Producto'
+import ScrollToTop from './Components/ScrollToTop/ScrollToTop'
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Switch>
         <Route path='/' exact component={LandingPage} />
-        <Route path='/home' exact component={Home} />
-        <Route path='/login' exact component={Login} />
-        <Route path='/register' exact component={Register} />
-        <Route path='/datosPersonales' exact component={DatosPersonales} />
-        <Route path='/misPedidos' exact component={MisPedidos} />
-        <Route path='/ayuda' exact component={Ayuda} />
-        <Route path='/productos' exact component={Productos} />
-        <Route path='/producto/:idProducto' exact component={Producto} />
+        <Route path='/home' component={Home} />
+        <Route path='/login' component={Login} />
+        <Route path='/register' component={Register} />
+        <Route path='/datosPersonales' component={DatosPersonales} />
+        <Route path='/misPedidos' component={MisPedidos} />
+        <Route path='/ayuda' component={Ayuda} />
+        <Route path='/productos' component={Productos} />
+        <Route path='/producto/:idProducto' component={Producto} />
       </Switch>
     </Router>
   )

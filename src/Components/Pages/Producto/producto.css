@@ -86,7 +86,7 @@ div#pagina_producto_query>div#pagina_producto>section#descripcion>p:first-child 
 
 div#pagina_producto_query>div#pagina_producto>section#descripcion>p:not(:first-child) {
     font-family: Lato;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 div#pagina_producto_query>div>p#productos_relacionados {
