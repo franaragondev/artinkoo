@@ -56,8 +56,8 @@ const ProductosHome = (props) => {
                         </article>
                     )
                 })}
-                <button id="mostrarMasVendidos">MOSTRAR MÁS</button>
             </section>
+            <button id="mostrarMasVendidos">MOSTRAR MÁS</button>
         </div>
     )
 }

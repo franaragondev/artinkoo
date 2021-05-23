@@ -85,7 +85,7 @@ section#masVendidos>article>a {
 	margin-top: 0.2rem;
 }
 
-section#masVendidos>button#mostrarMasVendidos {
+button#mostrarMasVendidos {
 	width: 60%;
 	height: 2.5rem;
 	background-color: white;
@@ -97,8 +97,10 @@ section#masVendidos>button#mostrarMasVendidos {
 	line-height: 18px;
 	letter-spacing: 0em;
 	text-align: center;
-	margin-bottom: 2rem;
 	cursor: pointer;
+	display: block;
+	margin: auto;
+	margin-bottom: 2rem;
 }
 
 /*PUBLICIDAD DISPOSITIVO MÓVIL*/
@@ -157,11 +159,13 @@ div.publicidad_query>section#coloreaPublicidadQuery>picture>img {
 }
 
 @media all and (min-width: 700px) {
+	section#masVendidos {
+		justify-content: flex-start;
+	}
 	h4.nombreProducto {
 		font-size: 1.6vh;
 		margin-bottom: .5rem;
 	}
-
 	/*SECCION INDEX PRODUCTOS*/
 	section#masVendidos>div#tituloVendidos>h2 {
 		font-size: 25px;
