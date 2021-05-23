@@ -57,7 +57,7 @@ const ProductosHome = (props) => {
                     )
                 })}
             </section>
-            <button id="mostrarMasVendidos">MOSTRAR MÁS</button>
+            <Link to='/productos'><button id="mostrarMasVendidos">MOSTRAR MÁS</button></Link>
         </div>
     )
 }
