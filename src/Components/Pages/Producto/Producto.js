@@ -10,21 +10,23 @@ import Footer from '../../Footer/Footer'
 const Producto = (props) => {
     const { idCategoria, idProducto } = useParams()
     const [datosProducto, setDatosProducto] = useState([])
-    const [productosRelacionados, setProductosRelacionados] = useState([])
-    const [categoriaSuperior, setCategoriaSuperior] = useState(parseInt(idCategoria) + 1)
+    // const [productosRelacionados, setProductosRelacionados] = useState([])
+    // const [categoriaSuperior, setCategoriaSuperior] = useState(parseInt(idCategoria) + 1)
+    // const [idProductoNuevo, setIdProductoNuevo] = useState(idProducto)
 
-    if (categoriaSuperior == 6) {
-        setCategoriaSuperior(1)
-    }
+    // if (categoriaSuperior == 6) {
+    //     setCategoriaSuperior(1)
+    // }
+
 
     useEffect(() => {
         Axios.get(`https://artinkoo.herokuapp.com/mostrarProducto/${idProducto}`).then((response) => {
             setDatosProducto(response.data[0])
 
         })
-        Axios.get(`https://artinkoo.herokuapp.com/mostrarRelacionados/${categoriaSuperior}/${idProducto}`).then((response) => {
-            setProductosRelacionados(response.data)
-        })
+        // Axios.get(`https://artinkoo.herokuapp.com/mostrarRelacionados/${categoriaSuperior}/${idProducto}`).then((response) => {
+        //     setProductosRelacionados(response.data)
+        // })
     }, [])
 
     return (
@@ -63,9 +65,7 @@ const Producto = (props) => {
                     </section>
                 </div>
 
-
-
-                <div>
+                {/* <div>
                     <p id='productos_relacionados'>PRODUCTOS RELACIONADOS</p>
 
                     <section id='relacionados'>
@@ -75,16 +75,16 @@ const Producto = (props) => {
                                 return (
                                     <div>
                                         <Link to={`/producto/${producto.idCategoria}/${producto.idProducto}`}>
-                                            <picture> <img id='imagen_producto_relacionado' alt='imagen_producto_relacionado' src={"../../images/productos/" + producto.idProducto + ".jpg"} /> </picture>
+                                            <picture onClick={recargar}> <img id='imagen_producto_relacionado' alt='imagen_producto_relacionado' src={"../../images/productos/" + producto.idProducto + ".jpg"} /> </picture>
                                         </Link>
                                     </div>
                                 )
                             })
                         }
-                        {/* <img id='imagen_producto_relacionado' alt='imagen_producto_relacionado' src={"../images/productos/" + idProducto + ".jpg"} /> */}
+                        <img id='imagen_producto_relacionado' alt='imagen_producto_relacionado' src={"../images/productos/" + idProducto + ".jpg"} />
 
                     </section>
-                </div>
+                </div> */}
             </div>
             <Footer />
         </>

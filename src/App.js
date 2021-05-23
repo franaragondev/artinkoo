@@ -10,6 +10,7 @@ import Ayuda from './Components/User/Ayuda'
 import Productos from './Components/Pages/Productos/Productos'
 import Producto from './Components/Pages/Producto/Producto'
 import ScrollToTop from './Components/ScrollToTop/ScrollToTop'
+import Contactanos from './Components/Pages/Contactanos/Contactanos'
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route path='/ayuda' component={Ayuda} />
         <Route path='/productos' component={Productos} />
         <Route path='/producto/:idCategoria/:idProducto' component={Producto} />
+        <Route path='/contactanos' component={Contactanos} />
       </Switch>
     </Router>
   )

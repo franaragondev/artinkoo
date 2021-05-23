@@ -2,7 +2,7 @@ import React, { Component, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 //Componente que renderizará la cabecera de la web
-const Header = (props) => {
+const HeaderPages = (props) => {
     return (
         <div>
             <header>
@@ -88,13 +88,13 @@ const Header = (props) => {
                     </div>
                 </div>
             </header>
-            <div className='buscadorQuery'>
-                {/* <img alt="lupa" src="../images/search_magnifying_glass_icon_149392.svg" /> */}
+            {/* <div className='buscadorQuery'>
+                <img alt="lupa" src="../images/search_magnifying_glass_icon_149392.svg" />
                 <input type="text" id="buscar" name="buscar" placeholder="Encuentra lo que buscas" />
                 <button id='btnBuscar'>Buscar</button>
-            </div>
+            </div> */}
         </div >
     )
 }
 
-export default Header
+export default HeaderPages

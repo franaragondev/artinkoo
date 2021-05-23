@@ -72,7 +72,7 @@ const Footer = (props) => {
                         <input type="checkbox" id="submenu3" />
                         <label for="submenu3">+</label>
                         <ul>
-                            <li><a href="pages/contacto.html">Contáctanos</a></li>
+                            <li><Link to='/contactanos'>Contáctanos</Link></li>
                             <li><a href="#">Envíos y Devoluciones</a></li>
                         </ul>
                     </li>
@@ -80,9 +80,9 @@ const Footer = (props) => {
 
                 <div id="redes_sociales">
                     <h1>SÍGUENOS EN REDES SOCIALES</h1>
-                    <a target="_blank" href="https://www.facebook.com"><img alt="facebook"
+                    <a target="_blank" href="https://www.facebook.com/Artinkoo-103718475247308/"><img alt="facebook"
                         src="https://proyecto-final-fran-aragon.netlify.app/images/Facebook_Rounded_Solid_icon-icons.com_61562.png" /></a>
-                    <a target="_blank" href="https://www.twitter.com"><img alt="twitter"
+                    <a target="_blank" href="https://twitter.com/artinkoo_ofi"><img alt="twitter"
                         src="https://proyecto-final-fran-aragon.netlify.app/images/Twitter_Rounded_Solid_icon-icons.com_61561.png" /></a>
                     <a target="_blank" href="https://www.instagram.com"><img alt="instagram"
                         src="https://proyecto-final-fran-aragon.netlify.app/images/Instagram_Rounded_Solid_icon-icons.com_61560.png" /></a>
