@@ -44,7 +44,7 @@ const Productos = (props) => {
                                 </section>
 
                                 <article>
-                                    <Link to={`/producto/${producto.idProducto}`}>
+                                    <Link to={`/producto/${producto.idCategoria}/${producto.idProducto}`}>
                                         <picture><img src={'../images/productos/' + producto.idProducto + '.jpg'} alt={'Imagen producto ' + producto.idProducto} /></picture>
                                     </Link>
                                     <h4 className='nombreProducto'>{producto.nombre} | {producto.precio}€</h4>
@@ -69,7 +69,7 @@ const Productos = (props) => {
                                 </section>
 
                                 <article>
-                                    <Link to={`/producto/${producto.idProducto}`}>
+                                    <Link to={`/producto/${producto.idCategoria}/${producto.idProducto}`}>
                                         <picture><img src={'../images/productos/' + producto.idProducto + '.jpg'} alt={'Imagen producto ' + producto.idProducto} /></picture>
                                     </Link>
                                     <h4 className='nombreProducto'>{producto.nombre} | {producto.precio}€</h4>
@@ -94,7 +94,7 @@ const Productos = (props) => {
                                 </section>
 
                                 <article>
-                                    <Link to={`/producto/${producto.idProducto}`}>
+                                    <Link to={`/producto/${producto.idCategoria}/${producto.idProducto}`}>
                                         <picture><img src={'../images/productos/' + producto.idProducto + '.jpg'} alt={'Imagen producto ' + producto.idProducto} /></picture>
                                     </Link>
                                     <h4 className='nombreProducto'>{producto.nombre} | {producto.precio}€</h4>
@@ -106,7 +106,7 @@ const Productos = (props) => {
                     return (
 
                         <article>
-                            <Link to={`/producto/${producto.idProducto}`}>
+                            <Link to={`/producto/${producto.idCategoria}/${producto.idProducto}`}>
                                 <picture><img src={'../images/productos/' + producto.idProducto + '.jpg'} alt={'Imagen producto ' + producto.idProducto} /></picture>
                             </Link>
                             <h4 className='nombreProducto'>{producto.nombre} | {producto.precio}€</h4>

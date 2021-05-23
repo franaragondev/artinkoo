@@ -31,7 +31,7 @@ const Header = (props) => {
 
                 <div id="logoCabecera">
                     <Link to='/home'>
-                        <img alt="logoColor" src="../images/logotipo_en_color.png" />
+                        <img alt="logoColor" src="https://proyecto-final-fran-aragon.netlify.app/images/logotipo_en_color.png" />
                     </Link>
                 </div>
 
@@ -44,7 +44,7 @@ const Header = (props) => {
 
                 <div id="derecha">
                     <Link to='/login'>
-                        <img id='icon_user' alt="icono_user" src="../images/icon_user.svg" />
+                        <img id='icon_user' alt="icono_user" src="https://proyecto-final-fran-aragon.netlify.app/images/icon_user.svg" />
                     </Link>
                     <input id="idioma" type="checkbox" />
                     <label id='idiomaAnimacion' for="idioma">
@@ -54,7 +54,7 @@ const Header = (props) => {
 
                     <input id="input_carrito" type="checkbox" />
                     <label id='animacionCarrito' for='input_carrito'><img id='icono_bolsaCompra' alt="bolsaCompra"
-                        src="../images/shopping-bag_icon-icons.com_69305.svg" /></label>
+                        src="https://proyecto-final-fran-aragon.netlify.app/images/shopping-bag_icon-icons.com_69305.svg" /></label>
 
                     {/* <input id="cerrar_carrito" type="checkbox" />
                     <label id='animacionbolsa' for='cerrar_carrito'><p id='cerrar_bolsa'>CERRAR</p></label>

@@ -96,13 +96,14 @@ div#pagina_producto_query>div>p#productos_relacionados {
     margin-bottom: 1rem;
 }
 
-div#pagina_producto_query>div>section#relacionados>picture {
+div#pagina_producto_query>div>section#relacionados {
     display: flex;
     justify-content: space-around;
 }
 
-div#pagina_producto_query>div>section#relacionados>picture>img {
-    width: 40%;
+div#pagina_producto_query>div>section#relacionados>div>a>picture>img {
+    width: 10rem;
+    margin: auto;
     margin-bottom: 2rem;
     cursor: pointer;
 }
@@ -114,10 +115,7 @@ div#pagina_producto_query>div>section#relacionados>picture>img {
         margin: auto;
         margin-top: 0;
     }
-
-    div#pagina_producto_query>div>section#relacionados>picture>img {
-        width: 25%;
-        margin-bottom: 2rem;
-        cursor: pointer;
+    div#pagina_producto_query>div>section#relacionados>div>a>picture>img {
+        width: 20rem;
     }
 }

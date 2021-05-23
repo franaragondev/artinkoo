@@ -8,12 +8,22 @@ import Footer from '../../Footer/Footer'
 
 //Componente que renderizará la página para ver un producto
 const Producto = (props) => {
-    const { idProducto } = useParams()
+    const { idCategoria, idProducto } = useParams()
     const [datosProducto, setDatosProducto] = useState([])
+    const [productosRelacionados, setProductosRelacionados] = useState([])
+    const [categoriaSuperior, setCategoriaSuperior] = useState(parseInt(idCategoria) + 1)
+
+    if (categoriaSuperior == 6) {
+        setCategoriaSuperior(1)
+    }
 
     useEffect(() => {
         Axios.get(`https://artinkoo.herokuapp.com/mostrarProducto/${idProducto}`).then((response) => {
             setDatosProducto(response.data[0])
+
+        })
+        Axios.get(`https://artinkoo.herokuapp.com/mostrarRelacionados/${categoriaSuperior}/${idProducto}`).then((response) => {
+            setProductosRelacionados(response.data)
         })
     }, [])
 
@@ -27,7 +37,7 @@ const Producto = (props) => {
                 <div id='carrusel_productos'>
                     <section id='producto'>
                         <picture>
-                            <img id='imagen_producto' alt='imagen_producto' src={"../images/productos/" + idProducto + ".jpg"} />
+                            <img id='imagen_producto' alt='imagen_producto' src={"../../images/productos/" + idProducto + ".jpg"} />
                         </picture>
                     </section>
                 </div>
@@ -59,10 +69,20 @@ const Producto = (props) => {
                     <p id='productos_relacionados'>PRODUCTOS RELACIONADOS</p>
 
                     <section id='relacionados'>
-                        <picture>
-                            <img id='imagen_producto_relacionado' alt='imagen_producto_relacionado' src={"../images/productos/" + idProducto + ".jpg"} />
-                            <img id='imagen_producto_relacionado' alt='imagen_producto_relacionado' src={"../images/productos/" + idProducto + ".jpg"} />
-                        </picture>
+
+                        {
+                            productosRelacionados.map((producto, index) => {
+                                return (
+                                    <div>
+                                        <Link to={`/producto/${producto.idCategoria}/${producto.idProducto}`}>
+                                            <picture> <img id='imagen_producto_relacionado' alt='imagen_producto_relacionado' src={"../../images/productos/" + producto.idProducto + ".jpg"} /> </picture>
+                                        </Link>
+                                    </div>
+                                )
+                            })
+                        }
+                        {/* <img id='imagen_producto_relacionado' alt='imagen_producto_relacionado' src={"../images/productos/" + idProducto + ".jpg"} /> */}
+
                     </section>
                 </div>
             </div>
