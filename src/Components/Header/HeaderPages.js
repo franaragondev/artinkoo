@@ -39,7 +39,7 @@ const HeaderPages = (props) => {
                     <p id='productos_menu_query'><Link to='/productos'>Productos</Link></p>
                     <p id='personalizacion_menu_query'><a href="#">ALOJÚ</a></p>
                     <p id='aloju_menu_query'><Link to='/contactanos'>Contáctanos</Link></p>
-                    <p id='contactanos_menu_query'><a href="https://gonative.io/share/zozlnn">Descarga la App</a></p>
+                    <p id='contactanos_menu_query'><a target="_blank" href="https://gonative.io/share/zozlnn">Descarga la App</a></p>
                 </div>
 
                 <div id="derecha">
