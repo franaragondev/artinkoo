@@ -4,7 +4,7 @@ import Axios from 'axios'
 import Footer from '../../Footer/Footer'
 import GoToTop from '../../GoToTop/GoToTop'
 import Header from '../../Header/Header'
-import Carousel from '../../Carousel/Carousel'
+import CarouselProductos from '../../Carousel/CarouselProductos'
 
 //Componente que renderizará la página PRODUCTOS
 const Productos = (props) => {
@@ -19,7 +19,7 @@ const Productos = (props) => {
     return (
         <div>
             <Header />
-            <Carousel />
+            <CarouselProductos />
             <section id="masVendidos">
                 <div id="tituloVendidos">
                     <hr />
