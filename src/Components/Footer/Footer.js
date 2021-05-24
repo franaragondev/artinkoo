@@ -64,7 +64,7 @@ const Footer = (props) => {
                         <input type="checkbox" id="submenu2" />
                         <label for="submenu2">+</label>
                         <ul>
-                            <li><a href="pages/politica_privacidad.html">Política de Privacidad</a></li>
+                            <li><Link to='/politicaPrivacidad'>Política de Privacidad</Link></li>
                         </ul>
                     </li>
                     <li>
@@ -73,7 +73,7 @@ const Footer = (props) => {
                         <label for="submenu3">+</label>
                         <ul>
                             <li><Link to='/contactanos'>Contáctanos</Link></li>
-                            <li><a href="#">Envíos y Devoluciones</a></li>
+                            <li><Link to='/enviosDevoluciones'>Envíos y Devoluciones</Link></li>
                         </ul>
                     </li>
                 </ul>

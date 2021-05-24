@@ -12,6 +12,8 @@ import Producto from './Components/Pages/Producto/Producto'
 import ScrollToTop from './Components/ScrollToTop/ScrollToTop'
 import Contactanos from './Components/Pages/Contactanos/Contactanos'
 import QuienesSomos from './Components/Pages/QuienesSomos/QuienesSomos'
+import PoliticaPrivacidad from './Components/Pages/PoliticaPrivacidad/PoliticaPrivacidad'
+import EnviosDevoluciones from './Components/Pages/EnviosDevoluciones/EnviosDevoluciones'
 
 const App = () => {
   return (
@@ -29,6 +31,8 @@ const App = () => {
         <Route path='/producto/:idCategoria/:idProducto' component={Producto} />
         <Route path='/contactanos' component={Contactanos} />
         <Route path='/quienesSomos' component={QuienesSomos} />
+        <Route path='/politicaPrivacidad' component={PoliticaPrivacidad} />
+        <Route path='/enviosDevoluciones' component={EnviosDevoluciones} />
       </Switch>
     </Router>
   )
