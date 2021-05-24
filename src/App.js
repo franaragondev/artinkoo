@@ -11,6 +11,7 @@ import Productos from './Components/Pages/Productos/Productos'
 import Producto from './Components/Pages/Producto/Producto'
 import ScrollToTop from './Components/ScrollToTop/ScrollToTop'
 import Contactanos from './Components/Pages/Contactanos/Contactanos'
+import QuienesSomos from './Components/Pages/QuienesSomos/QuienesSomos'
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
         <Route path='/productos' component={Productos} />
         <Route path='/producto/:idCategoria/:idProducto' component={Producto} />
         <Route path='/contactanos' component={Contactanos} />
+        <Route path='/quienesSomos' component={QuienesSomos} />
       </Switch>
     </Router>
   )

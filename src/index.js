@@ -18,6 +18,7 @@ import './Components/Pages/ProductosHome/productosHome.css'
 import './Components/Pages/Productos/productos.css'
 import './Components/Pages/Producto/producto.css'
 import './Components/Pages/Contactanos/contactanos.css'
+import './Components/Pages/QuienesSomos/quienesSomos.css'
 
 ReactDOM.render(
   <React.StrictMode>

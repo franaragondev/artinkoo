@@ -8,7 +8,7 @@ import HeaderPages from '../../Header/HeaderPages'
 import Footer from '../../Footer/Footer'
 
 //Componente que renderizará la página de contacto
-const Ayuda = (props) => {
+const Contactanos = (props) => {
     const [nombre, setNombre] = useState('')
     const [mensaje, setMensaje] = useState('')
     const [email, setEmail] = useState('')
@@ -81,4 +81,4 @@ const Ayuda = (props) => {
     )
 }
 
-export default Ayuda
+export default Contactanos

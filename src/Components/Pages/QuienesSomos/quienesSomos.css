@@ -1,0 +1,24 @@
+.legales {
+    margin-top: 4.2rem;
+}
+
+.tituloLegales {
+    text-align: center;
+    font-size: 24px;
+}
+
+.paginasFooter {
+    height: 50%;
+    width: 90%;
+    display: block;
+    margin: auto;
+}
+
+.imagenLegales {
+    width: 100%;
+}
+
+.parrafo_paginas_legales{
+    margin: 1rem;
+    text-align: justify;
+}

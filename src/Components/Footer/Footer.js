@@ -56,7 +56,7 @@ const Footer = (props) => {
                         <input type="checkbox" id="submenu1" />
                         <label for="submenu1">+</label>
                         <ul>
-                            <li><a href="pages/quienes_somos.html">¿Quiénes somos?</a></li>
+                            <li><Link to='/quienesSomos'>¿Quiénes somos?</Link></li>
                         </ul>
                     </li>
                     <li>
