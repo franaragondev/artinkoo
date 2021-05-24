@@ -80,7 +80,7 @@ const Footer = (props) => {
 
                 <div id="redes_sociales">
                     <h1>SÍGUENOS EN REDES SOCIALES</h1>
-                    <a target="_blank" href="https://www.facebook.com/Artinkoo-103718475247308/"><img alt="facebook"
+                    <a target="_blank" href="https://www.facebook.com/artinkoo/"><img alt="facebook"
                         src="https://proyecto-final-fran-aragon.netlify.app/images/Facebook_Rounded_Solid_icon-icons.com_61562.png" /></a>
                     <a target="_blank" href="https://twitter.com/artinkoo_ofi"><img alt="twitter"
                         src="https://proyecto-final-fran-aragon.netlify.app/images/Twitter_Rounded_Solid_icon-icons.com_61561.png" /></a>
