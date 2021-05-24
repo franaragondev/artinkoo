@@ -19,7 +19,7 @@ const Carousel = (props) => {
                     <CarouselComponent.Item interval={3000}>
                         <img
                             className="d-block w-100"
-                            src="../images/carousel2(PromoHalloween).jpg"
+                            src="../images/carousel2.jpg"
                             alt="promo carrusel"
                         />
                     </CarouselComponent.Item>
