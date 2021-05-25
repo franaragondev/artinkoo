@@ -1,10 +1,11 @@
 .legales {
-    margin-top: 4.2rem;
+    margin-top: 4.8rem;
 }
 
 .tituloLegales {
     text-align: center;
     font-size: 24px;
+    margin-bottom: 1rem;
 }
 
 .paginasFooter {
@@ -16,9 +17,30 @@
 
 .imagenLegales {
     width: 100%;
+    object-fit: cover;
 }
 
-.parrafo_paginas_legales{
+.parrafo_paginas_legales {
     margin: 1rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
     text-align: justify;
+}
+
+@media all and (min-width: 700px) {
+    .parrafo_paginas_legales {
+        margin-left: 12.5rem;
+        margin-right: 12.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .paginasFooter {
+        height: 30rem;
+        width: 70%;
+        display: block;
+        margin: auto;
+    }
+    .imagenLegales {
+        height: 30rem;
+    }
 }
