@@ -1,10 +1,13 @@
 .alojuPage {
     margin-top: 4.2rem;
-    /* height: 100%; */
-    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #FFFFFF 4.17%, rgba(255, 255, 255, 0) 100%), url("https://proyecto-final-fran-aragon.netlify.app/images/pexels-dio-alif-utomo-1525589.jpg");
-    background-size: 155%;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.493) 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #FFFFFF 4.17%, rgba(255, 255, 255, 0) 100%), url("https://proyecto-final-fran-aragon.netlify.app/images/pexels-dio-alif-utomo-1525589.jpg");
+    background-size: 370%;
     background-repeat: no-repeat;
     border: 1px solid transparent;
+}
+
+#fotoCabecera {
+    width: 100%
 }
 
 p#lema_aloju {
@@ -12,22 +15,24 @@ p#lema_aloju {
     font-family: 'Open Sans';
     font-style: italic;
     font-size: 13px;
+    margin-top: 1rem;
 }
 
-picture>img#imagen1_aloju {
+.imagenesAloju {
     display: block;
     margin: auto;
     width: 90%;
 }
 
-section#origenes>p:first-child {
+.tituloParrafoAloju {
     font-family: Open Sans;
     font-size: 18px;
     font-weight: bold;
     text-align: center;
+    margin-top: 1rem;
 }
 
-section#origenes>p:not(:first-child) {
+.parrafoAloju {
     font-family: Lato;
     font-size: 12px;
     margin-left: 5rem;
@@ -36,46 +41,65 @@ section#origenes>p:not(:first-child) {
     margin-bottom: 1rem;
 }
 
-picture>img#imagen2_aloju {
-    display: block;
-    margin: auto;
-    width: 90%;
-}
-
-section#vision>p:first-child {
-    font-family: Open Sans;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-}
-
-section#vision>p:not(:first-child) {
-    font-family: Lato;
-    font-size: 12px;
-    margin-left: 5rem;
-    margin-right: 5rem;
-    text-align: left;
-    margin-bottom: 1rem;
-}
-
-picture>img#imagen3_aloju {
-    display: block;
-    margin: auto;
-    width: 90%;
-}
-
-section#rebeldia>p:first-child {
-    font-family: Open Sans;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-}
-
-section#rebeldia>p:not(:first-child) {
+.parrafoAlojuUltimo {
     font-family: Lato;
     font-size: 12px;
     margin-left: 5rem;
     margin-right: 5rem;
     text-align: left;
     margin-bottom: 9rem;
+}
+
+@media all and (min-width: 490px) {
+    .alojuPage {
+        background-size: 350%;
+    }
+}
+
+@media all and (min-width: 530px) {
+    .alojuPage {
+        background-size: 340%;
+    }
+}
+
+@media all and (min-width: 600px) {
+    .alojuPage {
+        background-size: 315%;
+    }
+}
+
+@media all and (min-width: 730px) {
+    .alojuPage {
+        background-size: 290%;
+    }
+    p#lema_aloju{
+        font-size: 17px;
+    }
+    .tituloParrafoAloju {
+        font-size: 22px;
+    }
+    .parrafoAlojuUltimo {
+        font-size: 17px;
+    }
+    .parrafoAloju {
+        font-size: 17px;
+    }
+}
+
+@media all and (min-width: 850px) {
+    .alojuPage {
+        background-size: 275%;
+    }
+}
+
+@media all and (min-width: 1100px) {
+    .alojuPage {
+        background-size: 260%;
+    }
+}
+
+@media all and (min-width: 1530px) {
+    .alojuPage {
+        background-size: 250%;
+    }
 }

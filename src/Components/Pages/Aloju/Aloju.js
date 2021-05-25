@@ -16,47 +16,45 @@ const Aloju = (props) => {
             <HeaderPages />
             <GoToTop />
             <div className='alojuPage'>
-                <section id="carrusel">
-                    <div id="foto">
-                        <picture>
-                            <img alt="fotoCabecera" src="../images/alojuCabecera.jpg" />
-                        </picture>
-                    </div>
-                </section>
+                <div id="foto">
+                    <picture>
+                        <img id='fotoCabecera' alt="fotoCabecera" src="../images/alojuCabecera.jpg" />
+                    </picture>
+                </div>
 
                 <p id='lema_aloju'>Hogar de la valentía y la rebeldía</p>
 
                 <picture>
-                    <img id='imagen1_aloju' alt="imagen1_alojú" src="../images/pexels-pixabay-416676.jpg" />
+                    <img className='imagenesAloju' id='imagen1_aloju' alt="imagen1_alojú" src="../images/pexels-pixabay-416676.jpg" />
                 </picture>
 
                 <section id='origenes'>
-                    <p>LOS ORÍGENES</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting induLorem Ipsum is simply dummy text of the
-                    printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-        1500sstry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                    <p className='tituloParrafoAloju'>LOS ORÍGENES</p>
+                    <p className='parrafoAloju'>Debido a la monotonía provocada por el COVID-19, artinkoo nace con la misión de cambiar
+                    esto de forma radical, desde el primer momento del día hasta el último, cambiando la forma de vivir y de
+                    vestir. artinkoo será el motor por el cual cambiarás tu día a día, dándole color y ese toque de
+                     personalización propia que te haga ser inconfundible, único/a, en definitiva, que te haga ser tú.</p>
                 </section>
 
                 <picture>
-                    <img id='imagen2_aloju' alt="imagen2_alojú" src="../images/surfero.jpg" />
+                    <img className='imagenesAloju' id='imagen2_aloju' alt="imagen2_alojú" src="../images/surfero.jpg" />
                 </picture>
 
                 <section id='vision'>
-                    <p>NUESTRA VISIÓN</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting induLorem Ipsum is simply dummy text of the
-                    printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-        1500sstry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                    <p className='tituloParrafoAloju'>NUESTRA VISIÓN</p>
+                    <p className='parrafoAloju'>Desde artinkoo vemos la vida de otra forma ya que nos guiamos por la
+                     filosofía de ALOJÚ la cual nos hace ser libres, rebeldes y sobre todo, felices.</p>
                 </section>
 
                 <picture>
-                    <img id='imagen3_aloju' alt="imagen3_alojú" src="../images/pexels-guy-kawasaki-1654498.jpg" />
+                    <img className='imagenesAloju' id='imagen3_aloju' alt="imagen3_alojú" src="../images/pexels-guy-kawasaki-1654498.jpg" />
                 </picture>
 
                 <section id='rebeldia'>
-                    <p>FABRICAMOS REBELDÍA</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting induLorem Ipsum is simply dummy text of the
-                    printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-        1500sstry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                    <p className='tituloParrafoAloju'>FABRICAMOS REBELDÍA</p>
+                    <p className='parrafoAlojuUltimo'>Desde el nacimiento de artinkoo siempre ha banderado la rebeldía.
+                    Rebeldía que hace que vistas como tú quieras, que no te preocupes por los demás y que te sientas
+                    agusto contigo mismo. Esa es la verdadera clave de la felicidad.</p>
                 </section>
             </div>
             <Footer />
