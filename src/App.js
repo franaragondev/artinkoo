@@ -14,6 +14,7 @@ import Contactanos from './Components/Pages/Contactanos/Contactanos'
 import QuienesSomos from './Components/Pages/QuienesSomos/QuienesSomos'
 import PoliticaPrivacidad from './Components/Pages/PoliticaPrivacidad/PoliticaPrivacidad'
 import EnviosDevoluciones from './Components/Pages/EnviosDevoluciones/EnviosDevoluciones'
+import Aloju from './Components/Pages/Aloju/Aloju'
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
         <Route path='/quienesSomos' component={QuienesSomos} />
         <Route path='/politicaPrivacidad' component={PoliticaPrivacidad} />
         <Route path='/enviosDevoluciones' component={EnviosDevoluciones} />
+        <Route path='/aloju' component={Aloju} />
       </Switch>
     </Router>
   )

@@ -1,0 +1,80 @@
+.alojuPage {
+    margin-top: 4.2rem;
+    height: 100%;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #FFFFFF 4.17%, rgba(255, 255, 255, 0) 100%), url("../images/pexels-dio-alif-utomo-1525589.jpg");
+    background-size: 400%;
+    background-repeat: no-repeat;
+}
+
+main>p#lema_aloju {
+    text-align: center;
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-size: 13px;
+}
+
+main>picture>img#imagen1_aloju {
+    display: block;
+    margin: auto;
+    width: 90%;
+}
+
+main>section#origenes>p:first-child {
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+main>section#origenes>p:not(:first-child) {
+    font-family: Lato;
+    font-size: 12px;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+main>picture>img#imagen2_aloju {
+    display: block;
+    margin: auto;
+    width: 90%;
+}
+
+main>section#vision>p:first-child {
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+main>section#vision>p:not(:first-child) {
+    font-family: Lato;
+    font-size: 12px;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+main>picture>img#imagen3_aloju {
+    display: block;
+    margin: auto;
+    width: 90%;
+}
+
+main>section#rebeldia>p:first-child {
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+main>section#rebeldia>p:not(:first-child) {
+    font-family: Lato;
+    font-size: 12px;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    text-align: left;
+    margin-bottom: 9rem;
+}
