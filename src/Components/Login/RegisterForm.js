@@ -18,33 +18,70 @@ const RegisterForm = (props) => {
     const [usuario, setUsuario] = useState('')
     const [password, setPassword] = useState('')
 
+    const borrarCuentaDuplicada = (idInsertada) => {
+        console.log('hola');
+        Axios.post('https://artinkoo.herokuapp.com/borrarCuenta',
+            // Axios.post('http://localhost:8000/borrarCuenta',
+            { idUsuario: idInsertada })
+            .then(response => {
+                console.log(response);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
+    const registerDataUser = async (idInsertada) => {
+        console.log(idInsertada);
+        await Axios.post('https://artinkoo.herokuapp.com/registerDatosUser',
+            // await Axios.post('http://localhost:8000/registerDatosUser',
+            { usuario: usuario, contrasenia: md5(password), idUsuario: idInsertada })
+            .then(response => {
+                if (response.data.affectedRows == 1) {
+                    swal({
+                        title: "Registro Correcto!",
+                        text: 'Inicie Sesión desde el icono de usuarios',
+                        icon: "success",
+                        button: "Ok!",
+                    }).then(function () {
+                        // window.location.href = 'http://localhost:3000/login'
+                        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
+                    })
+                } else {
+                    borrarCuentaDuplicada(idInsertada)
+                    swal({
+                        title: "Oh! Algo ha fallado.",
+                        text: "Intente registrarse de nuevo más tarde.",
+                        icon: "error",
+                        button: "Volver",
+                    }).then(function () {
+                        // window.location.href = 'http://localhost:3000/login'
+                        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/home'
+                    })
+                }
+            })
+            .catch(error => {
+                swal({
+                    title: "Oh! Usuario ya en uso.",
+                    text: "Por favor, elija otro usuario para poder registrarse.",
+                    icon: "error",
+                    button: "Volver",
+                })
+                    .then(function () {
+                        // window.location.href = 'http://localhost:3000/login'
+                        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/home'
+                    })
+                borrarCuentaDuplicada(idInsertada)
+            })
+    }
+
     const register = async () => {
         if (nombre != '' && apellidos != '' && direccion != '' && ciudad != '' && provincia != '' && codigoPostal != '' && email != '' && usuario != '' && password != '') {
             await Axios.post('https://artinkoo.herokuapp.com/register',
+                // await Axios.post('http://localhost:8000/register',
                 { nombre: nombre, apellidos: apellidos, direccion: direccion, ciudad: ciudad, provincia: provincia, codigoPostal: codigoPostal, nombreUsuario: usuario, contrasenia: md5(password), email: email })
                 .then(response => {
-                    if (response.data.affectedRows == 1) {
-                        console.log(response);
-                        swal({
-                            title: "Registro Correcto!",
-                            text: 'Inicie Sesión desde el icono de usuarios',
-                            icon: "success",
-                            button: "Ok!",
-                        }).then(function () {
-                            // window.location.href = 'http://localhost:3000/login'
-                            window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
-                        })
-                    } else {
-                        swal({
-                            title: "Oh! Algo ha fallado.",
-                            text: "Intente registrarse de nuevo más tarde.",
-                            icon: "error",
-                            button: "Volver",
-                        }).then(function () {
-                            // window.location.href = 'http://localhost:3000/login'
-                            window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/home'
-                        })
-                    }
+                    registerDataUser(response.data.insertId)
                 })
                 .catch(error => {
                     console.log(error);
@@ -67,15 +104,6 @@ const RegisterForm = (props) => {
                     button: "Volver",
                 })
             }
-            // console.log(nombre);
-            // console.log(apellidos);
-            // console.log(direccion);
-            // console.log(ciudad);
-            // console.log(provincia);
-            // console.log(codigoPostal);
-            // console.log(email);
-            // console.log(usuario);
-            // console.log(password);
         }
     }
 

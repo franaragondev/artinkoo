@@ -16,13 +16,13 @@ const DatosPersonales = (props) => {
     const [provincia, setProvincia] = useState(cookies.get('provincia'))
     const [codigoPostal, setCodigoPostal] = useState(cookies.get('codigoPostal'))
     const [email, setEmail] = useState(cookies.get('email'))
-    const [usuario, setUsuario] = useState(cookies.get('nombreUsuario'))
     const [idUsuario, setIdUsuario] = useState(cookies.get('idUsuario'))
 
     const actualizar = async () => {
-        if (nombre != '' && apellidos != '' && direccion != '' && ciudad != '' && provincia != '' && codigoPostal != '' && email != '' && usuario != '') {
+        if (nombre != '' && apellidos != '' && direccion != '' && ciudad != '' && provincia != '' && codigoPostal != '' && email != '') {
+            // await Axios.post('http://localhost:8000/actualizar',
             await Axios.post('https://artinkoo.herokuapp.com/actualizar',
-                { nombre: nombre, apellidos: apellidos, direccion: direccion, ciudad: ciudad, provincia: provincia, codigoPostal: codigoPostal, nombreUsuario: usuario, email: email, idUsuario: idUsuario })
+                { nombre: nombre, apellidos: apellidos, direccion: direccion, ciudad: ciudad, provincia: provincia, codigoPostal: codigoPostal, email: email, idUsuario: idUsuario })
                 .then(response => {
                     if (response.statusText == 'OK') {
                         cookies.set('nombre', nombre, { path: '/' })
@@ -31,7 +31,6 @@ const DatosPersonales = (props) => {
                         cookies.set('ciudad', ciudad, { path: '/' })
                         cookies.set('provincia', provincia, { path: '/' })
                         cookies.set('codigoPostal', codigoPostal, { path: '/' })
-                        cookies.set('nombreUsuario', usuario, { path: '/' })
                         cookies.set('email', email, { path: '/' })
                         swal({
                             title: "Datos Actualizados",
@@ -39,8 +38,8 @@ const DatosPersonales = (props) => {
                             icon: "success",
                             button: "Ok!",
                         }).then(function () {
-                            window.location.href = 'http://localhost:3000/login'
-                            // window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
+                            // window.location.href = 'http://localhost:3000/login'
+                            window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
                         })
                     } else {
                         swal({
@@ -49,8 +48,8 @@ const DatosPersonales = (props) => {
                             icon: "error",
                             button: "Volver",
                         }).then(function () {
-                            window.location.href = 'http://localhost:3000/login'
-                            // window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
+                            // window.location.href = 'http://localhost:3000/login'
+                            window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
                         })
                     }
                 })
@@ -65,8 +64,54 @@ const DatosPersonales = (props) => {
                 button: "Volver",
             })
         }
+    }
+
+    const borrarCuentaCompleta = async () => {
+        Axios.post('https://artinkoo.herokuapp.com/borrarCuenta',
+            // Axios.post('http://localhost:8000/borrarCuenta',
+            { idUsuario: idUsuario })
+            .then(response => {
+                if (response.statusText == 'OK') {
+                    cookies.remove('idUsuario', { path: '/' })
+                    cookies.remove('nombre', { path: '/' })
+                    cookies.remove('apellidos', { path: '/' })
+                    cookies.remove('direccion', { path: '/' })
+                    cookies.remove('ciudad', { path: '/' })
+                    cookies.remove('provincia', { path: '/' })
+                    cookies.remove('codigoPostal', { path: '/' })
+                    cookies.remove('cesta', { path: '/' })
+                    cookies.remove('nombreUsuario', { path: '/' })
+                    cookies.remove('email', { path: '/' })
+                    swal({
+                        title: "Cuenta Borrada",
+                        text: `Su cuenta ha sido borrada correctamente.`,
+                        icon: "success",
+                        button: "Ok!",
+                    }).then(function () {
+                        // window.location.href = 'http://localhost:3000/login'
+                        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
+                    })
+                } else {
+                    swal({
+                        title: "Oh! Algo ha fallado.",
+                        text: "Inténtelo de nuevo más tarde.",
+                        icon: "error",
+                        button: "Volver",
+                    }).then(function () {
+                        // window.location.href = 'http://localhost:3000/login'
+                        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
+                    })
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            })
+
+        // window.location.href = 'http://localhost:3000/login'
+        // window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
 
     }
+
 
     const borrarCuenta = async () => {
         swal({
@@ -77,39 +122,12 @@ const DatosPersonales = (props) => {
             dangerMode: true,
         }).then((willDelete) => {
             if (willDelete) {
-                Axios.post('https://artinkoo.herokuapp.com/borrarCuenta',
+                Axios.post('https://artinkoo.herokuapp.com/borrarDatosUser',
+                    // Axios.post('http://localhost:8000/borrarDatosUser',
                     { idUsuario: idUsuario })
                     .then(response => {
                         if (response.statusText == 'OK') {
-                            cookies.remove('idUsuario', { path: '/' })
-                            cookies.remove('nombre', { path: '/' })
-                            cookies.remove('apellidos', { path: '/' })
-                            cookies.remove('direccion', { path: '/' })
-                            cookies.remove('ciudad', { path: '/' })
-                            cookies.remove('provincia', { path: '/' })
-                            cookies.remove('codigoPostal', { path: '/' })
-                            cookies.remove('cesta', { path: '/' })
-                            cookies.remove('nombreUsuario', { path: '/' })
-                            cookies.remove('email', { path: '/' })
-                            swal({
-                                title: "Cuenta Borrada",
-                                text: `Su cuenta ha sido borrada correctamente.`,
-                                icon: "success",
-                                button: "Ok!",
-                            }).then(function () {
-                                window.location.href = 'http://localhost:3000/login'
-                                // window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
-                            })
-                        } else {
-                            swal({
-                                title: "Oh! Algo ha fallado.",
-                                text: "Inténtelo de nuevo más tarde.",
-                                icon: "error",
-                                button: "Volver",
-                            }).then(function () {
-                                window.location.href = 'http://localhost:3000/login'
-                                // window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
-                            })
+                            borrarCuentaCompleta()
                         }
                     })
                     .catch(error => {
@@ -167,7 +185,6 @@ const DatosPersonales = (props) => {
                         <h2>DATOS PERSONALES</h2>
                         <input type='text' placeholder={cookies.get('nombre')} onChange={(e) => { setNombre(e.target.value) }} />
                         <input type='text' placeholder={cookies.get('apellidos')} onChange={(e) => { setApellidos(e.target.value) }} />
-                        <input type='text' placeholder={cookies.get('nombreUsuario')} onChange={(e) => { setUsuario(e.target.value) }} />
                         <input type='email' placeholder={cookies.get('email')} onChange={(e) => { setEmail(e.target.value) }} />
                         <input type='text' placeholder={cookies.get('provincia')} onChange={(e) => { setProvincia(e.target.value) }} />
                         <input type='text' placeholder={cookies.get('ciudad')} onChange={(e) => { setCiudad(e.target.value) }} />

@@ -24,6 +24,10 @@ const Producto = (props) => {
             setDatosProducto(response.data[0])
 
         })
+        // Axios.get(`http://localhost:8000/mostrarProducto/${idProducto}`).then((response) => {
+        //     setDatosProducto(response.data[0])
+
+        // })
         // Axios.get(`https://artinkoo.herokuapp.com/mostrarRelacionados/${categoriaSuperior}/${idProducto}`).then((response) => {
         //     setProductosRelacionados(response.data)
         // })

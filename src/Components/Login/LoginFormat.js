@@ -15,18 +15,12 @@ const LoginFormat = (props) => {
     const [datosGoogle, setDatosGoogle] = useState([])
     const cookies = new Cookies()
 
-    const loguin = async () => {
-        await Axios.post('https://artinkoo.herokuapp.com/login',
-            { nombreUsuario: nombre, contrasenia: md5(password) })
+    const variablesUsuario = () => {
+        Axios.post('https://artinkoo.herokuapp.com/obtenerDatosUsuario',
+            // Axios.post('http://localhost:8000/obtenerDatosUsuario',
+            { idUsuario: cookies.get('idUsuario') })
             .then(response => {
-                // if (response.data.message) {
-                // setLoguinStatus(response.data.message)
-                // return response.data;
-                // } else {
-                // setLoguinStatus('Bienvenido: ' + response.data[0].nombreUsuario)
                 return response.data;
-                // }
-                // console.log(response);
             })
             .then(response => {
                 if (response.length > 0) {
@@ -38,8 +32,6 @@ const LoginFormat = (props) => {
                     cookies.set('ciudad', respuesta.ciudad, { path: '/' })
                     cookies.set('provincia', respuesta.provincia, { path: '/' })
                     cookies.set('codigoPostal', respuesta.codigoPostal, { path: '/' })
-                    cookies.set('cesta', respuesta.cesta, { path: '/' })
-                    cookies.set('nombreUsuario', respuesta.nombreUsuario, { path: '/' })
                     cookies.set('email', respuesta.email, { path: '/' })
                     swal({
                         title: "Sesión Iniciada",
@@ -50,6 +42,25 @@ const LoginFormat = (props) => {
                         // window.location.href = 'http://localhost:3000/login'
                         window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
                     })
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
+    const loguin = async () => {
+        await Axios.post('https://artinkoo.herokuapp.com/login',
+        // await Axios.post('http://localhost:8000/login',
+            { nombreUsuario: nombre, contrasenia: md5(password) })
+            .then(response => {
+                return response.data;
+            })
+            .then(response => {
+                if (response.length > 0) {
+                    cookies.set('idUsuario', response[0].idUsuario, { path: '/' })
+                    cookies.set('nombreUsuario', response[0].nombreUsuario, { path: '/' })
+                    variablesUsuario()
                 } else {
                     swal({
                         title: "Oh! Algo ha fallado.",

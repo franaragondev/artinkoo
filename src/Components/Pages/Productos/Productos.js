@@ -14,6 +14,9 @@ const Productos = (props) => {
         Axios.get(`https://artinkoo.herokuapp.com/productos`).then((response) => {
             setProductos(response.data)
         })
+        // Axios.get(`http://localhost:8000/productos`).then((response) => {
+        //     setProductos(response.data)
+        // })
     }, [])
 
     return (

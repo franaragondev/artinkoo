@@ -10,6 +10,9 @@ const ProductosHome = (props) => {
         Axios.get(`https://artinkoo.herokuapp.com/masVendidos`).then((response) => {
             setProductosMasVendidos(response.data)
         })
+        // Axios.get(`http://localhost:8000/masVendidos`).then((response) => {
+        //     setProductosMasVendidos(response.data)
+        // })
     }, [])
 
     return (
