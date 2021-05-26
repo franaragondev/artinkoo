@@ -1,6 +1,6 @@
 .alojuPage {
     margin-top: 4.2rem;
-    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.493) 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #FFFFFF 4.17%, rgba(255, 255, 255, 0) 100%), url("https://proyecto-final-fran-aragon.netlify.app/images/pexels-dio-alif-utomo-1525589.jpg");
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.493) 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), url("https://proyecto-final-fran-aragon.netlify.app/images/pexels-dio-alif-utomo-1525589.jpg");
     background-size: 370%;
     background-repeat: no-repeat;
     border: 1px solid transparent;
@@ -37,7 +37,7 @@ p#lema_aloju {
     font-size: 12px;
     margin-left: 5rem;
     margin-right: 5rem;
-    text-align: left;
+    text-align: center;
     margin-bottom: 1rem;
 }
 
@@ -46,7 +46,7 @@ p#lema_aloju {
     font-size: 12px;
     margin-left: 5rem;
     margin-right: 5rem;
-    text-align: left;
+    text-align: center;
     margin-bottom: 9rem;
 }
 
