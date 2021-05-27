@@ -16,6 +16,11 @@ $(document).ready(function () {
         $('html, body').animate({ scrollTop: 0 }, 600);
     });
 
+    // $('button#btnBuscar').click(function () {
+    //     console.log('clic');
+    //     $('header div#menu input').prop('checked', false)
+    // })
+
     /*Abre y oculta el menu de la cesta de compra.
     Si esta abierto el menu normal, se cierra*/
     /*   $('#bolsaCompra').click(function () {

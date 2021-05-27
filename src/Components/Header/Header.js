@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 //Componente que renderizará la cabecera de la web
 const Header = (props) => {
-    const [aBuscar, setABuscar] = useState('')
+    const [aBuscar, setABuscar] = useState(' ')
     return (
         <div>
             <header>
@@ -19,7 +19,7 @@ const Header = (props) => {
                             <div className='buscador'>
                                 {/* <img alt="lupa" src="../images/search_magnifying_glass_icon_149392.svg" /> */}
                                 <input type="text" id="buscar" name="buscar" placeholder="Encuentra lo que buscas" onChange={(e) => { setABuscar(e.target.value) }} />
-                                <Link to={'/search/' + aBuscar}><button id='btnBuscar'>Buscar</button></Link>
+                                <Link to={'/search/ ' + aBuscar}><button id='btnBuscar'>Buscar</button></Link>
                             </div>
                             <hr />
                         </li>
@@ -92,7 +92,7 @@ const Header = (props) => {
             <div className='buscadorQuery'>
                 {/* <img alt="lupa" src="../images/search_magnifying_glass_icon_149392.svg" /> */}
                 <input type="text" id="buscar" name="buscar" placeholder="Encuentra lo que buscas" onChange={(e) => { setABuscar(e.target.value) }} />
-                <Link to={'/search/' + aBuscar}><button id='btnBuscar'>Buscar</button></Link>
+                <Link to={'/search/ ' + aBuscar}><button id='btnBuscar'>Buscar</button></Link>
             </div>
         </div >
     )

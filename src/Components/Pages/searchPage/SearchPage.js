@@ -10,17 +10,25 @@ import Header from '../../Header/Header'
 const SearchPage = (props) => {
     const { aBuscar } = useParams()
     const [productos, setProductos] = useState([]);
+    const [buscada, setBuscada] = useState(aBuscar)
+
+    if (buscada != aBuscar) {
+        Axios.get(`https://artinkoo.herokuapp.com/buscar/${aBuscar}`).then((response) => {
+            // Axios.get(`http://localhost:8000/buscar/${aBuscar}`).then((response) => {
+            setProductos(response.data)
+            setBuscada(aBuscar)
+            console.log(response.data);
+        })
+    }
 
     useEffect(() => {
-        // Axios.get(`https://artinkoo.herokuapp.com/productos`).then((response) => {
-        Axios.get(`http://localhost:8000/buscar/${aBuscar}`).then((response) => {
+        Axios.get(`https://artinkoo.herokuapp.com/buscar/${aBuscar}`).then((response) => {
+            // Axios.get(`http://localhost:8000/buscar/${aBuscar}`).then((response) => {
             setProductos(response.data)
             console.log(response.data);
         })
-        // Axios.get(`http://localhost:8000/productos`).then((response) => {
-        //     setProductos(response.data)
-        // })
     }, [])
+
 
     return (
         <div>
@@ -46,7 +54,10 @@ const SearchPage = (props) => {
                         )
                     })
                     :
-                    <p>Oh! Lo sentimos, no hay productos relacionados con tu búsqueda.</p>}
+                    <div className='busquedaVacia'>
+                        <p className='mensajeBusqueda'>Oh! Lo sentimos, no hay productos relacionados con tu búsqueda.</p>
+                    </div>
+                }
             </section>
             <GoToTop />
             <Footer />
