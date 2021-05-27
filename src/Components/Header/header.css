@@ -129,7 +129,7 @@ header>div#menu>ul#menuOculto>li>img {
     flex-wrap: wrap;
 }
 
-.buscador>button {
+.buscador>a>button {
     height: 1.7rem;
     margin: .5rem;
     cursor: pointer;
@@ -185,7 +185,7 @@ header>div#menu>ul#menuOculto>li>input::placeholder {
     border: 2px solid black;
 }
 
-.buscadorQuery>button {
+.buscadorQuery>a>button {
     height: 1.7rem;
     margin: .5rem;
     cursor: pointer;

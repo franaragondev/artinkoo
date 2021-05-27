@@ -15,6 +15,7 @@ import QuienesSomos from './Components/Pages/QuienesSomos/QuienesSomos'
 import PoliticaPrivacidad from './Components/Pages/PoliticaPrivacidad/PoliticaPrivacidad'
 import EnviosDevoluciones from './Components/Pages/EnviosDevoluciones/EnviosDevoluciones'
 import Aloju from './Components/Pages/Aloju/Aloju'
+import SearchPage from './Components/Pages/searchPage/SearchPage'
 
 const App = () => {
   return (
@@ -35,6 +36,7 @@ const App = () => {
         <Route path='/politicaPrivacidad' component={PoliticaPrivacidad} />
         <Route path='/enviosDevoluciones' component={EnviosDevoluciones} />
         <Route path='/aloju' component={Aloju} />
+        <Route path='/search/:aBuscar' component={SearchPage} />
       </Switch>
     </Router>
   )
