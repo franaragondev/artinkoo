@@ -7,7 +7,6 @@ import Axios from 'axios'
 const Header = (props) => {
     const [aBuscar, setABuscar] = useState(' ')
     const [productos, setProductos] = useState([]);
-    const [datosProductos, setDatosProductos] = useState([]);
     const cookies = new Cookies()
 
     useEffect(() => {

@@ -1,9 +1,57 @@
 import React, { Component, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Cookies from 'universal-cookie'
+import Axios from 'axios'
 
 //Componente que renderizará la cabecera de la web
 const HeaderPages = (props) => {
     const [aBuscar, setABuscar] = useState(' ')
+    const [productos, setProductos] = useState([]);
+    const cookies = new Cookies()
+
+    useEffect(() => {
+        // Axios.get(`https://artinkoo.herokuapp.com/buscar/${aBuscar}`).then((response) => {
+        Axios.get(`http://localhost:8000/verCesta/${cookies.get('idUsuario')}`).then((response) => {
+            setProductos(response.data)
+        })
+    }, [])
+
+    const mostrarCesta = () => {
+        //CARRITO VACÍO
+        if (productos.length == 0) {
+            return (
+                <div id='contenido_menu_compra'>
+                    <p>CARRITO DE COMPRA</p>
+                    <hr />
+                    <p id='carritoVacio'>Tu carrito está vacío pero no te preocupes, ¡tenemos decenas de productos esperándote!.</p>
+                    <Link to='/productos'><button id='seguirComprando'>SEGUIR COMPRANDO</button></Link>
+                </div>
+            )
+            //CARRITO CON PRODUCTOS
+        } else {
+            return (
+                <div id='contenido_menu_compra'>
+                    <p>CARRITO DE COMPRA</p>
+                    <hr />
+                    <div id='contenido_compra'>
+                        {
+                            productos.map((producto, index) => {
+                                return (
+                                    <picture>
+                                        <img src={"../images/productos/" + + producto.idProductoCesta + ".jpg"} alt={"imagen cesta producto " + producto.idProductoCesta} />
+                                    </picture>
+                                )
+                            })
+                        }
+                    </div>
+                    <hr />
+                    <button id='comprar_desde_menu'>COMPRAR</button>
+                    <button id='ver_carrito'>VER CARRITO</button>
+                </div>
+            )
+        }
+    }
+
     return (
         <div>
             <header>
@@ -61,31 +109,23 @@ const HeaderPages = (props) => {
                     <label id='animacionbolsa' for='cerrar_carrito'><p id='cerrar_bolsa'>CERRAR</p></label>
                     <p id='cerrar_bolsa2'>CERRAR</p> */}
 
-
                     <div id='menu_oculto_bolsa'>
                         {/* <div id='cerrar_menu_bolsa'>
                             <picture>
                                 <img id='icono_cerrar_bolsa' alt='cerrar' src='../images/cross-symbol_icon-icons.com_74149.png' />
                             </picture>
                         </div> */}
-                        <div id='contenido_menu_compra'>
-                            <p>CARRITO DE COMPRA</p>
-                            <hr />
-                            <div id='contenido_compra'>
-                                {/* <picture>
-                                <img src="images/nodisponible.png" alt="Imagen No Disponible" />
-                            </picture>
-                            <p id='nombre_producto'>Nombre producto</p>
-                            <p id='precio_producto'>1 x 26.65€</p>
-                            <picture>
-                                <img id='eliminar_producto' alt='eliminar_producto'
-                                    src='../images/cross-symbol_icon-icons.com_74149.png' />
-                            </picture> */}
+                        {cookies.get('nombre')
+                            ?
+                            mostrarCesta()
+                            :
+                            <div id='contenido_menu_compra'>
+                                <p>CARRITO DE COMPRA</p>
+                                <hr />
+                                <p id='carritoVacio'>Oh! Parece que no has iniciado sesión. ¡Loguéate y disfruta de todas las ventajas!.</p>
+                                <Link to='/login'><button id='seguirComprando'>INICIAR SESIÓN</button></Link>
                             </div>
-                            <hr />
-                            <button id='comprar_desde_menu'>COMPRAR</button>
-                            <button id='ver_carrito'>VER CARRITO</button>
-                        </div>
+                        }
                     </div>
                 </div>
             </header>
