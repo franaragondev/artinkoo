@@ -23,8 +23,8 @@ const Productos = (props) => {
                     icon: "success",
                     button: "Ok!",
                 }).then(function () {
-                    window.location.href = 'http://localhost:3000/home'
-                    // window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/home'
+                    // window.location.href = 'http://localhost:3000/home'
+                    window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/home'
                 })
             }
         })
