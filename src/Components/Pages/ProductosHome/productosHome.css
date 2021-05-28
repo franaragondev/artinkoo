@@ -79,10 +79,12 @@ section#masVendidos>article>a:nth-child(3) {
 	text-align: center;
 }
 
-section#masVendidos>article>a {
+section#masVendidos>article>span {
 	display: block;
 	margin: auto;
 	margin-top: 0.2rem;
+	cursor: pointer;
+	font-size: 15px;
 }
 
 button#mostrarMasVendidos {

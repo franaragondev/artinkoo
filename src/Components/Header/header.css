@@ -367,7 +367,7 @@ header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>div#contenido
     margin-right: 5%;
     margin-left: 5%;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>div#contenido_compra>picture>img {
