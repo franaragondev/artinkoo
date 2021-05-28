@@ -10,8 +10,8 @@ const HeaderPages = (props) => {
     const cookies = new Cookies()
 
     useEffect(() => {
-        // Axios.get(`https://artinkoo.herokuapp.com/buscar/${aBuscar}`).then((response) => {
-        Axios.get(`http://localhost:8000/verCesta/${cookies.get('idUsuario')}`).then((response) => {
+        Axios.get(`https://artinkoo.herokuapp.com/verCesta/${cookies.get('idUsuario')}`).then((response) => {
+        // Axios.get(`http://localhost:8000/verCesta/${cookies.get('idUsuario')}`).then((response) => {
             setProductos(response.data)
         })
     }, [])
