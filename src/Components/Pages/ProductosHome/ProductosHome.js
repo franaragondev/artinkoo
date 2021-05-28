@@ -16,20 +16,32 @@ const ProductosHome = (props) => {
     }, [])
 
     const añadirCesta = (idProducto) => {
-        Axios.post(`https://artinkoo.herokuapp.com/anadirCesta`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
-            // Axios.post(`http://localhost:8000/anadirCesta`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
-            if (response.data.affectedRows == 1) {
-                swal({
-                    title: "¡Tienes un producto nuevo esperándote!",
-                    text: 'Producto añadido a la cesta correctamente.',
-                    icon: "success",
-                    button: "Ok!",
-                }).then(function () {
-                    // window.location.href = 'http://localhost:3000/home'
-                    window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/home'
-                })
-            }
-        })
+        if (cookies.get('idUsuario')) {
+            Axios.post(`https://artinkoo.herokuapp.com/anadirCesta`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
+                // Axios.post(`http://localhost:8000/anadirCesta`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
+                if (response.data.affectedRows == 1) {
+                    swal({
+                        title: "¡Tienes un producto nuevo esperándote!",
+                        text: 'Producto añadido a la cesta correctamente.',
+                        icon: "success",
+                        button: "Ok!",
+                    }).then(function () {
+                        // window.location.href = 'http://localhost:3000/home'
+                        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/home'
+                    })
+                }
+            })
+        } else {
+            swal({
+                title: "Oh! Parece que no estás logueado.",
+                text: 'Por favor, loguéate o registrate antes de añadir productos a tu cesta.',
+                icon: "error",
+                button: "Ok!",
+            }).then(function () {
+                window.location.href = 'http://localhost:3000/login'
+                // window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
+            })
+        }
     }
 
     return (
