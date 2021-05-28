@@ -1,9 +1,12 @@
 import React, { Component, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Cookies from 'universal-cookie'
 
 //Componente que renderizará la cabecera de la web
 const Header = (props) => {
     const [aBuscar, setABuscar] = useState(' ')
+    const cookies = new Cookies()
+
     return (
         <div>
             <header>
@@ -68,24 +71,34 @@ const Header = (props) => {
                                 <img id='icono_cerrar_bolsa' alt='cerrar' src='../images/cross-symbol_icon-icons.com_74149.png' />
                             </picture>
                         </div> */}
-                        <div id='contenido_menu_compra'>
-                            <p>CARRITO DE COMPRA</p>
-                            <hr />
-                            <div id='contenido_compra'>
-                                {/* <picture>
-                                <img src="images/nodisponible.png" alt="Imagen No Disponible" />
+                        {cookies.get('nombre')
+                            ?
+                            <div id='contenido_menu_compra'>
+                                <p>CARRITO DE COMPRA</p>
+                                <hr />
+                                {/* <div id='contenido_compra'>
+                                <picture>
+                                <img src="../images/productos/32.jpg" alt="Imagen No Disponible" />
                             </picture>
                             <p id='nombre_producto'>Nombre producto</p>
                             <p id='precio_producto'>1 x 26.65€</p>
                             <picture>
                                 <img id='eliminar_producto' alt='eliminar_producto'
                                     src='../images/cross-symbol_icon-icons.com_74149.png' />
-                            </picture> */}
+                            </picture>
+                            </div> */}
+                                <hr />
+                                <button id='comprar_desde_menu'>COMPRAR</button>
+                                <button id='ver_carrito'>VER CARRITO</button>
                             </div>
-                            <hr />
-                            <button id='comprar_desde_menu'>COMPRAR</button>
-                            <button id='ver_carrito'>VER CARRITO</button>
-                        </div>
+                            :
+                            <div id='contenido_menu_compra'>
+                                <p>CARRITO DE COMPRA</p>
+                                <hr />
+                                <p id='carritoVacio'>Tu carrito está vacío pero no te preocupes, ¡tenemos decenas de productos esperándote!.</p>
+                                <Link to='/productos'><button id='seguirComprando'>SEGUIR COMPRANDO</button></Link>
+                            </div>
+                        }
                     </div>
                 </div>
             </header>

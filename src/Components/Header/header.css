@@ -426,6 +426,22 @@ header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>button#ver_ca
     cursor: pointer;
 }
 
+#carritoVacio {
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>a>button#seguirComprando {
+    border: 1px solid black;
+    background-color: white;
+    padding: 0.5rem;
+    width: 12rem;
+    display: block;
+    margin: auto;
+    margin-top: 1.5rem;
+    cursor: pointer;
+}
+
 @media all and (min-width: 550px) {
     header>div#menu>ul#menuOculto>li>hr {
         width: 132%;
