@@ -357,7 +357,7 @@ header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>p:first-child
 
 header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>hr {
     width: 90%;
-    border: 0;
+    border: 1;
     border-bottom: 1px solid #87B6C5;
     margin-bottom: 1.5rem;
 }
@@ -366,24 +366,27 @@ header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>div#contenido
     display: flex;
     margin-right: 5%;
     margin-left: 5%;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>div#contenido_compra>picture>img {
-    width: 30%;
+    width: 5rem;
     margin-bottom: 1.5rem;
 }
 
-header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>div#contenido_compra>p#nombre_producto {
+/* header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>div#contenido_compra>p#nombre_producto {
     position: absolute;
     margin-top: 0;
     margin-left: 28%;
     font-family: Open Sans;
     font-size: 15px;
+    margin-right: 2.2rem;
 }
 
 header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>div#contenido_compra>p#precio_producto {
     position: absolute;
-    margin-top: 1.5rem;
+    margin-top: 3.5rem;
     margin-left: 28%;
     font-family: Open Sans;
     font-size: 13px;
@@ -392,9 +395,8 @@ header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>div#contenido
 header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>div#contenido_compra>picture>img#eliminar_producto {
     width: 1rem;
     margin-top: 0.2rem;
-    margin-right: 5%;
     cursor: pointer;
-}
+} */
 
 header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>p:not(:first-child) {
     font-family: Open Sans;
