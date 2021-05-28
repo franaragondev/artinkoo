@@ -38,7 +38,7 @@ const Header = (props) => {
                             productos.map((producto, index) => {
                                 return (
                                     <picture>
-                                        <img src={"../images/productos/" + + producto.idProductoCesta + ".jpg"} alt={"imagen cesta producto " + producto.idProductoCesta} />
+                                        <img src={"https://proyecto-final-fran-aragon.netlify.app/images/productos/" + + producto.idProductoCesta + ".jpg"} alt={"imagen cesta producto " + producto.idProductoCesta} />
                                     </picture>
                                 )
                             })
