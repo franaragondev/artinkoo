@@ -1,0 +1,137 @@
+div>div#total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4.3rem;
+    background: rgba(196, 196, 196, 0.11);
+    height: 2rem;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+div>div#total>p {
+    margin-top: 0.5rem;
+}
+
+div>div#total>p#total_texto {
+    font-family: Quicksand;
+    font-size: 15px;
+    padding-left: 1rem;
+    margin-top: .3rem;
+}
+
+div>div#total>p#precio_total {
+    font-family: Open Sans;
+    font-size: 15px;
+    font-weight: 700;
+    padding-right: 1rem;
+    margin-top: .3rem;
+}
+
+div>div#tabla_datos {
+    margin-top: 2rem;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+div>div#tabla_datos>div:nth-child(1) {
+    border-bottom: 1px solid lightgray;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap;
+}
+
+div>div#tabla_datos>div:last-child {
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap;
+}
+
+div>div#tabla_datos>div#datos_contacto>p {
+    font-family: Quicksand;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+div>div#tabla_datos>div#datos_contacto>p:first-child {
+    font-size: 16px;
+    width: 60%;
+    margin-top: .5rem;
+}
+
+div>div#tabla_datos>div#datos_contacto>p:nth-child(2) {
+    font-size: 13px;
+    margin-top: .5rem;
+    cursor: pointer;
+}
+
+div>div#tabla_datos>div#datos_contacto>p:last-child {
+    margin-top: -0.2rem;
+    font-size: 15px;
+}
+
+div>p#metodo_envio {
+    font-family: Quicksand;
+    font-size: 18px;
+    margin-left: 5%;
+    margin-top: 1rem;
+}
+
+div>div#datos_envio {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+div>div#datos_envio>p:first-child {
+    font-family: Quicksand;
+    font-size: 16px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-top: 1rem;
+}
+
+div>div#datos_envio>p:not(:first-child) {
+    font-family: Quicksand;
+    font-size: 13px;
+    margin-top: 1.2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+div>button#continuar_pagos {
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    padding: 0.5rem;
+    width: 95%;
+    display: block;
+    margin: auto;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+div>a>p#volver_informacion {
+    text-align: center;
+    cursor: pointer;
+    font-family: Quicksand;
+    font-size: 15px;
+    color: #7D7D7D;
+    margin-top: 1rem;
+}

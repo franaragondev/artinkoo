@@ -30,6 +30,7 @@ div#productos_cesta>p {
     font-family: Quicksand;
     font-size: 15px;
     padding: 0.3rem;
+    margin-left: 1rem;
 }
 
 div#datos_cesta {
@@ -124,12 +125,14 @@ div#total_carrito>p {
 div#total_carrito>p#total_texto {
     font-family: Quicksand;
     font-size: 15px;
+    margin-left: 1rem;
 }
 
 div#total_carrito>p#precio_total {
     font-family: Open Sans;
     font-size: 15px;
     font-weight: 700;
+    margin-right: 1rem;
 }
 
 hr#carrito {

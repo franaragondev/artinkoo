@@ -22,6 +22,7 @@ import './Components/Pages/QuienesSomos/quienesSomos.css'
 import './Components/Pages/Aloju/aloju.css'
 import './Components/Pages/searchPage/searchPage.css'
 import './Components/Pages/carrito/carrito.css'
+import './Components/Pages/datosEnvio/datosEnvio.css'
 
 ReactDOM.render(
   <React.StrictMode>

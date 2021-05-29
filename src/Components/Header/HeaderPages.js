@@ -45,7 +45,7 @@ const HeaderPages = (props) => {
                         }
                     </div>
                     <hr />
-                    <button id='comprar_desde_menu'>COMPRAR</button>
+                    <Link to='/datosEnvio'><button id='comprar_desde_menu'>COMPRAR</button></Link>
                     <Link to='/carrito'><button id='ver_carrito'>VER CARRITO</button></Link>
                 </div>
             )

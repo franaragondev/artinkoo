@@ -418,7 +418,7 @@ header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>p:not(:first-
     margin-top: 2rem;
 }
 
-header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>button#comprar_desde_menu {
+header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>a>button#comprar_desde_menu {
     border: 1px solid black;
     background-color: black;
     color: white;

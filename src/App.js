@@ -17,6 +17,7 @@ import EnviosDevoluciones from './Components/Pages/EnviosDevoluciones/EnviosDevo
 import Aloju from './Components/Pages/Aloju/Aloju'
 import SearchPage from './Components/Pages/searchPage/SearchPage'
 import Carrito from './Components/Pages/carrito/Carrito'
+import DatosEnvio from './Components/Pages/datosEnvio/DatosEnvio'
 
 const App = () => {
   return (
@@ -39,6 +40,7 @@ const App = () => {
         <Route path='/aloju' component={Aloju} />
         <Route path='/search/:aBuscar' component={SearchPage} />
         <Route path='/carrito' component={Carrito} />
+        <Route path='/datosEnvio' component={DatosEnvio} />
       </Switch>
     </Router>
   )

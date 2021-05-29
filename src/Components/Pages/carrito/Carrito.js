@@ -101,7 +101,7 @@ const Carrito = (props) => {
             <p id='comentarios_adicionales'>Comentarios adicionales:</p>
             <textarea id='textarea_comentarios_adicionales' onChange={(e) => { setComentarios(e.target.value) }}></textarea> */}
 
-            <Link to='/'><button id='comprar_desde_cesta'>COMPRAR</button></Link>
+            <Link to='/datosEnvio'><button id='comprar_desde_cesta'>COMPRAR</button></Link>
             <GoToTop />
             <Footer />
         </div>
