@@ -256,6 +256,12 @@ header>div#logoCabecera>a>img {
     margin-top: 2%;
 }
 
+header>div#logoCabeceraCarrito>a>img {
+    width: 10rem;
+    margin-top: 2%;
+    margin-left: 1rem;
+}
+
 /*PARTE DERECHA DE LA CABECERA*/
 
 header>div#derecha {
@@ -266,6 +272,13 @@ header>div#derecha {
     cursor: pointer;
     margin-top: 0.8rem;
     width: 1.6rem;
+}
+
+#icon_userCarrito {
+    cursor: pointer;
+    margin-top: 0.8rem;
+    width: 1.6rem;
+    margin-right: 1rem;
 }
 
 /*CAMBIO DE IDIOMA*/

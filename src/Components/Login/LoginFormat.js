@@ -89,6 +89,7 @@ const LoginFormat = (props) => {
         cookies.remove('cesta', { path: '/' })
         cookies.remove('nombreUsuario', { path: '/' })
         cookies.remove('email', { path: '/' })
+        cookies.remove('precioTotal', { path: '/' })
         // window.location.href = 'http://localhost:3000/login'
         window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
     }

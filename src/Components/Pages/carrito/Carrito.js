@@ -5,7 +5,7 @@ import Cookies from 'universal-cookie'
 import swal from 'sweetalert';
 import Footer from '../../Footer/Footer'
 import GoToTop from '../../GoToTop/GoToTop'
-import Header from '../../Header/Header'
+import Header from '../../Header/HeaderCarrito'
 import useStateRef from 'react-usestateref'
 
 //Componente que renderizará la página CARRITO
@@ -101,7 +101,7 @@ const Carrito = (props) => {
             <p id='comentarios_adicionales'>Comentarios adicionales:</p>
             <textarea id='textarea_comentarios_adicionales' onChange={(e) => { setComentarios(e.target.value) }}></textarea> */}
 
-            <button id='comprar_desde_cesta'>COMPRAR</button>
+            <Link to='/'><button id='comprar_desde_cesta'>COMPRAR</button></Link>
             <GoToTop />
             <Footer />
         </div>
