@@ -18,7 +18,7 @@ const Carrito = (props) => {
 
     useEffect(() => {
         Axios.get(`https://artinkoo.herokuapp.com/verCesta/${cookies.get('idUsuario')}`).then((response) => {
-        // Axios.get(`http://localhost:8000/verCesta/${cookies.get('idUsuario')}`).then((response) => {
+            // Axios.get(`http://localhost:8000/verCesta/${cookies.get('idUsuario')}`).then((response) => {
             setProductos(response.data)
         })
     }, [])
@@ -36,7 +36,7 @@ const Carrito = (props) => {
 
     const borrarProductoCesta = (idProducto) => {
         Axios.post(`https://artinkoo.herokuapp.com/borrarProductoCesta`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
-        // Axios.post(`http://localhost:8000/borrarProductoCesta`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
+            // Axios.post(`http://localhost:8000/borrarProductoCesta`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
             if (response.data.affectedRows == 1) {
                 swal({
                     title: "¡Eliminado Satisfactorio!",
@@ -93,6 +93,7 @@ const Carrito = (props) => {
             <div id='total_carrito'>
                 <p id='total_texto'>TOTAL</p>
                 <p id='precio_total'>{precioTotal / 2}€</p>
+                {cookies.set('precioTotal', (precioTotal / 2), { path: '/' })}
             </div>
 
             {/* <hr id='carrito' />
