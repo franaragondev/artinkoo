@@ -16,6 +16,7 @@ import PoliticaPrivacidad from './Components/Pages/PoliticaPrivacidad/PoliticaPr
 import EnviosDevoluciones from './Components/Pages/EnviosDevoluciones/EnviosDevoluciones'
 import Aloju from './Components/Pages/Aloju/Aloju'
 import SearchPage from './Components/Pages/searchPage/SearchPage'
+import Carrito from './Components/Pages/carrito/Carrito'
 
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
         <Route path='/enviosDevoluciones' component={EnviosDevoluciones} />
         <Route path='/aloju' component={Aloju} />
         <Route path='/search/:aBuscar' component={SearchPage} />
+        <Route path='/carrito' component={Carrito} />
       </Switch>
     </Router>
   )

@@ -46,7 +46,7 @@ const Header = (props) => {
                     </div>
                     <hr />
                     <button id='comprar_desde_menu'>COMPRAR</button>
-                    <button id='ver_carrito'>VER CARRITO</button>
+                    <Link to='/carrito'><button id='ver_carrito'>VER CARRITO</button></Link>
                 </div>
             )
         }

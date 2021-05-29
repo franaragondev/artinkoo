@@ -417,7 +417,7 @@ header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>button#compra
     cursor: pointer;
 }
 
-header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>button#ver_carrito {
+header>div#derecha>div#menu_oculto_bolsa>div#contenido_menu_compra>a>button#ver_carrito {
     border: 1px solid black;
     background-color: white;
     padding: 0.5rem;

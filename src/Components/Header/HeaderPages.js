@@ -11,7 +11,7 @@ const HeaderPages = (props) => {
 
     useEffect(() => {
         Axios.get(`https://artinkoo.herokuapp.com/verCesta/${cookies.get('idUsuario')}`).then((response) => {
-        // Axios.get(`http://localhost:8000/verCesta/${cookies.get('idUsuario')}`).then((response) => {
+            // Axios.get(`http://localhost:8000/verCesta/${cookies.get('idUsuario')}`).then((response) => {
             setProductos(response.data)
         })
     }, [])
@@ -46,7 +46,7 @@ const HeaderPages = (props) => {
                     </div>
                     <hr />
                     <button id='comprar_desde_menu'>COMPRAR</button>
-                    <button id='ver_carrito'>VER CARRITO</button>
+                    <Link to='/carrito'><button id='ver_carrito'>VER CARRITO</button></Link>
                 </div>
             )
         }
