@@ -147,3 +147,16 @@ div>a>p#volver_informacion {
     background-color: white;
     cursor: pointer;
 }
+
+.editarDireccionEnvio {
+    display: flex;
+    flex-flow: column;
+}
+
+.btnCambiarDireccion {
+    border: 1px solid black;
+    background-color: white;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    margin-left: .5rem;
+}
