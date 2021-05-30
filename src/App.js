@@ -18,6 +18,7 @@ import Aloju from './Components/Pages/Aloju/Aloju'
 import SearchPage from './Components/Pages/searchPage/SearchPage'
 import Carrito from './Components/Pages/carrito/Carrito'
 import DatosEnvio from './Components/Pages/datosEnvio/DatosEnvio'
+import Pasarela from './Components/Pages/Pasarela/Pasarela'
 
 const App = () => {
   return (
@@ -41,6 +42,7 @@ const App = () => {
         <Route path='/search/:aBuscar' component={SearchPage} />
         <Route path='/carrito' component={Carrito} />
         <Route path='/datosEnvio' component={DatosEnvio} />
+        <Route path='/pasarela' component={Pasarela} />
       </Switch>
     </Router>
   )
