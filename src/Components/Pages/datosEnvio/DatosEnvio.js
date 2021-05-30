@@ -62,8 +62,8 @@ const DatosEnvio = (props) => {
 
     const actualizarEmail = async () => {
         if (editarEmail != '') {
-            await Axios.post('http://localhost:8000/actualizarEmail',
-                // await Axios.post('https://artinkoo.herokuapp.com/actualizarEmail',
+            // await Axios.post('http://localhost:8000/actualizarEmail',
+            await Axios.post('https://artinkoo.herokuapp.com/actualizarEmail',
                 { email: editarEmail, idUsuario: cookies.get('idUsuario') })
                 .then(response => {
                     if (response.statusText == 'OK') {
@@ -74,8 +74,8 @@ const DatosEnvio = (props) => {
                             icon: "success",
                             button: "Ok!",
                         }).then(function () {
-                            window.location.href = 'http://localhost:3000/datosEnvio'
-                            // window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/datosEnvio'
+                            // window.location.href = 'http://localhost:3000/datosEnvio'
+                            window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/datosEnvio'
                         })
                     } else {
                         swal({
@@ -84,8 +84,8 @@ const DatosEnvio = (props) => {
                             icon: "error",
                             button: "Volver",
                         }).then(function () {
-                            window.location.href = 'http://localhost:3000/datosEnvio'
-                            // window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/datosEnvio'
+                            // window.location.href = 'http://localhost:3000/datosEnvio'
+                            window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/datosEnvio'
                         })
                     }
                 })
@@ -104,8 +104,8 @@ const DatosEnvio = (props) => {
 
     const actualizarDireccion = async () => {
         if (editarDireccion != '' && editarCiudad != '' && editarProvincia != '' && editarCodigoPostal != '') {
-            await Axios.post('http://localhost:8000/actualizarDireccion',
-                // await Axios.post('https://artinkoo.herokuapp.com/actualizarEmail',
+            // await Axios.post('http://localhost:8000/actualizarDireccion',
+            await Axios.post('https://artinkoo.herokuapp.com/actualizarDireccion',
                 { direccion: editarDireccion, ciudad: editarCiudad, provincia: editarProvincia, codigoPostal: editarCodigoPostal, idUsuario: cookies.get('idUsuario') })
                 .then(response => {
                     if (response.statusText == 'OK') {
@@ -119,8 +119,8 @@ const DatosEnvio = (props) => {
                             icon: "success",
                             button: "Ok!",
                         }).then(function () {
-                            window.location.href = 'http://localhost:3000/datosEnvio'
-                            // window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/datosEnvio'
+                            // window.location.href = 'http://localhost:3000/datosEnvio'
+                            window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/datosEnvio'
                         })
                     } else {
                         swal({
@@ -129,8 +129,8 @@ const DatosEnvio = (props) => {
                             icon: "error",
                             button: "Volver",
                         }).then(function () {
-                            window.location.href = 'http://localhost:3000/datosEnvio'
-                            // window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/datosEnvio'
+                            // window.location.href = 'http://localhost:3000/datosEnvio'
+                            window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/datosEnvio'
                         })
                     }
                 })
@@ -178,13 +178,13 @@ const DatosEnvio = (props) => {
     }
 
     const finalizarCompra = () => {
-        window.location.href = 'http://localhost:3000/home'
+        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/home'
     }
 
     const anadirPedidoProducto = (idInsertada) => {
         productos.map((producto, index) => {
-            // Axios.post('https://artinkoo.herokuapp.com/anadirPedidoProducto',
-            Axios.post('http://localhost:8000/anadirPedidoProducto',
+            Axios.post('https://artinkoo.herokuapp.com/anadirPedidoProducto',
+                // Axios.post('http://localhost:8000/anadirPedidoProducto',
                 { idPedido: idInsertada, idProducto: producto.idProducto })
                 .then(response => {
                     finalizarCompra()
@@ -193,8 +193,8 @@ const DatosEnvio = (props) => {
     }
 
     const anadirPedidoUsuario = async (idInsertada) => {
-        // await Axios.post('https://artinkoo.herokuapp.com/anadirPedidoUsuario',
-        await Axios.post('http://localhost:8000/anadirPedidoUsuario',
+        await Axios.post('https://artinkoo.herokuapp.com/anadirPedidoUsuario',
+            // await Axios.post('http://localhost:8000/anadirPedidoUsuario',
             { idPedido: idInsertada, idUsuario: cookies.get('idUsuario') })
             .then(response => {
                 anadirPedidoProducto(idInsertada)
@@ -205,8 +205,8 @@ const DatosEnvio = (props) => {
     }
 
     const anadirPedido = async () => {
-        // await Axios.post('https://artinkoo.herokuapp.com/anadirPedido',
-        await Axios.post('http://localhost:8000/anadirPedido',
+        await Axios.post('https://artinkoo.herokuapp.com/anadirPedido',
+            // await Axios.post('http://localhost:8000/anadirPedido',
             { importe: (parseInt(cookies.get('precioTotal')) + (parseInt(cookies.get('precioTotal') * .10))) })
             .then(response => {
                 anadirPedidoUsuario(response.data.insertId)
@@ -217,14 +217,14 @@ const DatosEnvio = (props) => {
     }
 
     const vaciarCarrito = () => {
-        // Axios.post(`https://artinkoo.herokuapp.com/borrarCesta`, { idUsuario: cookies.get('idUsuario') }).then((response) => {
-        Axios.post(`http://localhost:8000/borrarCesta`, { idUsuario: cookies.get('idUsuario') }).then((response) => {
+        Axios.post(`https://artinkoo.herokuapp.com/borrarCesta`, { idUsuario: cookies.get('idUsuario') }).then((response) => {
+            // Axios.post(`http://localhost:8000/borrarCesta`, { idUsuario: cookies.get('idUsuario') }).then((response) => {
         })
     }
 
     const enviarEmailVenta = () => {
-        // Axios.post('https://artinkoo.herokuapp.com/emailVenta',
-        Axios.post('http://localhost:8000/emailVenta',
+        Axios.post('https://artinkoo.herokuapp.com/emailVenta',
+            // Axios.post('http://localhost:8000/emailVenta',
             {
                 nombre: cookies.get('nombre'), apellidos: cookies.get('apellidos'),
                 email: cookies.get('email'), direccion: cookies.get('direccion'),
@@ -237,8 +237,8 @@ const DatosEnvio = (props) => {
 
     const realizarPedido = () => {
         creaMensajePedido()
-        // Axios.post('https://artinkoo.herokuapp.com/realizarCompra',
-        Axios.post('http://localhost:8000/realizarCompra',
+        Axios.post('https://artinkoo.herokuapp.com/realizarCompra',
+            // Axios.post('http://localhost:8000/realizarCompra',
             {
                 nombre: cookies.get('nombre'), apellidos: cookies.get('apellidos'),
                 email: cookies.get('email'), direccion: cookies.get('direccion'),
@@ -326,8 +326,8 @@ const DatosEnvio = (props) => {
             </div>
         )
     } else {
-        // window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/home'
-        window.location.href = 'http://localhost:3000/home'
+        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/home'
+        // window.location.href = 'http://localhost:3000/home'
     }
 }
 
