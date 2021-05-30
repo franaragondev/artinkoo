@@ -179,6 +179,7 @@ const DatosEnvio = (props) => {
 
     const finalizarCompra = () => {
         window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/pasarela'
+        // window.location.href = 'http://localhost:3000/pasarela'
     }
 
     const anadirPedidoProducto = (idInsertada) => {

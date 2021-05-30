@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Cookies from 'universal-cookie'
 // import "bootswatch/dist/lux/bootstrap.min.css";
-
 import { loadStripe } from "@stripe/stripe-js";
 import {
     Elements,
@@ -9,10 +8,9 @@ import {
     useStripe,
     useElements,
 } from "@stripe/react-stripe-js";
-
 import axios from "axios";
 
-const stripePromise = loadStripe("<your public key here>");
+const stripePromise = loadStripe("pk_test_51Iwsf6HAiPs9nykwHQMsgaa8R6YP4fPUb3AR351RJRc9k1v6QVMQZ2uHBofplBqT4bVBvFzq8p1VJRsdu0E1LpF900SfPMxoQW");
 const cookies = new Cookies()
 
 const CheckoutForm = () => {
@@ -35,14 +33,16 @@ const CheckoutForm = () => {
             const { id } = paymentMethod;
             try {
                 const { data } = await axios.post(
-                    "http://localhost:3001/api/checkout",
+                    // "http://localhost:8000/pasarela",
+                    "https://artinkoo.herokuapp.com/pasarela",
                     {
                         id,
-                        amount: 10000, //cents
+                        amount: ((parseInt(cookies.get('precioTotal')) + (parseInt(cookies.get('precioTotal') * .10))) * 100), //cents
                     }
                 );
                 console.log(data);
-
+                window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/home'
+                // window.location.href = 'http://localhost:3000/home'
                 elements.getElement(CardElement).clear();
             } catch (error) {
                 console.log(error);
@@ -55,10 +55,10 @@ const CheckoutForm = () => {
 
     return (
         <form className="card card-body" onSubmit={handleSubmit}>
-            {/* Product Information */}
+            {/* Information */}
             <img
                 src="../images/logotipo_en_color.png"
-                alt="Corsair Gaming Keyboard RGB"
+                alt="logotipo artinkoo"
                 className="img-fluid"
             />
 
@@ -66,7 +66,7 @@ const CheckoutForm = () => {
 
             {/* User Card Input */}
             <div className="form-group">
-                <CardElement />
+                <CardElement className='form-control' />
             </div>
 
             <button disabled={!stripe} className="btn btn-success">
