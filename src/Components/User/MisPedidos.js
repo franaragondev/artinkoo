@@ -34,8 +34,9 @@ const MisPedidos = (props) => {
                             return (
                                 <div className='misPedidos'>
                                     <p><span className='columnaDatosPersonales'>Identificador Pedido: </span>{pedido.idPedido}.</p>
-                                    <p><span className='columnaDatosPersonales'>Productos: </span>{pedido.productosPedido}.</p>
-                                    <p><span className='columnaDatosPersonales'>Importe: </span>{pedido.importe}€.</p>
+                                    <p><span className='columnaDatosPersonales'>Fecha: </span>{pedido.fecha.slice(0, 10)}.</p>
+                                    <p><span className='columnaDatosPersonales'>Importe: </span>{pedido.importe}€</p>
+                                    <p><span className='columnaDatosPersonales'>Estado: </span>{pedido.estado}.</p>
                                 </div>
                             )
                         })

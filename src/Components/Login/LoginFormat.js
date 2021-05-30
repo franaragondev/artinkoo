@@ -154,14 +154,6 @@ const LoginFormat = (props) => {
                         </Link>
                     </div>
                     <div className='opcion'>
-                        <Link to='/misPedidos' className='opcionUsuarioLink'>
-                            <div className='opcionUsuario'>
-                                <p>SEGUIMIENTO DEL PEDIDO</p>
-                                <img className='camionIco' src='./images/truck_13241.png' alt='seguimiento'></img>
-                            </div>
-                        </Link>
-                    </div>
-                    <div className='opcion'>
                         <Link to='/ayuda' className='opcionUsuarioLink'>
                             <div className='opcionUsuario'>
                                 <p>AYUDA</p>
