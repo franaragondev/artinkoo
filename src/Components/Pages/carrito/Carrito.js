@@ -51,61 +51,68 @@ const Carrito = (props) => {
         })
     }
 
-    return (
-        <div>
-            <Header />
-            <div id='titulo_carrito'>
-                <p id='mi_carrito'>MI CARRITO</p>
-                <Link to='/productos'><p id='continuar_comprando'>Continuar Comprando</p></Link>
-            </div>
+    if (cookies.get('nombre')) {
+        return (
+            <div>
+                <Header />
+                <div id='titulo_carrito'>
+                    <p id='mi_carrito'>MI CARRITO</p>
+                    <Link to='/productos'><p id='continuar_comprando'>Continuar Comprando</p></Link>
+                </div>
 
-            <div id='productos_cesta'>
-                <p>PRODUCTOS</p>
-            </div>
+                <div id='productos_cesta'>
+                    <p>PRODUCTOS</p>
+                </div>
 
-            <div id='datos_cesta'>
-                {
-                    productos.map((producto, index) => {
-                        return (
-                            <div>
+                <div id='datos_cesta'>
+                    {
+                        productos.map((producto, index) => {
+                            return (
                                 <div>
-                                    <Link to={`/producto/${producto.idCategoria}/${producto.idProducto}`}>
+                                    <div>
+                                        <Link to={`/producto/${producto.idCategoria}/${producto.idProducto}`}>
+                                            <picture>
+                                                <img className='imagenProductoCesta' src={"https://proyecto-final-fran-aragon.netlify.app/images/productos/" + + producto.idProductoCesta + ".jpg"} alt={"imagen cesta producto " + producto.idProductoCesta} />
+                                            </picture>
+                                        </Link>
+                                    </div>
+                                    <div id='datos_producto_cesta'>
+                                        <p>{producto.nombre}</p>
+                                        <p id='precio_producto_cesta'>{producto.precio}€</p>
+                                    </div>
+                                    <div>
                                         <picture>
-                                            <img className='imagenProductoCesta' src={"https://proyecto-final-fran-aragon.netlify.app/images/productos/" + + producto.idProductoCesta + ".jpg"} alt={"imagen cesta producto " + producto.idProductoCesta} />
+                                            <img onClick={() => borrarProductoCesta(producto.idProducto)} id='borrar_producto' alt='eliminar_producto' src='../images/cross-symbol_icon-icons.com_74149.png' />
                                         </picture>
-                                    </Link>
+                                    </div>
                                 </div>
-                                <div id='datos_producto_cesta'>
-                                    <p>{producto.nombre}</p>
-                                    <p id='precio_producto_cesta'>{producto.precio}€</p>
-                                </div>
-                                <div>
-                                    <picture>
-                                        <img onClick={() => borrarProductoCesta(producto.idProducto)} id='borrar_producto' alt='eliminar_producto' src='../images/cross-symbol_icon-icons.com_74149.png' />
-                                    </picture>
-                                </div>
-                            </div>
-                        )
-                    })
-                }
+                            )
+                        })
+                    }
+                </div>
+
+                <div id='total_carrito'>
+                    <p id='total_texto'>TOTAL</p>
+                    <p id='precio_total'>{precioTotal / 2}€</p>
+                    {cookies.set('precioTotal', (precioTotal / 2), { path: '/' })}
+                </div>
+
+                {/* <hr id='carrito' />
+    
+                <p id='comentarios_adicionales'>Comentarios adicionales:</p>
+                <textarea id='textarea_comentarios_adicionales' onChange={(e) => { setComentarios(e.target.value) }}></textarea> */}
+
+                <Link to='/datosEnvio'><button id='comprar_desde_cesta'>COMPRAR</button></Link>
+                <GoToTop />
+                <Footer />
             </div>
+        )
+    } else {
+        // window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/home'
+        window.location.href = 'http://localhost:3000/home'
+    }
 
-            <div id='total_carrito'>
-                <p id='total_texto'>TOTAL</p>
-                <p id='precio_total'>{precioTotal / 2}€</p>
-                {cookies.set('precioTotal', (precioTotal / 2), { path: '/' })}
-            </div>
 
-            {/* <hr id='carrito' />
-
-            <p id='comentarios_adicionales'>Comentarios adicionales:</p>
-            <textarea id='textarea_comentarios_adicionales' onChange={(e) => { setComentarios(e.target.value) }}></textarea> */}
-
-            <Link to='/datosEnvio'><button id='comprar_desde_cesta'>COMPRAR</button></Link>
-            <GoToTop />
-            <Footer />
-        </div>
-    )
 }
 
 export default Carrito
