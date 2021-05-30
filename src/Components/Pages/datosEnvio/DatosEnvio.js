@@ -16,6 +16,9 @@ const DatosEnvio = (props) => {
     const [editarCiudad, setEditarCiudad] = useState('')
     const [editarProvincia, setEditarProvincia] = useState('')
     const [editarCodigoPostal, setEditarCodigoPostal] = useState('')
+    const [comentarios, setComentarios] = useState('')
+    const [codigoDescuento, setCodigoDescuento] = useState('')
+    const [codigoUsado, setCodigoUsado] = useState(false)
     const cookies = new Cookies()
 
     const cambiarTituloyContacto = () => {
@@ -123,6 +126,36 @@ const DatosEnvio = (props) => {
         }
     }
 
+    const comprobarCodigoDescuento = () => {
+        if (codigoDescuento == 'ARTINKOO10') {
+            if (codigoUsado == false && !cookies.get('codigoUsado')) {
+                setCodigoUsado(true)
+                cookies.set('precioTotal', (parseInt(cookies.get('precioTotal') * .90)), { path: '/' })
+                cookies.set('codigoUsado', true, { path: '/' })
+                swal({
+                    title: "Código Canjeado",
+                    text: `El código de descuento se ha aplicado correctamente.`,
+                    icon: "success",
+                    button: "Ok!",
+                })
+            } else {
+                swal({
+                    title: "Oh! Código usado.",
+                    text: "El código introducido ya ha sido usado una vez.",
+                    icon: "error",
+                    button: "Volver",
+                })
+            }
+        } else {
+            swal({
+                title: "Oh! Código erróneo.",
+                text: "El código introducido no es válido.",
+                icon: "error",
+                button: "Volver",
+            })
+        }
+    }
+
     if (cookies.get('nombre')) {
         return (
             <div>
@@ -130,7 +163,7 @@ const DatosEnvio = (props) => {
                 <div>
                     <div id='total'>
                         <p id='total_texto'>TOTAL</p>
-                        <p id='precio_total'>{parseInt(cookies.get('precioTotal')) + 3.5}€</p>
+                        <p id='precio_total'>{parseInt(cookies.get('precioTotal')) + (parseInt(cookies.get('precioTotal') * .10))}€</p>
                     </div>
 
                     <div id='tabla_datos'>
@@ -169,10 +202,22 @@ const DatosEnvio = (props) => {
 
                     <div id='datos_envio'>
                         <p>Método de envío</p>
-                        <p>3.50€</p>
+                        <p>{parseInt(cookies.get('precioTotal') * .10)}€</p>
                     </div>
 
-                    <button id='continuar_pagos'>CONTINUAR CON PAGOS</button>
+                    <p id='descuentos'>Descuentos</p>
+
+                    <div id='codigo_descuento'>
+                        <input placeholder="Código de Descuento" onChange={(e) => { setCodigoDescuento(e.target.value) }} />
+                        <picture>
+                            <img onClick={() => comprobarCodigoDescuento()} src='../images/boton_flecha.png' />
+                        </picture>
+                    </div>
+
+                    <p id='comentarios_adicionales'>Comentarios adicionales:</p>
+                    <textarea id='textarea_comentarios_adicionales' onChange={(e) => { setComentarios(e.target.value) }}></textarea>
+
+                    <button id='continuar_pagos'>CONTINUAR EN PASARELA DE PAGO</button>
                     <Link to='/carrito'><p id='volver_informacion'> Volver al carrito</p></Link>
                 </div>
                 <GoToTop />

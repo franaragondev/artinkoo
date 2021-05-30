@@ -81,6 +81,13 @@ div>div#tabla_datos>div#datos_contacto>p:nth-child(2) {
 div>div#tabla_datos>div#datos_contacto>p:last-child {
     margin-top: -0.2rem;
     font-size: 15px;
+    width: 100%;
+}
+
+div>div#tabla_datos>div#datos_contacto>div {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
 }
 
 div>p#metodo_envio {
@@ -140,12 +147,16 @@ div>a>p#volver_informacion {
     margin-left: .5rem;
     margin-right: .5rem;
     margin-bottom: .5rem;
+    /* width: 100%; */
 }
 
 .btnCambiarContacto {
     border: 1px solid black;
     background-color: white;
     cursor: pointer;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    margin-bottom: 1rem;
 }
 
 .editarDireccionEnvio {
@@ -159,4 +170,29 @@ div>a>p#volver_informacion {
     cursor: pointer;
     margin-bottom: 1rem;
     margin-left: .5rem;
+    margin-right: .5rem;
+}
+
+p#descuentos {
+    font-family: Quicksand;
+    font-size: 18px;
+    margin-left: 5%;
+    margin-top: 1rem;
+}
+
+div#codigo_descuento>input {
+    border: 1px solid lightgray;
+    padding: 0.5rem;
+    border-radius: 10px;
+    width: 71%;
+    margin-left: 5%;
+}
+
+div#codigo_descuento>picture>img {
+    position: absolute;
+    margin-left: 1rem;
+    width: 4rem;
+    cursor: pointer;
+    margin-right: 5%;
+    margin-top: .2rem;
 }
