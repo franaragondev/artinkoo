@@ -36,6 +36,7 @@ const Carrito = (props) => {
     calcularPrecioTotal()
 
     const borrarProductoCesta = (idProducto) => {
+        console.log('borrado');
         Axios.post(`https://artinkoo.herokuapp.com/borrarProductoCesta`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
             // Axios.post(`http://localhost:8000/borrarProductoCesta`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
             if (response.data.affectedRows == 1) {
@@ -48,6 +49,16 @@ const Carrito = (props) => {
                     // window.location.href = 'http://localhost:3000/carrito'
                     window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/carrito'
                 })
+            }
+        })
+    }
+
+    const anadirStock = (idProducto) => {
+        console.log('añadido');
+        Axios.post(`https://artinkoo.herokuapp.com/anadirStock`, { idProducto: idProducto }).then((response) => {
+            // Axios.post(`http://localhost:8000/anadirStock`, { idProducto: idProducto }).then((response) => {
+            if (response.data.affectedRows == 1) {
+                borrarProductoCesta(idProducto)
             }
         })
     }
@@ -83,7 +94,7 @@ const Carrito = (props) => {
                                     </div>
                                     <div>
                                         <picture>
-                                            <img onClick={() => borrarProductoCesta(producto.idProducto)} id='borrar_producto' alt='eliminar_producto' src='../images/cross-symbol_icon-icons.com_74149.png' />
+                                            <img onClick={() => anadirStock(producto.idProducto)} id='borrar_producto' alt='eliminar_producto' src='../images/cross-symbol_icon-icons.com_74149.png' />
                                         </picture>
                                     </div>
                                 </div>

@@ -5,11 +5,14 @@ import Axios from 'axios'
 import Header from '../../Header/Header'
 import GoToTop from '../../GoToTop/GoToTop'
 import Footer from '../../Footer/Footer'
+import Cookies from 'universal-cookie'
+import swal from 'sweetalert';
 
 //Componente que renderizará la página para ver un producto
 const Producto = (props) => {
     const { idCategoria, idProducto } = useParams()
     const [datosProducto, setDatosProducto] = useState([])
+    const cookies = new Cookies()
     // const [productosRelacionados, setProductosRelacionados] = useState([])
     // const [categoriaSuperior, setCategoriaSuperior] = useState(parseInt(idCategoria) + 1)
     // const [idProductoNuevo, setIdProductoNuevo] = useState(idProducto)
@@ -33,6 +36,59 @@ const Producto = (props) => {
         // })
     }, [])
 
+    const añadirCesta = (idProducto) => {
+        if (cookies.get('idUsuario')) {
+            Axios.post(`https://artinkoo.herokuapp.com/anadirCesta`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
+                // Axios.post(`http://localhost:8000/anadirCesta`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
+                if (response.data.affectedRows == 1) {
+                    swal({
+                        title: "¡Tienes un producto nuevo esperándote!",
+                        text: 'Producto añadido a la cesta correctamente.',
+                        icon: "success",
+                        button: "Ok!",
+                    }).then(function () {
+                        // window.location.href = 'http://localhost:3000/home'
+                        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/home'
+                    })
+                }
+            })
+        }
+        // else {
+        //     swal({
+        //         title: "Oh! Parece que no estás logueado.",
+        //         text: 'Por favor, loguéate o registrate antes de añadir productos a tu cesta.',
+        //         icon: "error",
+        //         button: "Ok!",
+        //     }).then(function () {
+        //         // window.location.href = 'http://localhost:3000/login'
+        //         window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
+        //     })
+        // }
+    }
+
+    const borrarStock = (idProducto) => {
+        console.log('borrando');
+        if (cookies.get('idUsuario')) {
+            Axios.post(`https://artinkoo.herokuapp.com/borrarStock`, { idProducto: idProducto }).then((response) => {
+                // Axios.post(`http://localhost:8000/borrarStock`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
+                if (response.data.affectedRows == 1) {
+                    añadirCesta(idProducto)
+                }
+            })
+        }
+        else {
+            swal({
+                title: "Oh! Parece que no estás logueado.",
+                text: 'Por favor, loguéate o registrate antes de añadir productos a tu cesta.',
+                icon: "error",
+                button: "Ok!",
+            }).then(function () {
+                // window.location.href = 'http://localhost:3000/login'
+                window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
+            })
+        }
+    }
+
     return (
         <>
             <Header />
@@ -54,14 +110,14 @@ const Producto = (props) => {
                         <p id='nombre_producto'>{datosProducto.nombre}</p>
                         <p id='precio'>{datosProducto.precio}€</p>
                     </section>
-                    <p id='cantidad_producto'>Cantidad:</p>
-                    <section id='modificar_cantidad_producto'>
-                        <p id='menos'>-</p>
-                        <p id='numero'>1</p>
-                        <p id='mas'>+</p>
-                    </section>
 
-                    <button id='anadir_producto'>Añadir al Carrito</button>
+                    {
+                        datosProducto.stock == 0
+                            ?
+                            <button id='anadir_producto'>No Disponible</button>
+                            :
+                            <button onClick={() => borrarStock(datosProducto.idProducto)} id='anadir_producto'>Añadir al Carrito</button>
+                    }
 
                     <section id='descripcion'>
                         <p>Descripción</p>

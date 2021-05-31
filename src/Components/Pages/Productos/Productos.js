@@ -29,7 +29,31 @@ const Productos = (props) => {
                     })
                 }
             })
-        } else {
+        }
+        // else {
+        //     swal({
+        //         title: "Oh! Parece que no estás logueado.",
+        //         text: 'Por favor, loguéate o registrate antes de añadir productos a tu cesta.',
+        //         icon: "error",
+        //         button: "Ok!",
+        //     }).then(function () {
+        //         // window.location.href = 'http://localhost:3000/login'
+        //         window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
+        //     })
+        // }
+    }
+
+    const borrarStock = (idProducto) => {
+        console.log('borrando');
+        if (cookies.get('idUsuario')) {
+            Axios.post(`https://artinkoo.herokuapp.com/borrarStock`, { idProducto: idProducto }).then((response) => {
+                // Axios.post(`http://localhost:8000/borrarStock`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
+                if (response.data.affectedRows == 1) {
+                    añadirCesta(idProducto)
+                }
+            })
+        }
+        else {
             swal({
                 title: "Oh! Parece que no estás logueado.",
                 text: 'Por favor, loguéate o registrate antes de añadir productos a tu cesta.',
@@ -83,7 +107,14 @@ const Productos = (props) => {
                                         <picture><img src={'../images/productos/' + producto.idProducto + '.jpg'} alt={'Imagen producto ' + producto.idProducto} /></picture>
                                     </Link>
                                     <h4 className='nombreProducto'>{producto.nombre} | {producto.precio}€</h4>
-                                    <span onClick={() => añadirCesta(producto.idProducto)}>AÑADIR A LA CESTA</span>
+                                    {
+                                        producto.stock == 0
+                                            ?
+                                            <span>NO DISPONIBLE</span>
+                                            :
+                                            <span onClick={() => borrarStock(producto.idProducto)}>AÑADIR A LA CESTA</span>
+                                    }
+
                                 </article>
                             </>
                         )
@@ -108,7 +139,13 @@ const Productos = (props) => {
                                         <picture><img src={'../images/productos/' + producto.idProducto + '.jpg'} alt={'Imagen producto ' + producto.idProducto} /></picture>
                                     </Link>
                                     <h4 className='nombreProducto'>{producto.nombre} | {producto.precio}€</h4>
-                                    <span onClick={() => añadirCesta(producto.idProducto)}>AÑADIR A LA CESTA</span>
+                                    {
+                                        producto.stock == 0
+                                            ?
+                                            <span>NO DISPONIBLE</span>
+                                            :
+                                            <span onClick={() => borrarStock(producto.idProducto)}>AÑADIR A LA CESTA</span>
+                                    }
                                 </article>
                             </>
                         )
@@ -133,7 +170,13 @@ const Productos = (props) => {
                                         <picture><img src={'../images/productos/' + producto.idProducto + '.jpg'} alt={'Imagen producto ' + producto.idProducto} /></picture>
                                     </Link>
                                     <h4 className='nombreProducto'>{producto.nombre} | {producto.precio}€</h4>
-                                    <span onClick={() => añadirCesta(producto.idProducto)}>AÑADIR A LA CESTA</span>
+                                    {
+                                        producto.stock == 0
+                                            ?
+                                            <span>NO DISPONIBLE</span>
+                                            :
+                                            <span onClick={() => borrarStock(producto.idProducto)}>AÑADIR A LA CESTA</span>
+                                    }
                                 </article>
                             </>
                         )
@@ -145,7 +188,13 @@ const Productos = (props) => {
                                 <picture><img src={'../images/productos/' + producto.idProducto + '.jpg'} alt={'Imagen producto ' + producto.idProducto} /></picture>
                             </Link>
                             <h4 className='nombreProducto'>{producto.nombre} | {producto.precio}€</h4>
-                            <span onClick={() => añadirCesta(producto.idProducto)}>AÑADIR A LA CESTA</span>
+                            {
+                                producto.stock == 0
+                                    ?
+                                    <span>NO DISPONIBLE</span>
+                                    :
+                                    <span onClick={() => borrarStock(producto.idProducto)}>AÑADIR A LA CESTA</span>
+                            }
                         </article>
 
                     )

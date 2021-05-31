@@ -21,7 +21,7 @@ const Footer = (props) => {
                     swal({
                         title: "Oh! Algo ha fallado",
                         text: 'Asegúrese que el email introducido no está ya registrado e inténtelo de nuevo más tarde.',
-                        icon: "success",
+                        icon: "error",
                         button: "Ok!",
                     })
                 }
