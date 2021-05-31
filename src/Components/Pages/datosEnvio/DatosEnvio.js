@@ -331,7 +331,7 @@ const DatosEnvio = (props) => {
                             ?
                             <div id='total2'>
                                 <p id='total_texto'>PRECIO CON ENVÍO</p>
-                                <p id='precio_total'>{parseInt(cookies.get('precioTotal'))}€</p>
+                                <p id='precio_total'>{parseInt(cookies.get('precioTotal'))+4.95}€</p>
                             </div>
                             :
                             <div>
