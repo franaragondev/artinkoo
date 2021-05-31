@@ -52,7 +52,7 @@ const Footer = (props) => {
 
                 <ul id="menuPiePagina">
                     <li>
-                        <a href="#">Sobre Nosotros</a>
+                        <a>Sobre Nosotros</a>
                         <input type="checkbox" id="submenu1" />
                         <label for="submenu1">+</label>
                         <ul>
@@ -60,7 +60,7 @@ const Footer = (props) => {
                         </ul>
                     </li>
                     <li>
-                        <a href="#">Legal</a>
+                        <a>Legal</a>
                         <input type="checkbox" id="submenu2" />
                         <label for="submenu2">+</label>
                         <ul>
@@ -68,7 +68,7 @@ const Footer = (props) => {
                         </ul>
                     </li>
                     <li>
-                        <a href="#">Servicio al cliente</a>
+                        <a>Servicio al cliente</a>
                         <input type="checkbox" id="submenu3" />
                         <label for="submenu3">+</label>
                         <ul>
