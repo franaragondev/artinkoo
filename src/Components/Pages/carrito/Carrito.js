@@ -105,8 +105,8 @@ const Carrito = (props) => {
 
                 <div id='total_carrito'>
                     <p id='total_texto'>TOTAL</p>
-                    <p id='precio_total'>{precioTotal / 2}€</p>
-                    {cookies.set('precioTotal', (precioTotal / 2), { path: '/' })}
+                    <p id='precio_total'>{precioTotal}€</p>
+                    {cookies.set('precioTotal', (precioTotal), { path: '/' })}
                 </div>
 
                 {/* <hr id='carrito' />
