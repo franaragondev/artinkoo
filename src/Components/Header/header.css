@@ -316,7 +316,7 @@ header>div#derecha>input#input_carrito {
     display: none;
 }
 
-header>div#derecha>label#animacionCarrito>img#icono_bolsaCompra {
+header>div#derecha>label#animacionCarrito>a>img#icono_bolsaCompra {
     margin-top: 0.8rem;
     width: 1.5rem;
     margin-left: 1rem;
@@ -324,9 +324,9 @@ header>div#derecha>label#animacionCarrito>img#icono_bolsaCompra {
     cursor: pointer;
 }
 
-input#input_carrito:checked~div#menu_oculto_bolsa {
+/* input#input_carrito:checked~div#menu_oculto_bolsa {
     right: 0;
-}
+} */
 
 /*CERRAR MENÚ BOLSA COMPRA*/
 

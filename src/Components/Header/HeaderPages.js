@@ -101,8 +101,10 @@ const HeaderPages = (props) => {
                     </label>
 
                     <input id="input_carrito" type="checkbox" />
-                    <label id='animacionCarrito' for='input_carrito'><img id='icono_bolsaCompra' alt="bolsaCompra"
-                        src="https://proyecto-final-fran-aragon.netlify.app/images/shopping-bag_icon-icons.com_69305.svg" /></label>
+                    <label id='animacionCarrito' for='input_carrito'>
+                        <Link to='/carrito'><img id='icono_bolsaCompra' alt="bolsaCompra"
+                            src="https://proyecto-final-fran-aragon.netlify.app/images/shopping-bag_icon-icons.com_69305.svg" /></Link>
+                    </label>
 
                     {/* <input id="cerrar_carrito" type="checkbox" />
                     <label id='animacionbolsa' for='cerrar_carrito'><p id='cerrar_bolsa'>CERRAR</p></label>
