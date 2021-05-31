@@ -327,11 +327,12 @@ const DatosEnvio = (props) => {
                     <textarea id='textarea_comentarios_adicionales' onChange={(e) => { setComentarios(e.target.value) }}></textarea>
 
                     {
-                        !cookies.get('codigoUsado')
+                        !cookies.get('precioTotal') < 50
                             ?
                             <div id='total2'>
                                 <p id='total_texto'>PRECIO CON ENVÍO</p>
-                                <p id='precio_total'>{parseInt(cookies.get('precioTotal'))+4.95}€</p>
+                                <p id='precio_total'>{parseInt(cookies.get('precioTotal')) + 4.95}€</p>
+                                {cookies.set('precioTotal', (parseInt(cookies.get('precioTotal')) + 4.95), { path: '/' })}
                             </div>
                             :
                             <div>
@@ -339,6 +340,19 @@ const DatosEnvio = (props) => {
                                     <p id='total_texto'>PRECIO CON ENVÍO</p>
                                     <p id='precio_total'>{parseInt(cookies.get('precioTotal'))}€</p>
                                 </div>
+                            </div>
+                    }
+
+                    {
+                        !cookies.get('codigoUsado')
+                            ?
+                            <span></span>
+                            // <div id='total2'>
+                            //     <p id='total_texto'>TOTAL CON DESCUENTO</p>
+                            //     <p id='precio_total'>{parseInt(cookies.get('precioTotal')) * .9}€</p>
+                            // </div>
+                            :
+                            <div>
                                 <div id='total2'>
                                     <p id='total_texto'>TOTAL CON DESCUENTO</p>
                                     <p id='precio_total'>{parseInt(cookies.get('precioTotal')) * .9}€</p>
