@@ -89,7 +89,7 @@ const ProductosHome = (props) => {
                     )
                 })}
             </section>
-            <Link to='/productos'><button id="mostrarMasVendidos">MOSTRAR MÁS</button></Link>
+            <Link to='/productos'><button id="mostrarMasVendidos">VER TODOS LOS PRODUCTOS</button></Link>
         </div>
     )
 }
