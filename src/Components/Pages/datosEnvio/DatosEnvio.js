@@ -23,6 +23,7 @@ const DatosEnvio = (props) => {
     const [codigoDescuento, setCodigoDescuento] = useState('')
     const [codigoUsado, setCodigoUsado] = useState(false)
     const cookies = new Cookies()
+    const [envioGratis, setEnvioGratis] = useState(parseInt(cookies.get('precioTotal')))
 
     useEffect(() => {
         Axios.get(`https://artinkoo.herokuapp.com/verCesta/${cookies.get('idUsuario')}`).then((response) => {
@@ -151,7 +152,7 @@ const DatosEnvio = (props) => {
         if (codigoDescuento == 'ARTINKOO10') {
             if (codigoUsado == false && !cookies.get('codigoUsado')) {
                 setCodigoUsado(true)
-                cookies.set('precioTotal', (parseInt(cookies.get('precioTotal') * .90)), { path: '/' })
+                cookies.set('precioTotalDescuento', (parseInt(cookies.get('precioTotal') * .90)), { path: '/' })
                 cookies.set('codigoUsado', true, { path: '/' })
                 swal({
                     title: "Código Canjeado",
@@ -264,8 +265,8 @@ const DatosEnvio = (props) => {
                 <Header />
                 <div>
                     <div id='total'>
-                        <p id='total_texto'>TOTAL</p>
-                        <p id='precio_total'>{parseInt(cookies.get('precioTotal')) + (parseInt(cookies.get('precioTotal') * .10))}€</p>
+                        <p id='total_texto'>PRECIO</p>
+                        <p id='precio_total'>{parseInt(cookies.get('precioTotal'))}€</p>
                     </div>
 
                     <div id='tabla_datos'>
@@ -304,7 +305,13 @@ const DatosEnvio = (props) => {
 
                     <div id='datos_envio'>
                         <p>Método de envío</p>
-                        <p>{parseInt(cookies.get('precioTotal') * .10)}€</p>
+                        {
+                            envioGratis > 50
+                                ?
+                                <p>GRATIS</p>
+                                :
+                                <p>4.95€</p>
+                        }
                     </div>
 
                     <p id='descuentos'>Descuentos</p>
@@ -318,6 +325,27 @@ const DatosEnvio = (props) => {
 
                     <p id='comentarios_adicionales'>Comentarios adicionales:</p>
                     <textarea id='textarea_comentarios_adicionales' onChange={(e) => { setComentarios(e.target.value) }}></textarea>
+
+                    {
+                        !cookies.get('codigoUsado')
+                            ?
+                            <div id='total2'>
+                                <p id='total_texto'>PRECIO CON ENVÍO</p>
+                                <p id='precio_total'>{parseInt(cookies.get('precioTotal'))}€</p>
+                            </div>
+                            :
+                            <div>
+                                <div id='total2'>
+                                    <p id='total_texto'>PRECIO CON ENVÍO</p>
+                                    <p id='precio_total'>{parseInt(cookies.get('precioTotal'))}€</p>
+                                </div>
+                                <div id='total2'>
+                                    <p id='total_texto'>TOTAL CON DESCUENTO</p>
+                                    <p id='precio_total'>{parseInt(cookies.get('precioTotal')) * .9}€</p>
+                                </div>
+                            </div>
+                    }
+
 
                     <button id='continuar_pagos' onClick={() => realizarPedido()}>CONTINUAR EN PASARELA DE PAGO</button>
                     <Link to='/carrito'><p id='volver_informacion'> Volver al carrito</p></Link>

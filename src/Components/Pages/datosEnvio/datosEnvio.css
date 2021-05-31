@@ -8,7 +8,21 @@ div>div#total {
     margin-right: 5%;
 }
 
+div>div#total2 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    background: rgba(196, 196, 196, 0.11);
+    height: 2rem;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 div>div#total>p {
+    margin-top: 0.5rem;
+}
+
+div>div#total2>p {
     margin-top: 0.5rem;
 }
 
@@ -19,7 +33,22 @@ div>div#total>p#total_texto {
     margin-top: .3rem;
 }
 
+div>div#total2>p#total_texto {
+    font-family: Quicksand;
+    font-size: 15px;
+    padding-left: 1rem;
+    margin-top: .3rem;
+}
+
 div>div#total>p#precio_total {
+    font-family: Open Sans;
+    font-size: 15px;
+    font-weight: 700;
+    padding-right: 1rem;
+    margin-top: .3rem;
+}
+
+div>div#total2>p#precio_total {
     font-family: Open Sans;
     font-size: 15px;
     font-weight: 700;

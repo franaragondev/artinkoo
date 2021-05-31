@@ -9,6 +9,7 @@ import {
     useElements,
 } from "@stripe/react-stripe-js";
 import axios from "axios";
+import swal from 'sweetalert';
 
 const stripePromise = loadStripe("pk_test_51Iwsf6HAiPs9nykwHQMsgaa8R6YP4fPUb3AR351RJRc9k1v6QVMQZ2uHBofplBqT4bVBvFzq8p1VJRsdu0E1LpF900SfPMxoQW");
 const cookies = new Cookies()
@@ -32,18 +33,47 @@ const CheckoutForm = () => {
             // console.log(paymentMethod)
             const { id } = paymentMethod;
             try {
-                const { data } = await axios.post(
-                    // "http://localhost:8000/pasarela",
-                    "https://artinkoo.herokuapp.com/pasarela",
-                    {
-                        id,
-                        amount: ((parseInt(cookies.get('precioTotal')) + (parseInt(cookies.get('precioTotal') * .10))) * 100), //cents
-                    }
-                );
-                console.log(data);
-                window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/home'
-                // window.location.href = 'http://localhost:3000/home'
-                elements.getElement(CardElement).clear();
+                if (cookies.get('precioTotalDescuento')) {
+                    const { data } = await axios.post(
+                        // "http://localhost:8000/pasarela",
+                        "https://artinkoo.herokuapp.com/pasarela",
+                        {
+                            id,
+                            amount: ((parseInt(cookies.get('precioTotalDescuento'))) * 100), //cents
+                        }
+                    );
+                    console.log(data);
+                    swal({
+                        title: "¡Compra Realizada!",
+                        text: 'Su compra se ha realizado con éxito, por favor revise su email para más detalles.',
+                        icon: "success",
+                        button: "Ok!",
+                    }).then(function () {
+                        // window.location.href = 'http://localhost:3000/home'
+                        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/home'
+                    })
+                    elements.getElement(CardElement).clear();
+                } else {
+                    const { data } = await axios.post(
+                        // "http://localhost:8000/pasarela",
+                        "https://artinkoo.herokuapp.com/pasarela",
+                        {
+                            id,
+                            amount: ((parseInt(cookies.get('precioTotal'))) * 100), //cents
+                        }
+                    );
+                    console.log(data);
+                    swal({
+                        title: "¡Compra Realizada!",
+                        text: 'Su compra se ha realizado con éxito, por favor revise su email para más detalles.',
+                        icon: "success",
+                        button: "Ok!",
+                    }).then(function () {
+                        // window.location.href = 'http://localhost:3000/home'
+                        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/home'
+                    })
+                    elements.getElement(CardElement).clear();
+                }
             } catch (error) {
                 console.log(error);
             }

@@ -16,6 +16,7 @@ const Carrito = (props) => {
     const [comentarios, setComentarios] = useState('')
     const cookies = new Cookies()
     cookies.remove('codigoUsado', { path: '/' })
+    cookies.remove('precioTotalDescuento', { path: '/' })
 
     useEffect(() => {
         Axios.get(`https://artinkoo.herokuapp.com/verCesta/${cookies.get('idUsuario')}`).then((response) => {
