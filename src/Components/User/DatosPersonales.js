@@ -127,7 +127,37 @@ const DatosPersonales = (props) => {
                     { idUsuario: idUsuario })
                     .then(response => {
                         if (response.statusText == 'OK') {
-                            borrarCuentaCompleta()
+                            //     borrarCuentaCompleta()
+                            // }
+                            cookies.remove('idUsuario', { path: '/' })
+                            cookies.remove('nombre', { path: '/' })
+                            cookies.remove('apellidos', { path: '/' })
+                            cookies.remove('direccion', { path: '/' })
+                            cookies.remove('ciudad', { path: '/' })
+                            cookies.remove('provincia', { path: '/' })
+                            cookies.remove('codigoPostal', { path: '/' })
+                            cookies.remove('cesta', { path: '/' })
+                            cookies.remove('nombreUsuario', { path: '/' })
+                            cookies.remove('email', { path: '/' })
+                            swal({
+                                title: "Cuenta Borrada",
+                                text: `Su cuenta ha sido borrada correctamente.`,
+                                icon: "success",
+                                button: "Ok!",
+                            }).then(function () {
+                                // window.location.href = 'http://localhost:3000/login'
+                                window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
+                            })
+                        } else {
+                            swal({
+                                title: "Oh! Algo ha fallado.",
+                                text: "Inténtelo de nuevo más tarde.",
+                                icon: "error",
+                                button: "Volver",
+                            }).then(function () {
+                                // window.location.href = 'http://localhost:3000/login'
+                                window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
+                            })
                         }
                     })
                     .catch(error => {
