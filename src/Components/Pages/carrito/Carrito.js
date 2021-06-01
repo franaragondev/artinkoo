@@ -121,7 +121,7 @@ const Carrito = (props) => {
             </div>
         )
     } else {
-        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/home'
+        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/login'
         // window.location.href = 'http://localhost:3000/home'
     }
 
