@@ -115,7 +115,14 @@ const Carrito = (props) => {
                 <p id='comentarios_adicionales'>Comentarios adicionales:</p>
                 <textarea id='textarea_comentarios_adicionales' onChange={(e) => { setComentarios(e.target.value) }}></textarea> */}
 
-                <Link to='/datosEnvio'><button id='comprar_desde_cesta'>COMPRAR</button></Link>
+                {
+                    cookies.get('precioTotal') == 0
+                        ?
+                        <Link to='/productos'><button id='comprar_desde_cesta'>AÑADE ARTÍCULOS A TU CESTA</button></Link>
+                        :
+                        <Link to='/datosEnvio'><button id='comprar_desde_cesta'>COMPRAR</button></Link>
+                }
+
                 <GoToTop />
                 <Footer />
             </div>
