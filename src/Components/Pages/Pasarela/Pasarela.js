@@ -92,13 +92,9 @@ const CheckoutForm = () => {
                 className="img-fluid"
             />
 
-            {
-                cookies.get('precioTotalDescuento')
-                    ?
-                    <h3 className="text-center my-2">Precio: {parseInt(cookies.get('precioTotalDescuento'))}€</h3>
-                    :
-                    <h3 className="text-center my-2">Precio: {parseInt(cookies.get('precioTotal'))}€</h3>
-            }
+
+            <h3 className="text-center my-2">Precio: {parseInt(cookies.get('precioTotal'))}€</h3>
+
 
             {/* User Card Input */}
             <div className="form-group">

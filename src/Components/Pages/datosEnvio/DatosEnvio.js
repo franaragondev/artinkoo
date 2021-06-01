@@ -209,7 +209,7 @@ const DatosEnvio = (props) => {
     const anadirPedido = async () => {
         await Axios.post('https://artinkoo.herokuapp.com/anadirPedido',
             // await Axios.post('http://localhost:8000/anadirPedido',
-            { importe: (parseInt(cookies.get('precioTotal')) + (parseInt(cookies.get('precioTotal') * .10))) })
+            { importe: (parseInt(cookies.get('precioTotal'))) })
             .then(response => {
                 anadirPedidoUsuario(response.data.insertId)
             })
@@ -232,7 +232,7 @@ const DatosEnvio = (props) => {
                 email: cookies.get('email'), direccion: cookies.get('direccion'),
                 ciudad: cookies.get('ciudad'), provincia: cookies.get('provincia'),
                 codigoPostal: cookies.get('codigoPostal'),
-                precioTotal: (parseInt(cookies.get('precioTotal')) + (parseInt(cookies.get('precioTotal') * .10))),
+                precioTotal: (parseInt(cookies.get('precioTotal'))),
                 productos: listaProductos, comentarios: comentarios
             })
     }
@@ -246,7 +246,7 @@ const DatosEnvio = (props) => {
                 email: cookies.get('email'), direccion: cookies.get('direccion'),
                 ciudad: cookies.get('ciudad'), provincia: cookies.get('provincia'),
                 codigoPostal: cookies.get('codigoPostal'),
-                precioTotal: (parseInt(cookies.get('precioTotal')) + (parseInt(cookies.get('precioTotal') * .10))),
+                precioTotal: (parseInt(cookies.get('precioTotal'))),
                 productos: listaProductos, comentarios: comentarios
             })
             .then(response => {
@@ -305,13 +305,7 @@ const DatosEnvio = (props) => {
 
                     <div id='datos_envio'>
                         <p>Método de envío</p>
-                        {
-                            envioGratis > 50
-                                ?
-                                <p>GRATIS</p>
-                                :
-                                <p>4.95€</p>
-                        }
+                        <p>3€</p>
                     </div>
 
                     <p id='descuentos'>Descuentos</p>
@@ -326,22 +320,13 @@ const DatosEnvio = (props) => {
                     <p id='comentarios_adicionales'>Comentarios adicionales:</p>
                     <textarea id='textarea_comentarios_adicionales' onChange={(e) => { setComentarios(e.target.value) }}></textarea>
 
-                    {
-                        !cookies.get('precioTotal') < 50
-                            ?
-                            <div id='total2'>
-                                <p id='total_texto'>PRECIO CON ENVÍO</p>
-                                <p id='precio_total'>{parseInt(cookies.get('precioTotal')) + 4.95}€</p>
-                                {cookies.set('precioTotal', (parseInt(cookies.get('precioTotal')) + 4.95), { path: '/' })}
-                            </div>
-                            :
-                            <div>
-                                <div id='total2'>
-                                    <p id='total_texto'>PRECIO CON ENVÍO</p>
-                                    <p id='precio_total'>{parseInt(cookies.get('precioTotal'))}€</p>
-                                </div>
-                            </div>
-                    }
+                    <div id='total2'>
+                        <p id='total_texto'>PRECIO CON ENVÍO</p>
+                        {cookies.set('precioTotal', (parseInt(cookies.get('precioTotal')) + 3), { path: '/' })}
+                        <p id='precio_total'>{parseInt(cookies.get('precioTotal'))}€</p>
+
+                    </div>
+
 
                     {
                         !cookies.get('codigoUsado')
@@ -356,6 +341,7 @@ const DatosEnvio = (props) => {
                                 <div id='total2'>
                                     <p id='total_texto'>TOTAL CON DESCUENTO</p>
                                     <p id='precio_total'>{parseInt(cookies.get('precioTotal')) * .9}€</p>
+                                    {cookies.set('precioTotal', (parseInt(cookies.get('precioTotal')) * .9), { path: '/' })}
                                 </div>
                             </div>
                     }
