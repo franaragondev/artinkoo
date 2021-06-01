@@ -24,6 +24,7 @@ const DatosEnvio = (props) => {
     const [codigoUsado, setCodigoUsado] = useState(false)
     const cookies = new Cookies()
     const [envioGratis, setEnvioGratis] = useState(parseInt(cookies.get('precioTotal')))
+    cookies.set('precioTotalEnvio', (parseInt(cookies.get('precioTotal')) + 3), { path: '/' })
 
     useEffect(() => {
         Axios.get(`https://artinkoo.herokuapp.com/verCesta/${cookies.get('idUsuario')}`).then((response) => {
@@ -322,8 +323,7 @@ const DatosEnvio = (props) => {
 
                     <div id='total2'>
                         <p id='total_texto'>PRECIO CON ENVÍO</p>
-                        {cookies.set('precioTotal', (parseInt(cookies.get('precioTotal'))), { path: '/' })}
-                        <p id='precio_total'>{parseInt(cookies.get('precioTotal'))}€</p>
+                        <p id='precio_total'>{parseInt(cookies.get('precioTotalEnvio'))}€</p>
 
                     </div>
 
