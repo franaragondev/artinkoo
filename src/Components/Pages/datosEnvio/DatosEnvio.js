@@ -234,7 +234,7 @@ const DatosEnvio = (props) => {
                     email: cookies.get('email'), direccion: cookies.get('direccion'),
                     ciudad: cookies.get('ciudad'), provincia: cookies.get('provincia'),
                     codigoPostal: cookies.get('codigoPostal'),
-                    precioTotal: (parseInt(cookies.get('precioTotalEnvio'))),
+                    precioTotal: (cookies.get('precioTotalEnvio')),
                     productos: listaProductos, comentarios: comentarios
                 })
         } else {
@@ -245,7 +245,7 @@ const DatosEnvio = (props) => {
                     email: cookies.get('email'), direccion: cookies.get('direccion'),
                     ciudad: cookies.get('ciudad'), provincia: cookies.get('provincia'),
                     codigoPostal: cookies.get('codigoPostal'),
-                    precioTotal: (parseInt(cookies.get('precioTotalDescuento'))),
+                    precioTotal: (cookies.get('precioTotalDescuento')),
                     productos: listaProductos, comentarios: comentarios
                 })
         }
@@ -261,7 +261,7 @@ const DatosEnvio = (props) => {
                     email: cookies.get('email'), direccion: cookies.get('direccion'),
                     ciudad: cookies.get('ciudad'), provincia: cookies.get('provincia'),
                     codigoPostal: cookies.get('codigoPostal'),
-                    precioTotal: (parseInt(cookies.get('precioTotalEnvio'))),
+                    precioTotal: (cookies.get('precioTotalEnvio')),
                     productos: listaProductos, comentarios: comentarios
                 })
                 .then(response => {
@@ -280,7 +280,7 @@ const DatosEnvio = (props) => {
                     email: cookies.get('email'), direccion: cookies.get('direccion'),
                     ciudad: cookies.get('ciudad'), provincia: cookies.get('provincia'),
                     codigoPostal: cookies.get('codigoPostal'),
-                    precioTotal: (parseInt(cookies.get('precioTotalDescuento'))),
+                    precioTotal: (cookies.get('precioTotalDescuento')),
                     productos: listaProductos, comentarios: comentarios
                 })
                 .then(response => {
