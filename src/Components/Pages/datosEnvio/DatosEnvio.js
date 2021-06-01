@@ -266,7 +266,7 @@ const DatosEnvio = (props) => {
                 <div>
                     <div id='total'>
                         <p id='total_texto'>PRECIO</p>
-                        <p id='precio_total'>{parseInt(cookies.get('precioTotal'))}€</p>
+                        <p id='precio_total'>{parseInt(cookies.get('precioTotal')) - 3}€</p>
                     </div>
 
                     <div id='tabla_datos'>
@@ -322,7 +322,7 @@ const DatosEnvio = (props) => {
 
                     <div id='total2'>
                         <p id='total_texto'>PRECIO CON ENVÍO</p>
-                        {cookies.set('precioTotal', (parseInt(cookies.get('precioTotal')) + 3), { path: '/' })}
+                        {cookies.set('precioTotal', (parseInt(cookies.get('precioTotal')) - 3), { path: '/' })}
                         <p id='precio_total'>{parseInt(cookies.get('precioTotal'))}€</p>
 
                     </div>
@@ -341,7 +341,7 @@ const DatosEnvio = (props) => {
                                 <div id='total2'>
                                     <p id='total_texto'>TOTAL CON DESCUENTO</p>
                                     <p id='precio_total'>{parseInt(cookies.get('precioTotal')) * .9}€</p>
-                                    {cookies.set('precioTotal', (parseInt(cookies.get('precioTotal')) * .9), { path: '/' })}
+                                    {/* {cookies.set('precioTotal', (parseInt(cookies.get('precioTotal')) * .9), { path: '/' })} */}
                                 </div>
                             </div>
                     }
