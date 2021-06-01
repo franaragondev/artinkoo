@@ -39,7 +39,7 @@ const CheckoutForm = () => {
                         "https://artinkoo.herokuapp.com/pasarela",
                         {
                             id,
-                            amount: (cookies.get('precioTotalDescuento') * 100), //cents
+                            amount: ((cookies.get('precioTotalDescuento') + 1) * 100), //cents
                         }
                     );
                     console.log(data);
@@ -59,7 +59,7 @@ const CheckoutForm = () => {
                         "https://artinkoo.herokuapp.com/pasarela",
                         {
                             id,
-                            amount: ((cookies.get('precioTotalEnvio')) * 100), //cents
+                            amount: ((cookies.get('precioTotalEnvio') + 3) * 100), //cents
                         }
                     );
                     console.log(data);
@@ -95,7 +95,7 @@ const CheckoutForm = () => {
             {
                 cookies.get('precioTotalDescuento')
                     ?
-                    <h3 className="text-center my-2">Precio: {parseInt(cookies.get('precioTotalDescuento'))}€</h3>
+                    <h3 className="text-center my-2">Precio: {cookies.get('precioTotalDescuento')}€</h3>
                     :
                     <h3 className="text-center my-2">Precio: {parseInt(cookies.get('precioTotalEnvio'))}€</h3>
             }
