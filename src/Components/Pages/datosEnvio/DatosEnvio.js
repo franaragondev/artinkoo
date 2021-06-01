@@ -215,7 +215,7 @@ const DatosEnvio = (props) => {
     const anadirPedidoUsuario = async (idInsertada) => {
         await Axios.post('https://artinkoo.herokuapp.com/anadirPedidoUsuario',
             // await Axios.post('http://localhost:8000/anadirPedidoUsuario',
-            { idPedido: idInsertada, idUsuario: cookies.get('idUsuario'), fecha: (day + "/" + month + "/" + year) })
+            { idPedido: idInsertada, idUsuario: cookies.get('idUsuario'), fecha: (year + "/" + month + "/" + day) })
             .then(response => {
                 anadirPedidoProducto(idInsertada)
             })
