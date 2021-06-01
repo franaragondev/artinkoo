@@ -180,8 +180,15 @@ const DatosEnvio = (props) => {
     }
 
     const finalizarCompra = () => {
-        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/pasarela'
-        // window.location.href = 'http://localhost:3000/pasarela'
+        swal({
+            title: "Redirigiendo a pasarela de pago.",
+            text: "Por favor, espere unos segundos...",
+            icon: "success",
+            button: "Ok!",
+        }).then(function () {
+            window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/pasarela'
+            // window.location.href = 'http://localhost:3000/pasarela'
+        })
     }
 
     const anadirPedidoProducto = (idInsertada) => {
