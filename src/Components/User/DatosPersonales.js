@@ -191,7 +191,6 @@ const DatosPersonales = (props) => {
                 <div className='datosPersonales'>
                     <h2>DATOS PERSONALES</h2>
                     <div className='datosUsuario'>
-                        <h4><span className='columnaDatosPersonales'>ID Google:</span> {cookies.get('idGoogle')}</h4>
                         <h4><span className='columnaDatosPersonales'>Nombre:</span> {cookies.get('nombreGoogle')}</h4>
                         <h4><span className='columnaDatosPersonales'>Apellidos:</span> {cookies.get('apellidosGoogle')}</h4>
                         <h4><span className='columnaDatosPersonales'>Email:</span> {cookies.get('emailGoogle')}</h4>
