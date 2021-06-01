@@ -226,38 +226,73 @@ const DatosEnvio = (props) => {
     }
 
     const enviarEmailVenta = () => {
-        Axios.post('https://artinkoo.herokuapp.com/emailVenta',
-            // Axios.post('http://localhost:8000/emailVenta',
-            {
-                nombre: cookies.get('nombre'), apellidos: cookies.get('apellidos'),
-                email: cookies.get('email'), direccion: cookies.get('direccion'),
-                ciudad: cookies.get('ciudad'), provincia: cookies.get('provincia'),
-                codigoPostal: cookies.get('codigoPostal'),
-                precioTotal: (parseInt(cookies.get('precioTotal'))),
-                productos: listaProductos, comentarios: comentarios
-            })
+        if (!cookies.get('codigoUsado')) {
+            Axios.post('https://artinkoo.herokuapp.com/emailVenta',
+                // Axios.post('http://localhost:8000/emailVenta',
+                {
+                    nombre: cookies.get('nombre'), apellidos: cookies.get('apellidos'),
+                    email: cookies.get('email'), direccion: cookies.get('direccion'),
+                    ciudad: cookies.get('ciudad'), provincia: cookies.get('provincia'),
+                    codigoPostal: cookies.get('codigoPostal'),
+                    precioTotal: (parseInt(cookies.get('precioTotalEnvio'))),
+                    productos: listaProductos, comentarios: comentarios
+                })
+        } else {
+            Axios.post('https://artinkoo.herokuapp.com/emailVenta',
+                // Axios.post('http://localhost:8000/emailVenta',
+                {
+                    nombre: cookies.get('nombre'), apellidos: cookies.get('apellidos'),
+                    email: cookies.get('email'), direccion: cookies.get('direccion'),
+                    ciudad: cookies.get('ciudad'), provincia: cookies.get('provincia'),
+                    codigoPostal: cookies.get('codigoPostal'),
+                    precioTotal: (parseInt(cookies.get('precioTotalDescuento'))),
+                    productos: listaProductos, comentarios: comentarios
+                })
+        }
     }
 
     const realizarPedido = () => {
         creaMensajePedido()
-        Axios.post('https://artinkoo.herokuapp.com/realizarCompra',
-            // Axios.post('http://localhost:8000/realizarCompra',
-            {
-                nombre: cookies.get('nombre'), apellidos: cookies.get('apellidos'),
-                email: cookies.get('email'), direccion: cookies.get('direccion'),
-                ciudad: cookies.get('ciudad'), provincia: cookies.get('provincia'),
-                codigoPostal: cookies.get('codigoPostal'),
-                precioTotal: (parseInt(cookies.get('precioTotal'))),
-                productos: listaProductos, comentarios: comentarios
-            })
-            .then(response => {
-                enviarEmailVenta()
-                vaciarCarrito()
-                anadirPedido()
-            })
-            .catch(error => {
-                console.log(error);
-            })
+        if (!cookies.get('codigoUsado')) {
+            Axios.post('https://artinkoo.herokuapp.com/realizarCompra',
+                // Axios.post('http://localhost:8000/realizarCompra',
+                {
+                    nombre: cookies.get('nombre'), apellidos: cookies.get('apellidos'),
+                    email: cookies.get('email'), direccion: cookies.get('direccion'),
+                    ciudad: cookies.get('ciudad'), provincia: cookies.get('provincia'),
+                    codigoPostal: cookies.get('codigoPostal'),
+                    precioTotal: (parseInt(cookies.get('precioTotalEnvio'))),
+                    productos: listaProductos, comentarios: comentarios
+                })
+                .then(response => {
+                    enviarEmailVenta()
+                    vaciarCarrito()
+                    anadirPedido()
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+        } else {
+            Axios.post('https://artinkoo.herokuapp.com/realizarCompra',
+                // Axios.post('http://localhost:8000/realizarCompra',
+                {
+                    nombre: cookies.get('nombre'), apellidos: cookies.get('apellidos'),
+                    email: cookies.get('email'), direccion: cookies.get('direccion'),
+                    ciudad: cookies.get('ciudad'), provincia: cookies.get('provincia'),
+                    codigoPostal: cookies.get('codigoPostal'),
+                    precioTotal: (parseInt(cookies.get('precioTotalDescuento'))),
+                    productos: listaProductos, comentarios: comentarios
+                })
+                .then(response => {
+                    enviarEmailVenta()
+                    vaciarCarrito()
+                    anadirPedido()
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+        }
+
     }
 
     if (cookies.get('nombre')) {

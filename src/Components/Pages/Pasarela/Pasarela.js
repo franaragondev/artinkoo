@@ -59,7 +59,7 @@ const CheckoutForm = () => {
                         "https://artinkoo.herokuapp.com/pasarela",
                         {
                             id,
-                            amount: ((cookies.get('precioTotalEnvio') + 3) * 100), //cents
+                            amount: ((cookies.get('precioTotalEnvio') - 3) * 100), //cents
                         }
                     );
                     console.log(data);
