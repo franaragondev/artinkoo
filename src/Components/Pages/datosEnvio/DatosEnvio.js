@@ -207,10 +207,15 @@ const DatosEnvio = (props) => {
         })
     }
 
+    var dateObj = new Date();
+    var month = dateObj.getUTCMonth() + 1; //months from 1-12
+    var day = dateObj.getUTCDate();
+    var year = dateObj.getUTCFullYear();
+
     const anadirPedidoUsuario = async (idInsertada) => {
         await Axios.post('https://artinkoo.herokuapp.com/anadirPedidoUsuario',
             // await Axios.post('http://localhost:8000/anadirPedidoUsuario',
-            { idPedido: idInsertada, idUsuario: cookies.get('idUsuario') })
+            { idPedido: idInsertada, idUsuario: cookies.get('idUsuario'), fecha: (year + "/" + month + "/" + day) })
             .then(response => {
                 anadirPedidoProducto(idInsertada)
             })
