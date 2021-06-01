@@ -179,6 +179,11 @@ const DatosEnvio = (props) => {
         }
     }
 
+    const redirigirProductos = () => {
+        window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/productos'
+        // window.location.href = 'http://localhost:3000/productos'
+    }
+
     const finalizarCompra = () => {
         swal({
             title: "Redirigiendo a pasarela de pago.",
@@ -388,8 +393,13 @@ const DatosEnvio = (props) => {
                             </div>
                     }
 
-
-                    <button id='continuar_pagos' onClick={() => realizarPedido()}>CONTINUAR EN PASARELA DE PAGO</button>
+                    {
+                        productos.length == 0
+                            ?
+                            <button id='continuar_pagos' onClick={() => redirigirProductos()}>AÑADA PRODUCTOS PARA COMPRAR</button>
+                            :
+                            <button id='continuar_pagos' onClick={() => realizarPedido()}>CONTINUAR EN PASARELA DE PAGO</button>
+                    }
                     <Link to='/carrito'><p id='volver_informacion'> Volver al carrito</p></Link>
                 </div>
                 <GoToTop />
