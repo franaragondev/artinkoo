@@ -5,6 +5,7 @@ import Axios from 'axios'
 import md5 from 'md5'
 import swal from 'sweetalert';
 import $ from "jquery";
+import EnlaceServer from '../EnlaceServer'
 
 //Componente que renderizará el formato del registro de la aplicación
 const RegisterForm = (props) => {
@@ -17,10 +18,11 @@ const RegisterForm = (props) => {
     const [email, setEmail] = useState('')
     const [usuario, setUsuario] = useState('')
     const [password, setPassword] = useState('')
+    const [enlace, setEnlace] = useState(EnlaceServer)
 
     const borrarCuentaDuplicada = (idInsertada) => {
         console.log('hola');
-        Axios.post('https://artinkoo.herokuapp.com/borrarCuenta',
+        Axios.post(enlace + '/borrarCuenta',
             // Axios.post('http://localhost:8000/borrarCuenta',
             { idUsuario: idInsertada })
             .then(response => {
@@ -33,7 +35,7 @@ const RegisterForm = (props) => {
 
     const registerDataUser = async (idInsertada) => {
         console.log(idInsertada);
-        await Axios.post('https://artinkoo.herokuapp.com/registerDatosUser',
+        await Axios.post(enlace + '/registerDatosUser',
             // await Axios.post('http://localhost:8000/registerDatosUser',
             { usuario: usuario, contrasenia: md5(password), idUsuario: idInsertada })
             .then(response => {
@@ -77,7 +79,7 @@ const RegisterForm = (props) => {
 
     const register = async () => {
         if (nombre != '' && apellidos != '' && direccion != '' && ciudad != '' && provincia != '' && codigoPostal != '' && email != '' && usuario != '' && password != '') {
-            await Axios.post('https://artinkoo.herokuapp.com/register',
+            await Axios.post(enlace + '/register',
                 // await Axios.post('http://localhost:8000/register',
                 { nombre: nombre, apellidos: apellidos, direccion: direccion, ciudad: ciudad, provincia: provincia, codigoPostal: codigoPostal, nombreUsuario: usuario, contrasenia: md5(password), email: email })
                 .then(response => {

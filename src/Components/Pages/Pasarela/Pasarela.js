@@ -10,6 +10,7 @@ import {
 } from "@stripe/react-stripe-js";
 import axios from "axios";
 import swal from 'sweetalert';
+import EnlaceServer from '../../EnlaceServer'
 
 const stripePromise = loadStripe("pk_test_51Iwsf6HAiPs9nykwHQMsgaa8R6YP4fPUb3AR351RJRc9k1v6QVMQZ2uHBofplBqT4bVBvFzq8p1VJRsdu0E1LpF900SfPMxoQW");
 const cookies = new Cookies()
@@ -19,6 +20,7 @@ const CheckoutForm = () => {
     const elements = useElements();
 
     const [loading, setLoading] = useState(false);
+    const [enlace, setEnlace] = useState(EnlaceServer)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -36,7 +38,7 @@ const CheckoutForm = () => {
                 if (cookies.get('precioTotalDescuento')) {
                     const { data } = await axios.post(
                         // "http://localhost:8000/pasarela",
-                        "https://artinkoo.herokuapp.com/pasarela",
+                        enlace + "/pasarela",
                         {
                             id,
                             amount: ((cookies.get('precioTotalDescuento')) * 100), //cents
@@ -56,7 +58,7 @@ const CheckoutForm = () => {
                 } else {
                     const { data } = await axios.post(
                         // "http://localhost:8000/pasarela",
-                        "https://artinkoo.herokuapp.com/pasarela",
+                        enlace + "/pasarela",
                         {
                             id,
                             amount: ((cookies.get('precioTotalEnvio')) * 100), //cents

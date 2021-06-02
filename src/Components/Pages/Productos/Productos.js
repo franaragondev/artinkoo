@@ -7,15 +7,17 @@ import Footer from '../../Footer/Footer'
 import GoToTop from '../../GoToTop/GoToTop'
 import Header from '../../Header/Header'
 import CarouselProductos from '../../Carousel/CarouselProductos'
+import EnlaceServer from '../../EnlaceServer'
 
 //Componente que renderizará la página PRODUCTOS
 const Productos = (props) => {
     const [productos, setProductos] = useState([]);
     const cookies = new Cookies()
+    const [enlace, setEnlace] = useState(EnlaceServer)
 
     const añadirCesta = (idProducto) => {
         if (cookies.get('idUsuario')) {
-            Axios.post(`https://artinkoo.herokuapp.com/anadirCesta`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
+            Axios.post(enlace + `/anadirCesta`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
                 // Axios.post(`http://localhost:8000/anadirCesta`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
                 if (response.data.affectedRows == 1) {
                     swal({
@@ -67,7 +69,7 @@ const Productos = (props) => {
     }
 
     useEffect(() => {
-        Axios.get(`https://artinkoo.herokuapp.com/productos`).then((response) => {
+        Axios.get(enlace + `/productos`).then((response) => {
             setProductos(response.data)
         })
         // Axios.get(`http://localhost:8000/productos`).then((response) => {

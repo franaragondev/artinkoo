@@ -2,15 +2,17 @@ import React, { Component, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Cookies from 'universal-cookie'
 import Axios from 'axios'
+import EnlaceServer from '../EnlaceServer'
 
 //Componente que renderizará la cabecera de la web
 const HeaderPages = (props) => {
     const [aBuscar, setABuscar] = useState(' ')
     const [productos, setProductos] = useState([]);
     const cookies = new Cookies()
+    const [enlace, setEnlace] = useState(EnlaceServer)
 
     useEffect(() => {
-        Axios.get(`https://artinkoo.herokuapp.com/verCesta/${cookies.get('idUsuario')}`).then((response) => {
+        Axios.get(enlace + `/verCesta/${cookies.get('idUsuario')}`).then((response) => {
             // Axios.get(`http://localhost:8000/verCesta/${cookies.get('idUsuario')}`).then((response) => {
             setProductos(response.data)
         })

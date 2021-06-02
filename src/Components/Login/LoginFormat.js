@@ -6,6 +6,7 @@ import md5 from 'md5'
 import Cookies from 'universal-cookie'
 import swal from 'sweetalert';
 import GoogleLogin from 'react-google-login'
+import EnlaceServer from '../EnlaceServer'
 
 //Componente que renderizará el formato de login de la aplicación
 const LoginFormat = (props) => {
@@ -14,9 +15,10 @@ const LoginFormat = (props) => {
     const [loguinStatus, setLoguinStatus] = useState('')
     const [datosGoogle, setDatosGoogle] = useState([])
     const cookies = new Cookies()
+    const [enlace, setEnlace] = useState(EnlaceServer)
 
     const variablesUsuario = () => {
-        Axios.post('https://artinkoo.herokuapp.com/obtenerDatosUsuario',
+        Axios.post(enlace + '/obtenerDatosUsuario',
             // Axios.post('http://localhost:8000/obtenerDatosUsuario',
             { idUsuario: cookies.get('idUsuario') })
             .then(response => {
@@ -50,7 +52,7 @@ const LoginFormat = (props) => {
     }
 
     const loguin = async () => {
-        await Axios.post('https://artinkoo.herokuapp.com/login',
+        await Axios.post(enlace + '/login',
             // await Axios.post('http://localhost:8000/login',
             { nombreUsuario: nombre, contrasenia: md5(password) })
             .then(response => {

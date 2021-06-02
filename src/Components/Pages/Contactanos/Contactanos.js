@@ -6,16 +6,18 @@ import Axios from 'axios'
 import swal from 'sweetalert';
 import HeaderPages from '../../Header/HeaderPages'
 import Footer from '../../Footer/Footer'
+import EnlaceServer from '../../EnlaceServer'
 
 //Componente que renderizará la página de contacto
 const Contactanos = (props) => {
     const [nombre, setNombre] = useState('')
     const [mensaje, setMensaje] = useState('')
     const [email, setEmail] = useState('')
+    const [enlace, setEnlace] = useState(EnlaceServer)
 
     const enviarEmail = async () => {
         if (nombre != '' && mensaje != '' && email != '') {
-            await Axios.post('https://artinkoo.herokuapp.com/contacto',
+            await Axios.post(enlace + '/contacto',
                 { nombre: nombre, email: email, mensaje: mensaje })
                 .then(response => {
                     if (response.statusText == 'OK') {

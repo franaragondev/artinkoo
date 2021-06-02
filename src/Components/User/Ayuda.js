@@ -4,16 +4,18 @@ import Cookies from 'universal-cookie'
 import { Link } from 'react-router-dom'
 import Axios from 'axios'
 import swal from 'sweetalert';
+import EnlaceServer from '../EnlaceServer'
 
 //Componente que renderizará el video de la primera carga
 const Ayuda = (props) => {
     const [nombre, setNombre] = useState('')
     const [mensaje, setMensaje] = useState('')
     const [email, setEmail] = useState('')
+    const [enlace, setEnlace] = useState(EnlaceServer)
 
     const enviarEmail = async () => {
         if (nombre != '' && mensaje != '' && email != '') {
-            await Axios.post('https://artinkoo.herokuapp.com/contactoAyuda',
+            await Axios.post(enlace + '/contactoAyuda',
                 { nombre: nombre, email: email, mensaje: mensaje })
                 .then(response => {
                     if (response.statusText == 'OK') {

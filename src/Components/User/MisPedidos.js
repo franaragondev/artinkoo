@@ -5,15 +5,17 @@ import Cookies from 'universal-cookie'
 import { Link } from 'react-router-dom'
 import Axios from 'axios'
 import swal from 'sweetalert';
+import EnlaceServer from '../EnlaceServer'
 
 //Componente que renderizará el video de la primera carga
 const MisPedidos = (props) => {
     const { id } = useParams()
     const cookies = new Cookies()
     const [listaPedidos, setListaPedidos] = useState([]);
+    const [enlace, setEnlace] = useState(EnlaceServer)
 
     useEffect(() => {
-        Axios.get(`https://artinkoo.herokuapp.com/misPedidos/${cookies.get('idUsuario')}`).then((response) => {
+        Axios.get(enlace + `/misPedidos/${cookies.get('idUsuario')}`).then((response) => {
             setListaPedidos(response.data)
             console.log(response);
         })

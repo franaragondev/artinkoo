@@ -7,6 +7,7 @@ import Footer from '../../Footer/Footer'
 import GoToTop from '../../GoToTop/GoToTop'
 import Header from '../../Header/HeaderCarrito'
 import useStateRef from 'react-usestateref'
+import EnlaceServer from '../../EnlaceServer'
 
 //Componente que renderizará la página CARRITO
 const Carrito = (props) => {
@@ -14,12 +15,13 @@ const Carrito = (props) => {
     const [precioTotal, setPrecioTotal, precioTotalRef] = useStateRef(0)
     const [contador, setContador] = useState(0)
     const [comentarios, setComentarios] = useState('')
+    const [enlace, setEnlace] = useState(EnlaceServer)
     const cookies = new Cookies()
     cookies.remove('codigoUsado', { path: '/' })
     cookies.remove('precioTotalDescuento', { path: '/' })
 
     useEffect(() => {
-        Axios.get(`https://artinkoo.herokuapp.com/verCesta/${cookies.get('idUsuario')}`).then((response) => {
+        Axios.get(enlace + `/verCesta/${cookies.get('idUsuario')}`).then((response) => {
             // Axios.get(`http://localhost:8000/verCesta/${cookies.get('idUsuario')}`).then((response) => {
             setProductos(response.data)
         })
@@ -38,7 +40,7 @@ const Carrito = (props) => {
 
     const borrarProductoCesta = (idProducto) => {
         console.log('borrado');
-        Axios.post(`https://artinkoo.herokuapp.com/borrarProductoCesta`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
+        Axios.post(enlace + `/borrarProductoCesta`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
             // Axios.post(`http://localhost:8000/borrarProductoCesta`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
             if (response.data.affectedRows == 1) {
                 swal({
@@ -56,7 +58,7 @@ const Carrito = (props) => {
 
     const anadirStock = (idProducto) => {
         console.log('añadido');
-        Axios.post(`https://artinkoo.herokuapp.com/anadirStock`, { idProducto: idProducto }).then((response) => {
+        Axios.post(enlace + `/anadirStock`, { idProducto: idProducto }).then((response) => {
             // Axios.post(`http://localhost:8000/anadirStock`, { idProducto: idProducto }).then((response) => {
             if (response.data.affectedRows == 1) {
                 borrarProductoCesta(idProducto)

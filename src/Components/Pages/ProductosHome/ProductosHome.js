@@ -3,21 +3,23 @@ import { Link } from 'react-router-dom'
 import Axios from 'axios'
 import Cookies from 'universal-cookie'
 import swal from 'sweetalert';
+import EnlaceServer from '../../EnlaceServer'
 
 //Componente que renderizará los productos situados en el HOME
 const ProductosHome = (props) => {
     const [productosMasVendidos, setProductosMasVendidos] = useState([]);
+    const [enlace, setEnlace] = useState(EnlaceServer)
     const cookies = new Cookies()
 
     useEffect(() => {
-        Axios.get(`https://artinkoo.herokuapp.com/masVendidos`).then((response) => {
+        Axios.get(enlace + `/masVendidos`).then((response) => {
             setProductosMasVendidos(response.data)
         })
     }, [])
 
     const añadirCesta = (idProducto) => {
         if (cookies.get('idUsuario')) {
-            Axios.post(`https://artinkoo.herokuapp.com/anadirCesta`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
+            Axios.post(enlace + `/anadirCesta`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
                 // Axios.post(`http://localhost:8000/anadirCesta`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
                 if (response.data.affectedRows == 1) {
                     swal({
@@ -48,7 +50,7 @@ const ProductosHome = (props) => {
     const borrarStock = (idProducto) => {
         console.log('borrando');
         if (cookies.get('idUsuario')) {
-            Axios.post(`https://artinkoo.herokuapp.com/borrarStock`, { idProducto: idProducto }).then((response) => {
+            Axios.post(enlace + `/borrarStock`, { idProducto: idProducto }).then((response) => {
                 // Axios.post(`http://localhost:8000/borrarStock`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
                 if (response.data.affectedRows == 1) {
                     añadirCesta(idProducto)

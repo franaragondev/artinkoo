@@ -6,6 +6,7 @@ import swal from 'sweetalert';
 import Footer from '../../Footer/Footer'
 import GoToTop from '../../GoToTop/GoToTop'
 import Header from '../../Header/HeaderCarrito'
+import EnlaceServer from '../../EnlaceServer'
 
 //Componente que renderizará la página de los datos del envío
 const DatosEnvio = (props) => {
@@ -24,10 +25,11 @@ const DatosEnvio = (props) => {
     const [codigoUsado, setCodigoUsado] = useState(false)
     const cookies = new Cookies()
     const [envioGratis, setEnvioGratis] = useState(parseInt(cookies.get('precioTotal')))
+    const [enlace, setEnlace] = useState(EnlaceServer)
     cookies.set('precioTotalEnvio', (parseInt(cookies.get('precioTotal')) + 3), { path: '/' })
 
     useEffect(() => {
-        Axios.get(`https://artinkoo.herokuapp.com/verCesta/${cookies.get('idUsuario')}`).then((response) => {
+        Axios.get(enlace + `/verCesta/${cookies.get('idUsuario')}`).then((response) => {
             // Axios.get(`http://localhost:8000/verCesta/${cookies.get('idUsuario')}`).then((response) => {
             setProductos(response.data)
         })
@@ -65,7 +67,7 @@ const DatosEnvio = (props) => {
     const actualizarEmail = async () => {
         if (editarEmail != '') {
             // await Axios.post('http://localhost:8000/actualizarEmail',
-            await Axios.post('https://artinkoo.herokuapp.com/actualizarEmail',
+            await Axios.post(enlace + '/actualizarEmail',
                 { email: editarEmail, idUsuario: cookies.get('idUsuario') })
                 .then(response => {
                     if (response.statusText == 'OK') {
@@ -107,7 +109,7 @@ const DatosEnvio = (props) => {
     const actualizarDireccion = async () => {
         if (editarDireccion != '' && editarCiudad != '' && editarProvincia != '' && editarCodigoPostal != '') {
             // await Axios.post('http://localhost:8000/actualizarDireccion',
-            await Axios.post('https://artinkoo.herokuapp.com/actualizarDireccion',
+            await Axios.post(enlace + '/actualizarDireccion',
                 { direccion: editarDireccion, ciudad: editarCiudad, provincia: editarProvincia, codigoPostal: editarCodigoPostal, idUsuario: cookies.get('idUsuario') })
                 .then(response => {
                     if (response.statusText == 'OK') {
@@ -198,7 +200,7 @@ const DatosEnvio = (props) => {
 
     const anadirPedidoProducto = (idInsertada) => {
         productos.map((producto, index) => {
-            Axios.post('https://artinkoo.herokuapp.com/anadirPedidoProducto',
+            Axios.post(enlace + '/anadirPedidoProducto',
                 // Axios.post('http://localhost:8000/anadirPedidoProducto',
                 { idPedido: idInsertada, idProducto: producto.idProducto })
                 .then(response => {
@@ -213,7 +215,7 @@ const DatosEnvio = (props) => {
     var year = dateObj.getUTCFullYear();
 
     const anadirPedidoUsuario = async (idInsertada) => {
-        await Axios.post('https://artinkoo.herokuapp.com/anadirPedidoUsuario',
+        await Axios.post(enlace + '/anadirPedidoUsuario',
             // await Axios.post('http://localhost:8000/anadirPedidoUsuario',
             { idPedido: idInsertada, idUsuario: cookies.get('idUsuario'), fecha: (year + "/" + month + "/" + day) })
             .then(response => {
@@ -225,7 +227,7 @@ const DatosEnvio = (props) => {
     }
 
     const anadirPedido = async () => {
-        await Axios.post('https://artinkoo.herokuapp.com/anadirPedido',
+        await Axios.post(enlace + '/anadirPedido',
             // await Axios.post('http://localhost:8000/anadirPedido',
             { importe: (parseInt(cookies.get('precioTotal'))) })
             .then(response => {
@@ -237,14 +239,14 @@ const DatosEnvio = (props) => {
     }
 
     const vaciarCarrito = () => {
-        Axios.post(`https://artinkoo.herokuapp.com/borrarCesta`, { idUsuario: cookies.get('idUsuario') }).then((response) => {
+        Axios.post(enlace + `/borrarCesta`, { idUsuario: cookies.get('idUsuario') }).then((response) => {
             // Axios.post(`http://localhost:8000/borrarCesta`, { idUsuario: cookies.get('idUsuario') }).then((response) => {
         })
     }
 
     const enviarEmailVenta = () => {
         if (!cookies.get('codigoUsado')) {
-            Axios.post('https://artinkoo.herokuapp.com/emailVenta',
+            Axios.post(enlace + '/emailVenta',
                 // Axios.post('http://localhost:8000/emailVenta',
                 {
                     nombre: cookies.get('nombre'), apellidos: cookies.get('apellidos'),
@@ -255,7 +257,7 @@ const DatosEnvio = (props) => {
                     productos: listaProductos, comentarios: comentarios
                 })
         } else {
-            Axios.post('https://artinkoo.herokuapp.com/emailVenta',
+            Axios.post(enlace + '/emailVenta',
                 // Axios.post('http://localhost:8000/emailVenta',
                 {
                     nombre: cookies.get('nombre'), apellidos: cookies.get('apellidos'),
@@ -271,7 +273,7 @@ const DatosEnvio = (props) => {
     const realizarPedido = () => {
         creaMensajePedido()
         if (!cookies.get('codigoUsado')) {
-            Axios.post('https://artinkoo.herokuapp.com/realizarCompra',
+            Axios.post(enlace + '/realizarCompra',
                 // Axios.post('http://localhost:8000/realizarCompra',
                 {
                     nombre: cookies.get('nombre'), apellidos: cookies.get('apellidos'),
@@ -290,7 +292,7 @@ const DatosEnvio = (props) => {
                     console.log(error);
                 })
         } else {
-            Axios.post('https://artinkoo.herokuapp.com/realizarCompra',
+            Axios.post(enlace + '/realizarCompra',
                 // Axios.post('http://localhost:8000/realizarCompra',
                 {
                     nombre: cookies.get('nombre'), apellidos: cookies.get('apellidos'),

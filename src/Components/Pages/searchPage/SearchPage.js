@@ -7,6 +7,7 @@ import GoToTop from '../../GoToTop/GoToTop'
 import Header from '../../Header/Header'
 import Cookies from 'universal-cookie'
 import swal from 'sweetalert';
+import EnlaceServer from '../../EnlaceServer'
 
 //Componente que renderizará la página PRODUCTOS
 const SearchPage = (props) => {
@@ -14,9 +15,10 @@ const SearchPage = (props) => {
     const [productos, setProductos] = useState([]);
     const [buscada, setBuscada] = useState(aBuscar)
     const cookies = new Cookies()
+    const [enlace, setEnlace] = useState(EnlaceServer)
 
     if (buscada != aBuscar) {
-        Axios.get(`https://artinkoo.herokuapp.com/buscar/${aBuscar}`).then((response) => {
+        Axios.get(enlace + `/buscar/${aBuscar}`).then((response) => {
             // Axios.get(`http://localhost:8000/buscar/${aBuscar}`).then((response) => {
             setProductos(response.data)
             setBuscada(aBuscar)
@@ -25,7 +27,7 @@ const SearchPage = (props) => {
     }
 
     useEffect(() => {
-        Axios.get(`https://artinkoo.herokuapp.com/buscar/${aBuscar}`).then((response) => {
+        Axios.get(enlace + `/buscar/${aBuscar}`).then((response) => {
             // Axios.get(`http://localhost:8000/buscar/${aBuscar}`).then((response) => {
             setProductos(response.data)
             console.log(response.data);
@@ -34,7 +36,7 @@ const SearchPage = (props) => {
 
     const añadirCesta = (idProducto) => {
         if (cookies.get('idUsuario')) {
-            Axios.post(`https://artinkoo.herokuapp.com/anadirCesta`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
+            Axios.post(enlace + `/anadirCesta`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
                 // Axios.post(`http://localhost:8000/anadirCesta`, { idUsuario: cookies.get('idUsuario'), idProducto: idProducto }).then((response) => {
                 if (response.data.affectedRows == 1) {
                     swal({

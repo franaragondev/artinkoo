@@ -4,6 +4,7 @@ import Cookies from 'universal-cookie'
 import { Link } from 'react-router-dom'
 import Axios from 'axios'
 import swal from 'sweetalert';
+import EnlaceServer from '../EnlaceServer'
 
 //Componente que renderizará el video de la primera carga
 const DatosPersonales = (props) => {
@@ -17,11 +18,12 @@ const DatosPersonales = (props) => {
     const [codigoPostal, setCodigoPostal] = useState(cookies.get('codigoPostal'))
     const [email, setEmail] = useState(cookies.get('email'))
     const [idUsuario, setIdUsuario] = useState(cookies.get('idUsuario'))
+    const [enlace, setEnlace] = useState(EnlaceServer)
 
     const actualizar = async () => {
         if (nombre != '' && apellidos != '' && direccion != '' && ciudad != '' && provincia != '' && codigoPostal != '' && email != '') {
             // await Axios.post('http://localhost:8000/actualizar',
-            await Axios.post('https://artinkoo.herokuapp.com/actualizar',
+            await Axios.post(enlace + '/actualizar',
                 { nombre: nombre, apellidos: apellidos, direccion: direccion, ciudad: ciudad, provincia: provincia, codigoPostal: codigoPostal, email: email, idUsuario: idUsuario })
                 .then(response => {
                     if (response.statusText == 'OK') {
@@ -67,7 +69,7 @@ const DatosPersonales = (props) => {
     }
 
     const borrarCuentaCompleta = async () => {
-        Axios.post('https://artinkoo.herokuapp.com/borrarCuenta',
+        Axios.post(enlace + '/borrarCuenta',
             // Axios.post('http://localhost:8000/borrarCuenta',
             { idUsuario: idUsuario })
             .then(response => {
@@ -122,7 +124,7 @@ const DatosPersonales = (props) => {
             dangerMode: true,
         }).then((willDelete) => {
             if (willDelete) {
-                Axios.post('https://artinkoo.herokuapp.com/borrarDatosUser',
+                Axios.post(enlace + '/borrarDatosUser',
                     // Axios.post('http://localhost:8000/borrarDatosUser',
                     { idUsuario: idUsuario })
                     .then(response => {

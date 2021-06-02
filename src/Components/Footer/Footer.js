@@ -2,13 +2,15 @@ import React, { Component, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Axios from 'axios'
 import swal from 'sweetalert';
+import EnlaceServer from '../EnlaceServer'
 
 //Componente que renderizará el pie de página de la web
 const Footer = (props) => {
     const [emailRegistro, setEmailRegistro] = useState('')
+    const [enlace, setEnlace] = useState(EnlaceServer)
 
     const registrarNewsletter = async () => {
-        await Axios.post('https://artinkoo.herokuapp.com/registrarseNewsletter', { email: emailRegistro })
+        await Axios.post(enlace + '/registrarseNewsletter', { email: emailRegistro })
             .then(response => {
                 if (response.data == 'Signed Up!') {
                     swal({
