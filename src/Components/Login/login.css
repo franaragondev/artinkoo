@@ -178,9 +178,6 @@
     .opcionesRegistro>input {
         width: 25%;
     }
-    .opcionesRegistro>button {
-        width: 15%;
-    }
 }
 
 @media all and (min-width: 1100px) {

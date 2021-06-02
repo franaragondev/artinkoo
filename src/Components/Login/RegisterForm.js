@@ -122,9 +122,9 @@ const RegisterForm = (props) => {
                 <input required className='inputLogin' type='email' placeholder='Email' name='email' onChange={(e) => { setEmail(e.target.value) }} />
                 <input required className='inputLogin' type='text' placeholder='Usuario' name='usuario' onChange={(e) => { setUsuario(e.target.value) }} />
                 <input required className='inputLogin' type='password' placeholder='Contraseña' name='contrasenia' onChange={(e) => { setPassword(e.target.value) }} />
-                <button className='btnLogin' onClick={register}>Registrarse</button>
             </div>
-            <Link to='/login' className='link'>Iniciar Sesión </Link>
+            <button className='btnLogin' onClick={register}>Registrarse</button>
+            <p><Link to='/login' className='link'>Iniciar Sesión </Link></p>
         </div>
     )
 }
