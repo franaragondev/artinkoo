@@ -15,6 +15,15 @@ import EnlaceServer from '../../EnlaceServer'
 const stripePromise = loadStripe("pk_test_51Iwsf6HAiPs9nykwHQMsgaa8R6YP4fPUb3AR351RJRc9k1v6QVMQZ2uHBofplBqT4bVBvFzq8p1VJRsdu0E1LpF900SfPMxoQW");
 const cookies = new Cookies()
 
+const DesactivarPasarela = () => {
+    swal({
+        title: "Oh! Funcion no disponible.",
+        text: 'Lo sentimos pero esta opción no está disponible en estos momentos.',
+        icon: "error",
+        button: "Ok!",
+    })
+}
+
 const CheckoutForm = () => {
     const stripe = useStripe();
     const elements = useElements();
@@ -126,7 +135,7 @@ function Pasarela() {
             <div className="container p-4">
                 <div className="row h-100">
                     <div className="col-md-4 offset-md-4 h-100">
-                        <CheckoutForm />
+                        <DesactivarPasarela />
                     </div>
                 </div>
             </div>
