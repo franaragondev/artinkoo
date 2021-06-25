@@ -25,6 +25,12 @@ const DesactivarPasarela = () => {
         // window.location.href = 'http://localhost:3000/home'
         window.location.href = 'https://proyecto-final-fran-aragon.netlify.app/home'
     })
+
+    return (
+        <div>
+
+        </div>
+    )
 }
 
 const CheckoutForm = () => {

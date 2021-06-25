@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Cookies from 'universal-cookie'
 import Axios from 'axios'
 import EnlaceServer from '../EnlaceServer'
+import swal from 'sweetalert';
 
 //Componente que renderizará la cabecera de la web
 const HeaderPages = (props) => {
